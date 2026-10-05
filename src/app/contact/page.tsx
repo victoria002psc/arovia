@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 const cards = [
   ["Healthcare", "Clinic appointments, home care, diagnostics, ambulance, and pharmacy.", "healthcare"],
-  ["Equipment", "Import, export, medical equipment, and medical supplies.", "equipment"],
+  ["Equipment Trade", "Export and medical equipment.", "equipment"],
   ["Digital Health", "Medical apps, websites, platforms, and digital solutions.", "digital"],
   ["Partnership", "Institutions and businesses exploring a working relationship.", "partnership"],
   ["General", "Any other question for Arovia Group.", "general"],
@@ -50,7 +50,7 @@ export default function ContactPage({ searchParams }: { searchParams?: { type?: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
       <header className="bg-arovia-mist">
         <div className="mx-auto max-w-6xl px-5 py-16 lg:px-10">
-          <Heading level={1}>Get in Touch With Arovia Group</Heading>
+          <Heading level={1}>Talk to Arovia</Heading>
           <p className="mt-4 max-w-3xl text-lg text-slate-700">
             Questions about our services? Ready to partner with us? Arovia Group is in Guntur, Andhra Pradesh.
           </p>

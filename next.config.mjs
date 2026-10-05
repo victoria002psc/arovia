@@ -1,5 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      { source: "/medicines", destination: "/pharmacy", permanent: true },
+      { source: "/medicines/:path*", destination: "/pharmacy", permanent: true },
+      { source: "/equipment", destination: "/equipment-trade", permanent: true },
+      { source: "/equipment/export", destination: "/equipment-trade/export", permanent: true },
+      { source: "/equipment/equipment", destination: "/equipment-trade/medical-equipment", permanent: true },
+      { source: "/equipment/import", destination: "/equipment-trade", permanent: true },
+      { source: "/equipment/supplies", destination: "/equipment-trade", permanent: true },
+      { source: "/home-care", destination: "/care", permanent: true },
+      { source: "/home-care/:path*", destination: "/care", permanent: true },
+      { source: "/disclaimer", destination: "/medical-disclaimer", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

@@ -25,12 +25,12 @@ function text(value?: string) {
 export function ServicePageTemplate({ page }: { page: ContentPage }) {
   const tone = pillarClasses(page.pillar);
   const related = relatedFor(page.path);
-  const showCareNotice = page.path.startsWith("/care") || page.path.startsWith("/medicines");
+  const showCareNotice = page.path.startsWith("/care") || page.path.startsWith("/pharmacy");
   const showEmergency = page.path === "/care/ambulance";
   const trust = [
     page.path.startsWith("/care") ? { label: "Clinic registration", value: clinicRegistration } : null,
-    page.path.startsWith("/medicines") ? { label: "Pharmacy license", value: pharmacyLicense } : null,
-    page.path.startsWith("/equipment") ? { label: "Import-export and equipment registrations", value: importExportRegistrations } : null,
+    page.path.startsWith("/pharmacy") ? { label: "Pharmacy license", value: pharmacyLicense } : null,
+    page.path.startsWith("/equipment-trade") ? { label: "Export registration", value: importExportRegistrations } : null,
   ].filter((item): item is { label: string; value: string } => Boolean(item));
 
   const breadcrumbSchema = {

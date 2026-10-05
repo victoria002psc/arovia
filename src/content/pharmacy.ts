@@ -1,25 +1,25 @@
 import type { ContentPage } from "@/types";
 
-export const medicinesPage: ContentPage = {
-  path: "/medicines",
+export const pharmacyPage: ContentPage = {
+  path: "/pharmacy",
   pillar: "medicine",
   seo: {
-    title: "Arovia Pharmacy — Prescription Medicines & Health Products",
-    description: "Pharmacy services with prescription fulfillment, health products, and professional consultation. Home delivery available.",
-    keywords: ["prescription medicines", "medicine delivery", "pharmacy consultation", "health supplements"],
+    title: "Arovia Pharmacy — Prescriptions and Health Products",
+    description: "Pharmacy services with prescription fulfillment, health products, and pharmacist consultation.",
+    keywords: ["pharmacy", "prescription fulfillment", "pharmacist consultation", "health products"],
   },
-  eyebrow: "Medicines",
-  title: "Safe Medicines, Healthier Lives",
-  subheading: "Access prescription medicines, health products, and professional pharmacy guidance—integrated with your complete healthcare journey.",
+  eyebrow: "Pharmacy",
+  title: "Pharmacy Within a Connected Healthcare Journey",
+  subheading: "Prescription medicines, health products, and pharmacist guidance, coordinated with the rest of your care.",
   intro:
-    "Medicines are fundamental to healthcare, but access shouldn't be complicated. Arovia's Pharmacy service provides prescription medicines, healthcare products, and professional guidance—all coordinated with clinical care and home delivery options for your convenience.",
-  primaryCta: { label: "Access Medicines", href: "/contact?type=healthcare" },
+    "Arovia's pharmacy provides prescription medicines, healthcare products, and professional guidance, coordinated with clinical care. Availability, pricing, and delivery are confirmed with the pharmacy team. They are not promised on this page.",
+  primaryCta: { label: "Talk to the pharmacy", href: "/contact?type=pharmacy" },
   secondaryCta: { label: "How it works", href: "#how" },
   breadcrumbs: [
     { label: "Home", href: "/" },
-    { label: "Medicines", href: "/medicines" },
+    { label: "Pharmacy", href: "/pharmacy" },
   ],
-  audiencesTitle: "Medicines for Every Healthcare Need",
+  audiencesTitle: "Who the pharmacy is for",
   audiencesIntro: "From individuals managing chronic conditions to families with multiple healthcare needs, our pharmacy service supports your medicine requirements.",
   audiences: [
     { title: "Individual Patients", description: "Access to prescribed medicines with professional guidance for acute illness and chronic conditions." },
@@ -27,7 +27,7 @@ export const medicinesPage: ContentPage = {
     { title: "Healthcare Institutions", description: "Hospitals, clinics, and care facilities can partner for medicine supply and inventory support." },
     { title: "Chronic Disease Patients", description: "Consistent supply for ongoing conditions such as diabetes and hypertension." },
   ],
-  servicesTitle: "Prescription Medicines & Healthcare Products",
+  servicesTitle: "What the pharmacy offers",
   servicesIntro: "More than filling a prescription—we provide access, guidance, and a link to the rest of your care.",
   services: [
     {
@@ -40,7 +40,7 @@ export const medicinesPage: ContentPage = {
         "Dosage instructions",
         "Interaction checking",
         "Refill management",
-        "Pickup, home delivery, express, and scheduled delivery",
+        "Dispensing and refill coordination",
       ],
       notes: [
         "Prescriptions from Arovia clinicians or other providers",
@@ -63,8 +63,8 @@ export const medicinesPage: ContentPage = {
   whyTitle: "The Arovia Pharmacy Advantage",
   why: [
     { title: "Professional Guidance", description: "Licensed pharmacists provide consultation, not just dispensing." },
-    { title: "Integration", description: "Medicines connect with clinic care, diagnostics, and home support." },
-    { title: "Convenient Access", description: "Pickup, home delivery, express delivery, and scheduled refills." },
+    { title: "Integration", description: "The pharmacy connects with clinic care, diagnostics, and home support." },
+    { title: "Refill coordination", description: "Refills are arranged with the prescriber. Collection is confirmed when the order is ready." },
     { title: "Quality Assurance", description: "Verification, interaction checks, and proper handling." },
     { title: "Affordable options", description: "Generic alternatives when they are appropriate." },
   ],
@@ -75,24 +75,23 @@ export const medicinesPage: ContentPage = {
     { title: "Homecare", description: "If you receive homecare, medications are part of the care plan." },
     { title: "Health records", description: "Medicine history is intended to stay with your health record." },
   ],
-  stepsTitle: "How to Get Your Medicines",
-  stepsIntro: "Getting medicines from Arovia Pharmacy is simple and convenient.",
+  stepsTitle: "How a pharmacy request works",
+  stepsIntro: "A prescription request starts with the details a pharmacist needs to check.",
   steps: [
     { title: "Prescription", description: "Bring or upload a prescription from any doctor, Arovia or otherwise." },
     { title: "Verification", description: "Pharmacists verify the prescription for accuracy and safety." },
     { title: "Fulfillment", description: "We prepare medicines with the right dosage and instructions." },
     { title: "Consultation", description: "A pharmacist explains usage, side effects, and interactions." },
-    { title: "Delivery or pickup", description: "Choose delivery or pickup at a time that works for you." },
+    { title: "Collection", description: "The pharmacy confirms how and when the prepared items can be collected." },
   ],
   faqs: [
     { question: "Can I order medicines without a physical prescription?", answer: "E-prescription policy is still being confirmed. Share what you have and a pharmacist will tell you the accepted format." },
-    { question: "What's the delivery timeline?", answer: "Standard and express windows are confirmed for your service area when you order." },
-    { question: "Do you accept insurance for medicines?", answer: "Insurance partnerships are still being confirmed. Ask when you submit a prescription." },
-    { question: "Can I get medicines delivered to my home?", answer: "Yes. Home delivery is available within our current service area." },
+    { question: "Do you deliver?", answer: "Delivery coverage is not published. Ask the pharmacy team when you submit a prescription. [SERVICE AREAS / DELIVERY COVERAGE]" },
+    { question: "Do you accept insurance?", answer: "Insurance partnerships are still being confirmed. Ask when you submit a prescription." },
     { question: "Is pharmacist consultation included?", answer: "Yes. Pharmacists counsel on usage, side effects, and interactions." },
   ],
   ctaTitle: "Need medicines or health products?",
   ctaCopy: "Whether you have a prescription or want to explore health products, the pharmacy team is ready to help.",
-  ctaPrimary: { label: "Submit Your Prescription", href: "/contact?type=healthcare" },
+  ctaPrimary: { label: "Talk to the pharmacy", href: "/contact?type=pharmacy" },
   ctaSecondary: { label: "Pharmacy questions", href: "/faq" },
 };

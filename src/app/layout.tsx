@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Complete healthcare solutions in one place. Clinic care, home care, medicines, medical equipment, and healthcare technology. Integrated for better outcomes.",
+    "Arovia Group brings together care, pharmacy, medical equipment, and digital health.",
   keywords: ["integrated healthcare solutions", "pharmacy services", "medical equipment trade", "healthcare technology"],
   openGraph: {
     title: "Arovia Group — Integrated Healthcare Ecosystem",
-    description: "Care, medicines, equipment, and digital health connected in one place.",
+    description: "Care, pharmacy, equipment trade, and digital health.",
     type: "website",
     locale: "en_US",
     siteName: "Arovia Group",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Arovia Group — Integrated Healthcare Ecosystem",
-    description: "Care, medicines, equipment, and digital health connected in one place.",
+    description: "Care, pharmacy, equipment trade, and digital health.",
   },
 };
 

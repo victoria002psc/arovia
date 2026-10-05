@@ -98,7 +98,7 @@ export function Navigation() {
           {phoneDisplay}
         </a>
         <Button href="/contact" size="sm" className="hidden xl:inline-flex">
-          Get in Touch
+          Talk to Arovia
         </Button>
         <button
           ref={menuButtonRef}
@@ -149,7 +149,7 @@ export function Navigation() {
             {phoneDisplay}
           </a>
           <Button href="/contact" className="mt-4">
-            Get in Touch
+            Talk to Arovia
           </Button>
         </div>
       )}

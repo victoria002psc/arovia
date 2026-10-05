@@ -1,1 +1,1 @@
-export { equipmentPage, equipmentSupplyPage, exportPage, importPage, suppliesPage } from "@/content/equipment";
+export { equipmentPage, equipmentSupplyPage, exportPage } from "@/content/equipment";

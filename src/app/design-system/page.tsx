@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const swatches = [
   ["Care", "bg-arovia-care"],
-  ["Medicines", "bg-arovia-medicine"],
+  ["Pharmacy", "bg-arovia-medicine"],
   ["Equipment", "bg-arovia-equipment"],
   ["Digital", "bg-arovia-digital"],
   ["Cyan", "bg-arovia-cyan"],
@@ -32,7 +32,7 @@ const swatches = [
 
 const gradients = [
   ["Care", "bg-gradient-care"],
-  ["Medicines", "bg-gradient-medicine"],
+  ["Pharmacy", "bg-gradient-medicine"],
   ["Equipment", "bg-gradient-equipment"],
   ["Digital", "bg-gradient-digital"],
   ["Subtle", "bg-gradient-subtle"],
@@ -109,9 +109,9 @@ export default function DesignSystemPage() {
         <Heading id="surfaces">Card, icon and accordion</Heading>
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
           <Card>
-            <Icon name="HeartPulse" label="Home Care" className="h-6 w-6 text-arovia-care" />
+            <Icon name="HeartPulse" label="Care" className="h-6 w-6 text-arovia-care" />
             <Heading level={3} className="mt-4">
-              Home Care
+              Care
             </Heading>
             <p className="mt-2 text-sm text-slate-600">Clinic, Homecare, Diagnostics and Ambulance.</p>
           </Card>
@@ -135,14 +135,14 @@ export default function DesignSystemPage() {
         heading="Services"
         items={[
           { title: "Clinic", description: "Clinic", href: "/care/clinic" },
-          { title: "Pharmacy", description: "Pharmacy", href: "/medicines" },
+          { title: "Pharmacy", description: "Pharmacy", href: "/pharmacy" },
         ]}
       />
       <WhoWeServe heading="Who it serves" items={[{ title: "Patients and families", description: "People using Arovia services." }]} />
       <HowItWorks heading="How it works" steps={[{ title: "Contact", description: "Send an inquiry." }]} />
       <TrustSection items={[{ label: "Certifications", value: certifications }, { label: "Clinic registration", value: clinicRegistration }]} />
       <ContactStrip />
-      <CTASection heading="Get in Touch" text="Contact Arovia Group." primary={{ label: "Get in Touch", href: "/contact" }} secondary={{ label: "About", href: "/about" }} />
+      <CTASection heading="Talk to Arovia" text="Contact Arovia Group." primary={{ label: "Talk to Arovia", href: "/contact" }} secondary={{ label: "About", href: "/about" }} />
     </>
   );
 }

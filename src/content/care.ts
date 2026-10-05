@@ -32,7 +32,7 @@ export const carePage: ContentPage = {
   path: "/care",
   pillar: "care",
   seo: {
-    title: "Arovia Care Services — Clinic, Home Care, Diagnostics, Ambulance",
+    title: "Arovia Care — Homecare, Diagnostics, Ambulance, Clinic",
     description:
       "Complete care services from clinic consultations to home care, diagnostics, and emergency ambulance. Healthcare meets you where you need it.",
     keywords: ["clinic care", "home care services", "diagnostic tests", "ambulance services", "outpatient care"],
@@ -73,19 +73,6 @@ export const carePage: ContentPage = {
   servicesIntro: "Each service stands alone, but together they create a complete care network.",
   services: [
     {
-      title: "Clinic: Outpatient & Specialty Care",
-      description: "Professional medical consultations, specialty care, and treatment planning in a clinical setting.",
-      href: "/care/clinic",
-      included: [
-        "General medical consultations",
-        "Specialty care consultations",
-        "Treatment planning and recommendations",
-        "Referral coordination",
-        "Ongoing patient management",
-      ],
-      whenToUse: ["Routine checkups", "Acute illness", "Chronic disease management", "Specialty consultations"],
-    },
-    {
       title: "Homecare: Care in the Comfort of Your Home",
       description: "Professional healthcare delivered at home, from nursing and personal care to medication support.",
       href: "/care/homecare",
@@ -103,16 +90,29 @@ export const carePage: ContentPage = {
       included: ["Laboratory testing", "Health checkup packages", "Home collection", "Results interpretation"],
     },
     {
-      title: "Ambulance: Emergency Response & Patient Transport",
-      description: "Rapid response, care during transport, and non-emergency medical transfers.",
+      title: "Ambulance: Patient Transport",
+      description: "Ambulance support and patient transport. In a life-threatening emergency, call local emergency services.",
       href: "/care/ambulance",
-      included: ["24/7 emergency response", "Paramedic care", "Hospital transfers", "Planned medical transport"],
+      included: ["Patient transport", "Care during transport", "Hospital transfers", "Planned medical transport"],
+    },
+    {
+      title: "Clinic: Outpatient and Specialty Care",
+      description: "Professional medical consultations, specialty care, and treatment planning in a clinical setting.",
+      href: "/care/clinic",
+      included: [
+        "General medical consultations",
+        "Specialty care consultations",
+        "Treatment planning and recommendations",
+        "Referral coordination",
+        "Ongoing patient management",
+      ],
+      whenToUse: ["Routine checkups", "Acute illness", "Chronic disease management", "Specialty consultations"],
     },
   ],
   whyTitle: "The Arovia Care Advantage",
   why: [
     { title: "Integrated System", description: "Clinic care, home support, diagnostics, and emergency response stay coordinated." },
-    { title: "Qualified Professionals", description: "Doctors, nurses, paramedics, and specialists committed to healthcare excellence." },
+    { title: "Clinical team", description: "Care is delivered by the clinical team assigned to the service. Individual credentials are confirmed when you book." },
     { title: "Accessible", description: "Care comes to you when it makes sense—clinic, home, or emergency." },
     { title: "Coordinated", description: "Your care is connected across clinic, home, and diagnostics." },
     { title: "Patient-Centered", description: "Care planning prioritizes wellbeing and quality of life." },
@@ -195,7 +195,7 @@ export const homecarePage: ContentPage = {
   path: "/care/homecare",
   pillar: "care",
   seo: {
-    title: "Home Care Services — Professional In-Home Healthcare | Arovia",
+    title: "Homecare — Professional In-Home Healthcare | Arovia",
     description: "Professional in-home care and support. From recovery care to chronic disease management, we bring healthcare to your home.",
     keywords: ["home nursing", "elderly care", "post-operative care", "chronic disease management", "in-home care"],
   },
@@ -204,7 +204,7 @@ export const homecarePage: ContentPage = {
   subheading: "Nursing, personal care, and recovery support without requiring a clinic visit for every need.",
   intro:
     "Professional, compassionate healthcare delivered to your home. From nursing care to personal assistance, we support your health without requiring clinic visits for every step of recovery or ongoing care.",
-  primaryCta: { label: "Request Home Care Assessment", href: "/contact?type=healthcare" },
+  primaryCta: { label: "Request a homecare assessment", href: "/contact?type=healthcare" },
   secondaryCta: { label: "All Care Services", href: "/care" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -263,7 +263,7 @@ export const homecarePage: ContentPage = {
   ],
   ctaTitle: "Request a home assessment",
   ctaCopy: "Share who needs care, whether it is short-term or ongoing, and how to reach the family.",
-  ctaPrimary: { label: "Request Home Care Assessment", href: "/contact?type=healthcare" },
+  ctaPrimary: { label: "Request a homecare assessment", href: "/contact?type=healthcare" },
   ctaSecondary: { label: "Homecare questions", href: "/faq" },
 };
 
@@ -340,15 +340,15 @@ export const ambulancePage: ContentPage = {
   path: "/care/ambulance",
   pillar: "care",
   seo: {
-    title: "Emergency Ambulance Services — 24/7 Response | Arovia",
-    description: "24/7 emergency ambulance services with trained paramedics. Rapid response for medical emergencies. Save our number.",
+    title: "Ambulance Services — Patient Transport | Arovia",
+    description: "Ambulance support and patient transport. In a life-threatening emergency, call local emergency services.",
     keywords: ["emergency ambulance", "patient transport", "paramedic services", "emergency transport"],
   },
   eyebrow: "Care · Ambulance",
   title: "Ambulance Services: Emergency Response & Patient Transport",
-  subheading: "When minutes matter, a trained crew, equipped vehicle, and a clear handoff to definitive care.",
+  subheading: "Patient transport with a crew, an equipped vehicle, and a handoff to the receiving facility.",
   intro:
-    "When medical emergencies happen, every second counts. Our ambulance service provides rapid response, professional medical care during transport, and safe delivery to definitive care. Non-emergency medical transport is available for discharges and planned transfers.",
+    "In a life-threatening emergency, call local emergency services. Arovia ambulance support covers patient transport and care during transport. It does not publish a response time. Non-emergency medical transport can be requested for discharges and planned transfers.",
   primaryCta: { label: "Emergency Transport Inquiry", href: "/contact?type=healthcare" },
   secondaryCta: { label: "Save our number on Contact", href: "/contact" },
   breadcrumbs: [
@@ -362,7 +362,7 @@ export const ambulancePage: ContentPage = {
       title: "Emergency and planned transport",
       description: "Stabilization on scene, monitoring in transit, and coordination with the receiving facility.",
       included: [
-        "Emergency response intended around the clock",
+        "Emergency transport requests",
         "Professional paramedics",
         "Basic and advanced life support",
         "Patient stabilization",

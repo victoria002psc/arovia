@@ -6,7 +6,7 @@ export const faqs: FaqItem[] = [
     category: "general",
     question: "What is Arovia Group?",
     answer:
-      "Arovia Group is a startup healthcare company operating as an integrated healthcare ecosystem. We connect four major healthcare services—Care (clinics, homecare, diagnostics, ambulance), Medicines (pharmacy), Medical Equipment Trade (import/export/supply), and Digital Health (healthcare technology)—into one seamless system. Rather than forcing patients and organizations to navigate multiple providers, we coordinate all four functions as one ecosystem.",
+      "Arovia Group is a healthcare group. Care covers homecare, diagnostics, ambulance, and clinic. Pharmacy is a single service. Equipment Trade covers export and medical equipment. Digital Health covers medical apps, medical websites, healthcare platforms, and digital solutions.",
   },
   {
     id: "why-integration",
@@ -286,7 +286,7 @@ export const faqs: FaqItem[] = [
     category: "medicines",
     question: "Do you deliver medicines to my home?",
     answer:
-      "Yes. Home delivery is available within [SERVICE AREA].",
+      "Delivery coverage is not published. [SERVICE AREAS / DELIVERY COVERAGE] Ask the pharmacy when you submit a prescription.",
   },
   {
     id: "otc",
@@ -300,14 +300,14 @@ export const faqs: FaqItem[] = [
     category: "medicines",
     question: "Can I order medicines online?",
     answer:
-      "Online ordering details are still being confirmed. You can start a medicine request through the Contact page, and the pharmacy team will confirm pickup or delivery.",
+      "Online ordering is not published. You can start a pharmacy request through the Contact page, and the pharmacy team will confirm the next step.",
   },
   {
     id: "delivery-time",
     category: "medicines",
-    question: "What's your delivery timeframe for medicines?",
+    question: "How soon can a prescription be prepared?",
     answer:
-      "Standard and express delivery windows are still being confirmed for each service area. Express delivery is intended for urgent needs.",
+      "Timing is confirmed when the pharmacy accepts the prescription. No delivery window is published.",
   },
   {
     id: "e-rx",
@@ -335,7 +335,7 @@ export const faqs: FaqItem[] = [
     category: "medicines",
     question: "What payment methods do you accept?",
     answer:
-      "Accepted payment methods are still being confirmed. The pharmacy team will tell you the options available for pickup and delivery.",
+      "Accepted payment methods are still being confirmed. The pharmacy team will tell you the options when the prescription is prepared.",
   },
   {
     id: "pharmacist",
@@ -366,48 +366,6 @@ export const faqs: FaqItem[] = [
       "The pharmacy team includes licensed pharmacists and trained pharmacy staff who continue professional education and focus on medication safety.",
   },
   {
-    id: "import-how",
-    category: "equipment",
-    question: "How does equipment import work?",
-    answer:
-      "Import includes requirement assessment, global supplier identification, price and quality comparison, purchase, logistics and customs, quality verification, installation and training, and warranty setup. Timeline depends on the equipment type.",
-  },
-  {
-    id: "source-countries",
-    category: "equipment",
-    question: "What countries do you source equipment from?",
-    answer:
-      "Source countries are being confirmed. We source from suppliers that can meet quality and compliance expectations for your facility.",
-  },
-  {
-    id: "quality-standards",
-    category: "equipment",
-    question: "What quality standards do imported equipment meet?",
-    answer:
-      "Specific certifications such as ISO, CE, or FDA will be listed once confirmed. Equipment is verified for quality before delivery.",
-  },
-  {
-    id: "import-time",
-    category: "equipment",
-    question: "How long does equipment import take?",
-    answer:
-      "Timeline depends on equipment type, source location, shipping method, customs, and installation. We'll provide a specific timeline for your request.",
-  },
-  {
-    id: "price-includes",
-    category: "equipment",
-    question: "What's included in the price of imported equipment?",
-    answer:
-      "Quotes generally cover equipment, import logistics, delivery, installation, and basic training. Warranty terms are confirmed in the quotation.",
-  },
-  {
-    id: "import-compliance",
-    category: "equipment",
-    question: "Can you help with regulatory compliance for import?",
-    answer:
-      "Yes. We handle import documentation, regulatory compliance, customs clearance, quality certifications, and equipment registration when required.",
-  },
-  {
     id: "do-export",
     category: "equipment",
     question: "Do you export medical equipment?",
@@ -427,13 +385,6 @@ export const faqs: FaqItem[] = [
     question: "Which countries do you export to?",
     answer:
       "Export destinations are being confirmed. Share your target market and we'll tell you whether we can support it.",
-  },
-  {
-    id: "consumables",
-    category: "equipment",
-    question: "Can you supply consumables on an ongoing basis?",
-    answer:
-      "Yes. We offer regular delivery schedules, inventory support, bulk pricing, just-in-time options, and customized supply arrangements.",
   },
   {
     id: "pricing",
@@ -615,8 +566,8 @@ export const faqs: FaqItem[] = [
 export const faqCategories = [
   { id: "all", label: "All" },
   { id: "general", label: "General" },
-  { id: "care", label: "Home Care" },
-  { id: "medicines", label: "Medicines" },
-  { id: "equipment", label: "Equipment" },
+  { id: "care", label: "Care" },
+  { id: "medicines", label: "Pharmacy" },
+  { id: "equipment", label: "Equipment Trade" },
   { id: "digital", label: "Digital Health" },
 ] as const;

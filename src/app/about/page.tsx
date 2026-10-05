@@ -19,8 +19,8 @@ const values = [
 
 const pillars = [
   ["Care", "Our Care pillar delivers direct healthcare to patients through clinics, home care, diagnostics, and emergency services. Healthcare is most effective when it's accessible."],
-  ["Medicines", "Our Medicines pillar ensures patients have safe, timely access to prescription medicines and healthcare products, with guidance and home delivery."],
-  ["Medical Equipment Trade", "Our Equipment pillar connects healthcare institutions with quality medical equipment, supplies, and global trade expertise."],
+  ["Pharmacy", "The pharmacy provides prescription medicines and healthcare products, with pharmacist guidance. Availability and delivery are confirmed with the team."],
+  ["Equipment Trade", "Equipment Trade covers export support and medical equipment for healthcare organizations."],
   ["Digital Health", "Our Digital Health pillar builds technology that makes healthcare more efficient, accessible, and coordinated."],
 ];
 
