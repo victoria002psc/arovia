@@ -39,7 +39,7 @@ export function Navigation() {
         scrolled ? "border-[#E6E8EA] shadow-[0_1px_0_rgba(11,23,42,0.04)]" : "border-[#E6E8EA]",
       )}
     >
-      <nav className="mx-auto flex h-[4.5rem] max-w-[1440px] items-center justify-between gap-6 px-5 lg:px-10" aria-label="Primary">
+      <nav className="mx-auto flex h-20 max-w-[1440px] items-center justify-between gap-6 px-5 lg:px-10" aria-label="Primary">
         <Logo />
         <ul className="hidden items-center gap-1 xl:flex">
           {navItems.map((item) => {
@@ -99,7 +99,7 @@ export function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 bottom-0 top-[4.5rem] z-40 overflow-y-auto bg-[#F7F8F6] px-6 py-8 xl:hidden"
+            className="fixed inset-x-0 bottom-0 top-20 z-40 overflow-y-auto bg-[#F7F8F6] px-6 py-8 xl:hidden"
           >
             <ul className="space-y-6">
               {navItems.map((item) => (
