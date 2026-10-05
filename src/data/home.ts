@@ -69,7 +69,7 @@ export const homePillars = {
     },
     {
       name: "Digital Health",
-      headline: "Healthcare Technology That Transforms Care",
+      headline: "Technology designed around healthcare needs.",
       href: "/digital-health",
       cta: "Explore Digital Health",
       summary:
