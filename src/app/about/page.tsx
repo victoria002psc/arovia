@@ -27,17 +27,17 @@ const pillars = [
 export default function AboutPage() {
   return (
     <>
-      <header className="bg-slate-900 text-white">
+      <header className="bg-arovia-mist">
         <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">About</p>
-          <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-tight sm:text-5xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-arovia-cyan">About</p>
+          <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-tight text-arovia-navy sm:text-5xl">
             About Arovia Group: Healthcare Reimagined as an Integrated Ecosystem
           </h1>
-          <p className="mt-4 max-w-3xl text-lg text-slate-300">
+          <p className="mt-4 max-w-3xl text-lg text-slate-700">
             We&apos;re building a better way to access healthcare, medicines, equipment, and technology—all working together.
           </p>
-          <p className="mt-4 max-w-3xl leading-relaxed text-slate-300">
-            Arovia Group is a startup healthcare company founded on a simple belief: healthcare shouldn&apos;t be fragmented. Patients shouldn&apos;t have to navigate multiple providers for care, medicines, and equipment. Healthcare institutions shouldn&apos;t struggle to coordinate care and technology. We&apos;re integrating four healthcare pillars into one seamless ecosystem.
+          <p className="mt-4 max-w-3xl leading-relaxed text-slate-600">
+            Arovia Group is a startup healthcare company in Guntur, Andhra Pradesh, founded on a simple belief: healthcare shouldn&apos;t be fragmented. Patients shouldn&apos;t have to navigate multiple providers for care, medicines, and equipment. Healthcare institutions shouldn&apos;t struggle to coordinate care and technology. We&apos;re integrating four healthcare pillars into one seamless ecosystem.
           </p>
         </div>
       </header>
@@ -110,11 +110,13 @@ export default function AboutPage() {
             Licenses, registrations, and certifications will be published here once confirmed. Until then, this page does not claim approvals that have not been verified.
           </p>
           <h2 className="mt-12 text-3xl font-semibold">Healthcare Professionals & Experts</h2>
+          <p className="mt-3 max-w-3xl bg-amber-100 px-3 py-2 text-slate-900">[FOUNDER / LEADERSHIP]</p>
+          <p className="mt-3 max-w-3xl bg-amber-100 px-3 py-2 text-slate-900">[FOUNDING YEAR]</p>
           <p className="mt-3 max-w-3xl text-slate-600">
-            Named leadership, clinicians, and technology leads will be added when the team list is ready. Arovia is built by healthcare professionals, specialists, technology experts, and operators.
+            Named leadership, clinicians, and technology leads will be added when the team list is ready. Arovia is built by healthcare professionals, specialists, technology experts, and operators. Service coverage beyond Guntur is [SERVICE AREAS / DELIVERY COVERAGE].
           </p>
           <div className="mt-8">
-            <Link href="/contact?type=Partnership%2FBusiness%20Inquiry" className="inline-flex min-h-11 items-center font-semibold text-cyan-700">
+            <Link href="/contact?type=partnership" className="inline-flex min-h-11 items-center font-semibold text-cyan-700">
               Discuss Partnership Opportunities
             </Link>
           </div>

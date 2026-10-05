@@ -14,7 +14,7 @@ const careFaqs = [
   {
     question: "How long does emergency response take?",
     answer:
-      "Emergency calls are prioritized for immediate dispatch. A published average response time will be confirmed with the ambulance number.",
+      "In a life-threatening emergency, call local emergency services. Arovia does not publish a response time. For non-emergency transport, contact the care team on [PHONE].",
   },
   {
     question: "Are diagnostic tests covered by insurance?",
@@ -43,7 +43,7 @@ export const carePage: ContentPage = {
     "From routine checkups to emergency response, from home-based care to diagnostic testing—Arovia's Care pillar brings healthcare to where you need it.",
   intro:
     "Healthcare shouldn't require you to fit into healthcare's schedule. Our Care pillar brings clinical expertise, home-based services, diagnostic capabilities, and emergency response together in one coordinated system. Whether you're seeking outpatient care, ongoing home support, health checkups, or emergency assistance, we're available and accessible.",
-  primaryCta: { label: "Schedule Care", href: "/contact?type=Healthcare%2FCare%20Services" },
+  primaryCta: { label: "Schedule Care", href: "/contact?type=healthcare" },
   secondaryCta: { label: "Learn Our Services", href: "#services" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -120,7 +120,7 @@ export const carePage: ContentPage = {
   faqs: careFaqs,
   ctaTitle: "Ready for Arovia Care?",
   ctaCopy: "Whether you need a clinic appointment, home care assessment, diagnostic tests, or emergency assistance, we're ready to help.",
-  ctaPrimary: { label: "Contact Our Care Team", href: "/contact?type=Healthcare%2FCare%20Services" },
+  ctaPrimary: { label: "Contact Our Care Team", href: "/contact?type=healthcare" },
   ctaSecondary: { label: "View Care FAQs", href: "/faq" },
 };
 
@@ -137,7 +137,7 @@ export const clinicPage: ContentPage = {
   subheading: "Outpatient and specialty care with treatment planning that connects to the rest of Arovia.",
   intro:
     "Our clinic services provide professional medical consultations, specialty care, and treatment planning in a clinical setting. Qualified clinicians coordinate with home care, diagnostics, and pharmacy so the visit is the start of a plan, not a dead end.",
-  primaryCta: { label: "Schedule a Clinic Appointment", href: "/contact?type=Healthcare%2FCare%20Services" },
+  primaryCta: { label: "Schedule a Clinic Appointment", href: "/contact?type=healthcare" },
   secondaryCta: { label: "All Care Services", href: "/care" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -187,7 +187,7 @@ export const clinicPage: ContentPage = {
   faqs: careFaqs.slice(0, 3),
   ctaTitle: "Book your consultation",
   ctaCopy: "Tell us the kind of visit you need and a preferred time. The care team will confirm the appointment.",
-  ctaPrimary: { label: "Schedule a Clinic Appointment", href: "/contact?type=Healthcare%2FCare%20Services" },
+  ctaPrimary: { label: "Schedule a Clinic Appointment", href: "/contact?type=healthcare" },
   ctaSecondary: { label: "Back to Care", href: "/care" },
 };
 
@@ -204,7 +204,7 @@ export const homecarePage: ContentPage = {
   subheading: "Nursing, personal care, and recovery support without requiring a clinic visit for every need.",
   intro:
     "Professional, compassionate healthcare delivered to your home. From nursing care to personal assistance, we support your health without requiring clinic visits for every step of recovery or ongoing care.",
-  primaryCta: { label: "Request Home Care Assessment", href: "/contact?type=Healthcare%2FCare%20Services" },
+  primaryCta: { label: "Request Home Care Assessment", href: "/contact?type=healthcare" },
   secondaryCta: { label: "All Care Services", href: "/care" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -263,7 +263,7 @@ export const homecarePage: ContentPage = {
   ],
   ctaTitle: "Request a home assessment",
   ctaCopy: "Share who needs care, whether it is short-term or ongoing, and how to reach the family.",
-  ctaPrimary: { label: "Request Home Care Assessment", href: "/contact?type=Healthcare%2FCare%20Services" },
+  ctaPrimary: { label: "Request Home Care Assessment", href: "/contact?type=healthcare" },
   ctaSecondary: { label: "Homecare questions", href: "/faq" },
 };
 
@@ -280,7 +280,7 @@ export const diagnosticsPage: ContentPage = {
   subheading: "Accurate testing that guides treatment, with collection at the clinic or at home.",
   intro:
     "Accurate, timely health diagnostics guide treatment and prevention. Our laboratory services provide comprehensive testing with professional interpretation, coordinated with the clinician who is treating you.",
-  primaryCta: { label: "Book Diagnostic Tests", href: "/contact?type=Healthcare%2FCare%20Services" },
+  primaryCta: { label: "Book Diagnostic Tests", href: "/contact?type=healthcare" },
   secondaryCta: { label: "All Care Services", href: "/care" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -332,7 +332,7 @@ export const diagnosticsPage: ContentPage = {
   ],
   ctaTitle: "Book a test or checkup",
   ctaCopy: "Tell us the tests you need, or ask for a checkup package. We'll confirm preparation and timing.",
-  ctaPrimary: { label: "Book Diagnostic Tests", href: "/contact?type=Healthcare%2FCare%20Services" },
+  ctaPrimary: { label: "Book Diagnostic Tests", href: "/contact?type=healthcare" },
   ctaSecondary: { label: "Diagnostics questions", href: "/faq" },
 };
 
@@ -349,7 +349,7 @@ export const ambulancePage: ContentPage = {
   subheading: "When minutes matter, a trained crew, equipped vehicle, and a clear handoff to definitive care.",
   intro:
     "When medical emergencies happen, every second counts. Our ambulance service provides rapid response, professional medical care during transport, and safe delivery to definitive care. Non-emergency medical transport is available for discharges and planned transfers.",
-  primaryCta: { label: "Emergency Transport Inquiry", href: "/contact?type=Healthcare%2FCare%20Services" },
+  primaryCta: { label: "Emergency Transport Inquiry", href: "/contact?type=healthcare" },
   secondaryCta: { label: "Save our number on Contact", href: "/contact" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -405,6 +405,6 @@ export const ambulancePage: ContentPage = {
   ],
   ctaTitle: "Save the ambulance number",
   ctaCopy: "The emergency line will be published here and on the Contact page as soon as it is confirmed. For a planned transfer, send an inquiry now.",
-  ctaPrimary: { label: "Emergency Transport Inquiry", href: "/contact?type=Healthcare%2FCare%20Services" },
+  ctaPrimary: { label: "Emergency Transport Inquiry", href: "/contact?type=healthcare" },
   ctaSecondary: { label: "Contact", href: "/contact" },
 };

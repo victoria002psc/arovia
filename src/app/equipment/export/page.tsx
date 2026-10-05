@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ServicePageView } from "@/components/templates/ServicePageView";
+import { ServicePageTemplate } from "@/components/templates/ServicePageTemplate";
 import { exportPage } from "@/content/equipment";
 
 export const metadata: Metadata = {
@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ServicePageView page={exportPage} />;
+  return <ServicePageTemplate page={exportPage} />;
 }

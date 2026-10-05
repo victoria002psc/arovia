@@ -13,7 +13,7 @@ export const equipmentPage: ContentPage = {
   subheading: "Import, export, and supply hospital, diagnostic, surgical, and ICU equipment with professional expertise and reliable partnerships.",
   intro:
     "Healthcare institutions need reliable equipment sourcing. Arovia's Medical Equipment Trade pillar connects your facility with quality equipment globally—whether you're importing to build or expand operations, exporting to serve international markets, or maintaining ongoing equipment supply. We handle equipment, consumables, and the expertise behind them.",
-  primaryCta: { label: "Discuss Equipment Needs", href: "/contact?type=Medical%20Equipment" },
+  primaryCta: { label: "Discuss Equipment Needs", href: "/contact?type=equipment" },
   secondaryCta: { label: "Explore Services", href: "#services" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -70,8 +70,8 @@ export const equipmentPage: ContentPage = {
   ],
   ctaTitle: "Ready to source equipment?",
   ctaCopy: "Whether this is a first import or an expansion, the team can help with sourcing, logistics, and support.",
-  ctaPrimary: { label: "Submit Equipment Inquiry", href: "/contact?type=Medical%20Equipment" },
-  ctaSecondary: { label: "Request a quotation", href: "/contact?type=Medical%20Equipment" },
+  ctaPrimary: { label: "Submit Equipment Inquiry", href: "/contact?type=equipment" },
+  ctaSecondary: { label: "Request a quotation", href: "/contact?type=equipment" },
 };
 
 export const importPage: ContentPage = {
@@ -87,7 +87,7 @@ export const importPage: ContentPage = {
   subheading: "Establish or expand your facility with equipment sourced globally and delivered locally.",
   intro:
     "We handle sourcing, import logistics, quality verification, and installation support so your team can focus on opening or expanding care.",
-  primaryCta: { label: "Submit Equipment Import Inquiry", href: "/contact?type=Medical%20Equipment" },
+  primaryCta: { label: "Submit Equipment Import Inquiry", href: "/contact?type=equipment" },
   secondaryCta: { label: "Equipment overview", href: "/equipment" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -132,7 +132,7 @@ export const importPage: ContentPage = {
   faqs: (equipmentPage.faqs ?? []).slice(0, 4),
   ctaTitle: "Start an import inquiry",
   ctaCopy: "Share the equipment type, quantity, and timeline. We'll return sourcing options.",
-  ctaPrimary: { label: "Submit Equipment Import Inquiry", href: "/contact?type=Medical%20Equipment" },
+  ctaPrimary: { label: "Submit Equipment Import Inquiry", href: "/contact?type=equipment" },
 };
 
 export const exportPage: ContentPage = {
@@ -148,7 +148,7 @@ export const exportPage: ContentPage = {
   subheading: "Expand distribution with export logistics, documentation, and market-access support.",
   intro:
     "We provide export logistics, market access, and distribution expertise so medical equipment can reach international buyers with the paperwork and quality checks those markets expect.",
-  primaryCta: { label: "Discuss Equipment Export", href: "/contact?type=Medical%20Equipment" },
+  primaryCta: { label: "Discuss Equipment Export", href: "/contact?type=equipment" },
   secondaryCta: { label: "Equipment overview", href: "/equipment" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -188,7 +188,7 @@ export const exportPage: ContentPage = {
   ],
   ctaTitle: "Talk about an export opportunity",
   ctaCopy: "Tell us the product, destination, and volume. We'll outline the path.",
-  ctaPrimary: { label: "Discuss Equipment Export Opportunity", href: "/contact?type=Medical%20Equipment" },
+  ctaPrimary: { label: "Discuss Equipment Export Opportunity", href: "/contact?type=equipment" },
 };
 
 export const equipmentSupplyPage: ContentPage = {
@@ -204,7 +204,7 @@ export const equipmentSupplyPage: ContentPage = {
   subheading: "Quality equipment for new facilities and upgrades, with installation and staff training.",
   intro:
     "Whether you are opening a facility or replacing a critical device, we supply hospital, diagnostic, surgical, and ICU equipment and stay for setup and training.",
-  primaryCta: { label: "Request Equipment Quotation", href: "/contact?type=Medical%20Equipment" },
+  primaryCta: { label: "Request Equipment Quotation", href: "/contact?type=equipment" },
   secondaryCta: { label: "Equipment overview", href: "/equipment" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -242,7 +242,7 @@ export const equipmentSupplyPage: ContentPage = {
   ],
   ctaTitle: "Request a quotation",
   ctaCopy: "List the departments you are equipping and any must-have specifications.",
-  ctaPrimary: { label: "Request Equipment Quotation", href: "/contact?type=Medical%20Equipment" },
+  ctaPrimary: { label: "Request Equipment Quotation", href: "/contact?type=equipment" },
 };
 
 export const suppliesPage: ContentPage = {
@@ -258,7 +258,7 @@ export const suppliesPage: ContentPage = {
   subheading: "Reliable bulk supply, inventory support, and replenishment for facilities that cannot stock out.",
   intro:
     "Beyond capital equipment, facilities need a steady supply of consumables. We provide bulk supply, inventory support, and ongoing replenishment.",
-  primaryCta: { label: "Establish a Supply Partnership", href: "/contact?type=Medical%20Equipment" },
+  primaryCta: { label: "Establish a Supply Partnership", href: "/contact?type=equipment" },
   secondaryCta: { label: "Equipment overview", href: "/equipment" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -283,5 +283,5 @@ export const suppliesPage: ContentPage = {
   ],
   ctaTitle: "Set up ongoing supply",
   ctaCopy: "Tell us the categories, approximate volumes, and delivery location.",
-  ctaPrimary: { label: "Establish Ongoing Supply Partnership", href: "/contact?type=Medical%20Equipment" },
+  ctaPrimary: { label: "Establish Ongoing Supply Partnership", href: "/contact?type=equipment" },
 };

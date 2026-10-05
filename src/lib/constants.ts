@@ -116,7 +116,7 @@ export const pillarDirectory = [
 export const legalLinks = [
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
-  { label: "Medical Disclaimer", href: "/disclaimer" },
+  { label: "Medical Disclaimer", href: "/medical-disclaimer" },
 ] as const;
 
 export const footerColumns = [
@@ -418,4 +418,5 @@ export const routes = [
   "/privacy",
   "/terms",
   "/disclaimer",
+  "/medical-disclaimer",
 ];

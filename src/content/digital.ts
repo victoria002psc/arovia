@@ -13,7 +13,7 @@ export const digitalPage: ContentPage = {
   subheading: "Custom healthcare apps, websites, platforms, and software built for how care is actually delivered.",
   intro:
     "Healthcare is increasingly digital, but technology shouldn't be generic. Arovia's Digital Health pillar builds custom solutions—healthcare apps, websites, integrated platforms, and specialized software—designed to transform how healthcare organizations operate and serve patients.",
-  primaryCta: { label: "Discuss Your Digital Project", href: "/contact?type=Digital%20Health%20Solutions" },
+  primaryCta: { label: "Discuss Your Digital Project", href: "/contact?type=digital" },
   secondaryCta: { label: "Explore Solutions", href: "#services" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -53,8 +53,8 @@ export const digitalPage: ContentPage = {
   ],
   ctaTitle: "Ready to transform care with technology?",
   ctaCopy: "Bring the problem, the users, and any systems we must connect. We'll propose a path.",
-  ctaPrimary: { label: "Discuss Your Digital Health Project", href: "/contact?type=Digital%20Health%20Solutions" },
-  ctaSecondary: { label: "Request a consultation", href: "/contact?type=Digital%20Health%20Solutions" },
+  ctaPrimary: { label: "Discuss Your Digital Health Project", href: "/contact?type=digital" },
+  ctaSecondary: { label: "Request a consultation", href: "/contact?type=digital" },
 };
 
 export const appsPage: ContentPage = {
@@ -70,7 +70,7 @@ export const appsPage: ContentPage = {
   subheading: "Mobile products patients use daily and organizations can operate at scale.",
   intro:
     "From appointment booking and medication reminders to clinical documentation and bed management, we build healthcare apps for iOS and Android with security and clinical workflow in the design.",
-  primaryCta: { label: "Discuss Your Healthcare App", href: "/contact?type=Digital%20Health%20Solutions" },
+  primaryCta: { label: "Discuss Your Healthcare App", href: "/contact?type=digital" },
   secondaryCta: { label: "Digital Health", href: "/digital-health" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -108,7 +108,7 @@ export const appsPage: ContentPage = {
   faqs: (digitalPage.faqs ?? []).slice(0, 4),
   ctaTitle: "Describe the app",
   ctaCopy: "Who uses it, what job it replaces, and which systems it must talk to.",
-  ctaPrimary: { label: "Discuss Your Healthcare App Idea", href: "/contact?type=Digital%20Health%20Solutions" },
+  ctaPrimary: { label: "Discuss Your Healthcare App Idea", href: "/contact?type=digital" },
 };
 
 export const websitesPage: ContentPage = {
@@ -124,7 +124,7 @@ export const websitesPage: ContentPage = {
   subheading: "Sites and portals that inform, engage, and let people take the next step.",
   intro:
     "From a clear clinic website to a patient portal with records, booking, refills, and secure messages, we build web products with healthcare-specific journeys, accessibility, and protection of patient data.",
-  primaryCta: { label: "Build Your Healthcare Website", href: "/contact?type=Digital%20Health%20Solutions" },
+  primaryCta: { label: "Build Your Healthcare Website", href: "/contact?type=digital" },
   secondaryCta: { label: "Digital Health", href: "/digital-health" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -149,7 +149,7 @@ export const websitesPage: ContentPage = {
   ],
   ctaTitle: "Plan the website",
   ctaCopy: "Share the audiences, the services to feature, and any systems to connect.",
-  ctaPrimary: { label: "Build Your Healthcare Website", href: "/contact?type=Digital%20Health%20Solutions" },
+  ctaPrimary: { label: "Build Your Healthcare Website", href: "/contact?type=digital" },
 };
 
 export const platformsPage: ContentPage = {
@@ -165,7 +165,7 @@ export const platformsPage: ContentPage = {
   subheading: "Patient management, clinical work, pharmacy, billing, and analytics in one system.",
   intro:
     "Integrated platforms connect the work of a clinic or hospital so teams are not retyping the same patient into five tools. Security, roles, and audit history are part of the platform, not a later project.",
-  primaryCta: { label: "Discuss Platform Integration", href: "/contact?type=Digital%20Health%20Solutions" },
+  primaryCta: { label: "Discuss Platform Integration", href: "/contact?type=digital" },
   secondaryCta: { label: "Digital Health", href: "/digital-health" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -189,7 +189,7 @@ export const platformsPage: ContentPage = {
   faqs: (digitalPage.faqs ?? []).slice(1, 5),
   ctaTitle: "Map the platform",
   ctaCopy: "List the departments and the systems that must remain. We'll propose the integration boundary.",
-  ctaPrimary: { label: "Discuss Platform Integration", href: "/contact?type=Digital%20Health%20Solutions" },
+  ctaPrimary: { label: "Discuss Platform Integration", href: "/contact?type=digital" },
 };
 
 export const solutionsPage: ContentPage = {
@@ -205,7 +205,7 @@ export const solutionsPage: ContentPage = {
   subheading: "Specialized systems when a standard product does not match the work.",
   intro:
     "Some organizations need a lab system, a theatre schedule, a vaccination registry, or a device integration that no packaged product covers well. We design and build that software, then train the people who will run it.",
-  primaryCta: { label: "Describe Your Solution", href: "/contact?type=Digital%20Health%20Solutions" },
+  primaryCta: { label: "Describe Your Solution", href: "/contact?type=digital" },
   secondaryCta: { label: "Digital Health", href: "/digital-health" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -239,5 +239,5 @@ export const solutionsPage: ContentPage = {
   ],
   ctaTitle: "Describe the need",
   ctaCopy: "A short brief is enough to start: who struggles today, and what a better Tuesday looks like.",
-  ctaPrimary: { label: "Describe Your Custom Solution Needs", href: "/contact?type=Digital%20Health%20Solutions" },
+  ctaPrimary: { label: "Describe Your Custom Solution Needs", href: "/contact?type=digital" },
 };

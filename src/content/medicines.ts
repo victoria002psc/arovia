@@ -13,7 +13,7 @@ export const medicinesPage: ContentPage = {
   subheading: "Access prescription medicines, health products, and professional pharmacy guidance—integrated with your complete healthcare journey.",
   intro:
     "Medicines are fundamental to healthcare, but access shouldn't be complicated. Arovia's Pharmacy service provides prescription medicines, healthcare products, and professional guidance—all coordinated with clinical care and home delivery options for your convenience.",
-  primaryCta: { label: "Access Medicines", href: "/contact?type=Medicines%2FPharmacy" },
+  primaryCta: { label: "Access Medicines", href: "/contact?type=healthcare" },
   secondaryCta: { label: "How it works", href: "#how" },
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -93,6 +93,6 @@ export const medicinesPage: ContentPage = {
   ],
   ctaTitle: "Need medicines or health products?",
   ctaCopy: "Whether you have a prescription or want to explore health products, the pharmacy team is ready to help.",
-  ctaPrimary: { label: "Submit Your Prescription", href: "/contact?type=Medicines%2FPharmacy" },
+  ctaPrimary: { label: "Submit Your Prescription", href: "/contact?type=healthcare" },
   ctaSecondary: { label: "Pharmacy questions", href: "/faq" },
 };
