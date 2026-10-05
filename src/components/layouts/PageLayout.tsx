@@ -1,5 +1,4 @@
 import { Header } from "@/components/layouts/Header";
-import { CallButton } from "@/components/ui/CallButton";
 import { ScrollTop } from "@/components/ui/ScrollTop";
 import { Footer } from "@/components/sections/Footer";
 
@@ -12,7 +11,6 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
       <Header />
       <main id="main">{children}</main>
       <Footer />
-      <CallButton />
       <ScrollTop />
     </>
   );

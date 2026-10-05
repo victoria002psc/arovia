@@ -26,7 +26,7 @@ export function Footer() {
   const rest = footerColumns.filter((column) => column.title !== "Company");
 
   return (
-    <footer className="bg-arovia-navy pb-24 text-white md:pb-0">
+    <footer className="bg-arovia-navy text-white">
       <Container className="grid gap-10 py-16 md:grid-cols-2 xl:grid-cols-5">
         <div>
           <Logo inverted />
