@@ -49,3 +49,23 @@ export const buttonHover = {
 };
 
 export const buttonTap = { scale: 0.98 };
+
+/** Definitions only. Pages apply these in later phases. */
+export const fadeUp: Variants = itemVariants;
+
+export const fadeIn: Variants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.8, ease } },
+};
+
+export const staggerContainer: Variants = containerVariants;
+
+export const scaleIn: Variants = {
+  hidden: { opacity: 0, scale: 0.98 },
+  show: { opacity: 1, scale: 1, transition: { duration: 0.8, ease } },
+};
+
+export const slideIn: Variants = {
+  hidden: { opacity: 0, x: 12 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.8, ease } },
+};

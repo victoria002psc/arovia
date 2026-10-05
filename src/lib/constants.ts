@@ -1,19 +1,26 @@
 import type { NavItem, PillarId } from "@/types";
+import {
+  addressSingleLine,
+  businessHours,
+  companyName,
+  email,
+  phoneDisplay,
+  showWhatsApp,
+} from "@/lib/site-info";
 
 /**
- * Company contact details.
- * Leave a field empty until the real value is confirmed.
+ * Contact fields are read from site-info.ts. They are not written here.
  */
 export const company = {
-  name: "Arovia Group",
-  phone: "",
-  email: "",
-  address: "",
-  whatsapp: "",
-  hours: "",
+  name: companyName,
+  phone: phoneDisplay,
+  email,
+  address: addressSingleLine,
+  whatsapp: showWhatsApp ? phoneDisplay : "",
+  hours: businessHours,
   emergencyPhone: "",
   year: 2026,
-  siteUrl: "https://arovia.group",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://arovia.group",
 };
 
 export const inquiryTypes = [
@@ -30,56 +37,103 @@ export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   {
-    label: "Care",
+    label: "Home Care",
     href: "/care",
     children: [
-      { label: "Homecare", href: "/care/homecare", description: "Care at home" },
-      { label: "Diagnostics", href: "/care/diagnostics", description: "Tests and checkups" },
-      { label: "Ambulance", href: "/care/ambulance", description: "Emergency response" },
-      { label: "Clinic", href: "/care/clinic", description: "Outpatient care" },
+      { label: "Clinic", href: "/care/clinic", description: "Clinic" },
+      { label: "Homecare", href: "/care/homecare", description: "Homecare" },
+      { label: "Diagnostics", href: "/care/diagnostics", description: "Diagnostics" },
+      { label: "Ambulance", href: "/care/ambulance", description: "Ambulance" },
     ],
   },
-  { label: "Pharmacy", href: "/pharmacy" },
   {
-    label: "Equipment Trade",
-    href: "/equipment-trade",
+    label: "Medicines",
+    href: "/medicines",
+    children: [{ label: "Pharmacy", href: "/medicines", description: "Pharmacy" }],
+  },
+  {
+    label: "Medical Equipment Trade",
+    href: "/equipment",
     children: [
-      { label: "Export", href: "/equipment-trade/export", description: "International distribution" },
-      { label: "Medical Equipment", href: "/equipment-trade/medical-equipment", description: "Hospital and clinical equipment" },
+      { label: "Import", href: "/equipment/import", description: "Import" },
+      { label: "Export", href: "/equipment/export", description: "Export" },
+      { label: "Medical Equipment", href: "/equipment/equipment", description: "Medical Equipment" },
+      { label: "Medical Supplies", href: "/equipment/supplies", description: "Medical Supplies" },
     ],
   },
   {
     label: "Digital Health",
     href: "/digital-health",
     children: [
-      { label: "Medical Apps", href: "/digital-health/apps", description: "Healthcare applications" },
-      { label: "Medical Websites", href: "/digital-health/websites", description: "Sites and portals" },
-      { label: "Healthcare Platforms", href: "/digital-health/platforms", description: "Integrated systems" },
-      { label: "Digital Solutions", href: "/digital-health/solutions", description: "Custom healthcare software" },
+      { label: "Medical Apps", href: "/digital-health/apps", description: "Medical Apps" },
+      { label: "Medical Websites", href: "/digital-health/websites", description: "Medical Websites" },
+      { label: "Healthcare Platforms", href: "/digital-health/platforms", description: "Healthcare Platforms" },
+      { label: "Digital Solutions", href: "/digital-health/solutions", description: "Digital Solutions" },
     ],
   },
   { label: "Contact", href: "/contact" },
 ];
 
+export const pillarDirectory = [
+  {
+    id: "care" as const,
+    name: "Home Care",
+    slug: "care",
+    href: "/care",
+    colorToken: "arovia-care",
+    icon: "HeartPulse" as const,
+    summary: "Clinic, Homecare, Diagnostics and Ambulance.",
+  },
+  {
+    id: "medicine" as const,
+    name: "Medicines",
+    slug: "medicines",
+    href: "/medicines",
+    colorToken: "arovia-medicine",
+    icon: "Pill",
+    summary: "Pharmacy.",
+  },
+  {
+    id: "equipment" as const,
+    name: "Medical Equipment Trade",
+    slug: "equipment",
+    href: "/equipment",
+    colorToken: "arovia-equipment",
+    icon: "Stethoscope",
+    summary: "Import, Export, Medical Equipment and Medical Supplies.",
+  },
+  {
+    id: "digital" as const,
+    name: "Digital Health",
+    slug: "digital-health",
+    href: "/digital-health",
+    colorToken: "arovia-digital",
+    icon: "MonitorSmartphone",
+    summary: "Medical Apps, Medical Websites, Healthcare Platforms and Digital Solutions.",
+  },
+] as const;
+
 export const footerColumns = [
   {
-    title: "Care",
+    title: "Home Care",
     links: [
+      { label: "Clinic", href: "/care/clinic" },
       { label: "Homecare", href: "/care/homecare" },
       { label: "Diagnostics", href: "/care/diagnostics" },
       { label: "Ambulance", href: "/care/ambulance" },
-      { label: "Clinic", href: "/care/clinic" },
     ],
   },
   {
-    title: "Pharmacy",
-    links: [{ label: "Pharmacy", href: "/pharmacy" }],
+    title: "Medicines",
+    links: [{ label: "Pharmacy", href: "/medicines" }],
   },
   {
-    title: "Equipment Trade",
+    title: "Medical Equipment Trade",
     links: [
-      { label: "Export", href: "/equipment-trade/export" },
-      { label: "Medical Equipment", href: "/equipment-trade/medical-equipment" },
+      { label: "Import", href: "/equipment/import" },
+      { label: "Export", href: "/equipment/export" },
+      { label: "Medical Equipment", href: "/equipment/equipment" },
+      { label: "Medical Supplies", href: "/equipment/supplies" },
     ],
   },
   {

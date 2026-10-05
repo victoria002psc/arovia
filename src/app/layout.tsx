@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { PageLayout } from "@/components/layouts/PageLayout";
 import { company } from "@/lib/constants";
 
-const sans = Inter({
+const sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap",
-});
-
-const heading = Manrope({
-  subsets: ["latin"],
-  variable: "--font-heading",
   display: "swap",
 });
 
@@ -50,7 +44,7 @@ const organization = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${sans.variable} ${heading.variable} font-sans antialiased`}>
+      <body className={`${sans.variable} font-sans antialiased`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} />
         <PageLayout>{children}</PageLayout>
       </body>

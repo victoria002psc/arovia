@@ -1,11 +1,9 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { buttonHover, buttonTap } from "@/lib/animation-variants";
 import { cn } from "@/lib/utils";
+import { Icon } from "@/components/ui/Icon";
 
 type ButtonVariant = "primary" | "care" | "medicine" | "equipment" | "digital" | "outline" | "ghost";
+type ButtonSize = "sm" | "md" | "lg";
 
 const variants: Record<ButtonVariant, string> = {
   primary: "bg-arovia-cyan text-white hover:bg-cyan-600 shadow-sm",
@@ -17,13 +15,21 @@ const variants: Record<ButtonVariant, string> = {
   ghost: "bg-transparent text-arovia-ink hover:bg-slate-100",
 };
 
+const sizes: Record<ButtonSize, string> = {
+  sm: "min-h-9 px-3 text-sm",
+  md: "min-h-11 px-5 text-base",
+  lg: "min-h-12 px-6 text-base",
+};
+
 interface ButtonProps {
   href?: string;
   variant?: ButtonVariant;
+  size?: ButtonSize;
   className?: string;
   children: React.ReactNode;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
+  loading?: boolean;
   onClick?: () => void;
   ariaLabel?: string;
 }
@@ -31,41 +37,42 @@ interface ButtonProps {
 export function Button({
   href,
   variant = "primary",
+  size = "md",
   className,
   children,
   type = "button",
   disabled,
+  loading = false,
   onClick,
   ariaLabel,
 }: ButtonProps) {
+  const isDisabled = disabled || loading;
   const classes = cn(
-    "inline-flex min-h-11 items-center justify-center rounded-full px-5 py-2.5 text-base font-semibold transition-colors",
+    "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors",
     variants[variant],
-    disabled && "pointer-events-none opacity-60",
+    sizes[size],
+    isDisabled && "pointer-events-none opacity-60",
     className,
+  );
+
+  const content = (
+    <>
+      {loading && <Icon name="LoaderCircle" className="h-4 w-4 animate-spin" />}
+      {children}
+    </>
   );
 
   if (href) {
     return (
-      <motion.div whileHover={buttonHover} whileTap={buttonTap} className="inline-flex">
-        <Link href={href} className={classes} aria-label={ariaLabel}>
-          {children}
-        </Link>
-      </motion.div>
+      <Link href={href} className={classes} aria-label={ariaLabel} aria-disabled={isDisabled || undefined}>
+        {content}
+      </Link>
     );
   }
 
   return (
-    <motion.button
-      type={type}
-      className={classes}
-      disabled={disabled}
-      onClick={onClick}
-      aria-label={ariaLabel}
-      whileHover={disabled ? undefined : buttonHover}
-      whileTap={disabled ? undefined : buttonTap}
-    >
-      {children}
-    </motion.button>
+    <button type={type} className={classes} disabled={isDisabled} onClick={onClick} aria-label={ariaLabel} aria-busy={loading || undefined}>
+      {content}
+    </button>
   );
 }
