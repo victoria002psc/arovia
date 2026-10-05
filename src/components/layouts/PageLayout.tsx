@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/ui/Navigation";
+import { ScrollTop } from "@/components/ui/ScrollTop";
 import { Footer } from "@/components/sections/Footer";
 
 export function PageLayout({ children }: { children: React.ReactNode }) {
@@ -10,6 +11,7 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
       <Navigation />
       <main id="main">{children}</main>
       <Footer />
+      <ScrollTop />
     </>
   );
 }

@@ -1,44 +1,51 @@
-import type { Variants, Easing } from "framer-motion";
+import type { Easing, Variants } from "framer-motion";
 
-const easeOut: Easing = "easeOut";
+const ease: Easing = "easeInOut";
 
-/** Staggered section entrance. */
 export const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.08, delayChildren: 0.05 },
+    transition: { staggerChildren: 0.12, delayChildren: 0.08 },
   },
 };
 
-/** Fade and rise used for cards, headings, and list items. */
 export const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: easeOut },
+    transition: { duration: 0.8, ease },
   },
 };
 
-/** Full-page fade used when a route first paints. */
-export const pageVariants: Variants = {
-  hidden: { opacity: 0, y: 12 },
+export const headlineVariants: Variants = {
+  hidden: { opacity: 0, y: 10, scale: 0.98 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: easeOut },
+    scale: 1,
+    transition: { duration: 0.8, ease },
+  },
+};
+
+export const pageVariants: Variants = {
+  hidden: { opacity: 0, y: 8 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease },
   },
 };
 
 export const hoverLift = {
-  y: -8,
-  transition: { duration: 0.25, ease: easeOut },
+  y: -2,
+  transition: { duration: 0.3, ease },
 };
 
 export const buttonHover = {
   y: -2,
-  transition: { duration: 0.2, ease: easeOut },
+  transition: { duration: 0.3, ease },
 };
 
 export const buttonTap = { scale: 0.98 };

@@ -171,12 +171,12 @@ export function ContactForm({ initialType }: { initialType?: string }) {
       </div>
       <AnimatePresence>
         {status === "success" && (
-          <motion.p role="status" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+          <motion.p role="status" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: "easeInOut" }} className="rounded-2xl bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
             {serverMessage}
           </motion.p>
         )}
         {status === "error" && (
-          <motion.p role="alert" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl bg-rose-50 px-4 py-3 text-sm text-rose-800">
+          <motion.p role="alert" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: "easeInOut" }} className="rounded-2xl bg-rose-50 px-4 py-3 text-sm text-rose-800">
             {serverMessage}
           </motion.p>
         )}
@@ -198,7 +198,7 @@ function Field({ label, error, required, children }: { label: string; error?: st
 
 function inputClass(invalid: boolean) {
   return cn(
-    "w-full rounded-2xl border bg-white px-4 py-3 text-base font-normal text-arovia-ink outline-none transition focus:border-arovia-cyan",
+    "w-full rounded-2xl border bg-white px-4 py-4 text-base font-normal text-arovia-ink outline-none transition-[border-color,box-shadow] duration-300 focus:border-[#0F9F8F] focus:shadow-[0_0_0_3px_rgba(15,159,143,0.15)]",
     invalid ? "border-rose-400" : "border-slate-200",
   );
 }

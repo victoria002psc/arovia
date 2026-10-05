@@ -45,7 +45,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  transition={{ duration: 0.45, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
                   <p className="px-5 pb-5 text-sm leading-relaxed text-slate-600">{item.answer}</p>

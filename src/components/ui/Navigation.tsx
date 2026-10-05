@@ -35,8 +35,8 @@ export function Navigation() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b bg-white transition-shadow",
-        scrolled ? "border-[#E6E8EA] shadow-[0_1px_0_rgba(11,23,42,0.04)]" : "border-[#E6E8EA]",
+        "sticky top-0 z-50 border-b border-[#E6E8EA] transition-[background-color,box-shadow] duration-300",
+        scrolled ? "bg-white/95 shadow-[0_10px_30px_-24px_rgba(11,23,42,0.55)] backdrop-blur-md" : "bg-white",
       )}
     >
       <nav className="mx-auto flex h-20 max-w-[1440px] items-center justify-between gap-6 px-5 lg:px-10" aria-label="Primary">
@@ -54,8 +54,14 @@ export function Navigation() {
                   )}
                   aria-current={active ? "page" : undefined}
                 >
-                  <span className={cn("border-b pb-0.5", active ? "border-[#0F9F8F]" : "border-transparent group-hover:border-[#0B172A]/30")}>
+                  <span className="relative">
                     {item.label}
+                    <span
+                      className={cn(
+                        "absolute -bottom-1 left-0 h-px w-full origin-left bg-[#0F9F8F] transition-transform duration-300",
+                        active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
+                      )}
+                    />
                   </span>
                 </Link>
                 {item.children && (
@@ -76,7 +82,7 @@ export function Navigation() {
           })}
         </ul>
         <div className="hidden xl:block">
-          <Link href="/contact" className="inline-flex min-h-11 items-center bg-[#0B172A] px-5 text-[14px] font-medium text-white hover:bg-[#16283f]">
+          <Link href="/contact" className="inline-flex min-h-11 items-center bg-[#0B172A] px-5 text-[14px] font-medium text-white transition-[background-color,transform] duration-300 hover:bg-[#16283f] active:scale-[0.98]">
             Talk to Arovia
           </Link>
         </div>
@@ -95,10 +101,10 @@ export function Navigation() {
         {open && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
             className="fixed inset-x-0 bottom-0 top-20 z-40 overflow-y-auto bg-[#F7F8F6] px-6 py-8 xl:hidden"
           >
             <ul className="space-y-6">
