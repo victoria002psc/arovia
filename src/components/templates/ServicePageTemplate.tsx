@@ -77,9 +77,9 @@ export function ServicePageTemplate({ page }: { page: ContentPage }) {
         <Section>
           <Heading>{page.audiencesTitle}</Heading>
           {page.audiencesIntro && <p className="mt-3 max-w-3xl text-slate-600">{text(page.audiencesIntro)}</p>}
-          <ul className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-8 divide-y divide-arovia-navy/10 border-y border-arovia-navy/10">
             {page.audiences.map((item) => (
-              <li key={item.title} className="rounded-lg border border-slate-200 bg-white p-5">
+              <li key={item.title} className="py-5">
                 <Heading level={3}>{item.title}</Heading>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{text(item.description)}</p>
               </li>
@@ -94,7 +94,7 @@ export function ServicePageTemplate({ page }: { page: ContentPage }) {
           {page.servicesIntro && <p className="mt-3 max-w-3xl text-slate-600">{text(page.servicesIntro)}</p>}
           <div className="mt-8 grid gap-5">
             {page.services.map((service) => (
-              <article key={service.title} className="rounded-lg border border-slate-200 p-6">
+              <article key={service.title} className="border-t border-arovia-navy/10 py-8">
                 <Heading level={3}>{service.title}</Heading>
                 <p className="mt-2 max-w-3xl text-slate-600">{text(service.description)}</p>
                 {service.included && (
@@ -122,9 +122,9 @@ export function ServicePageTemplate({ page }: { page: ContentPage }) {
         <Section background="mist">
           <Heading>{page.stepsTitle ?? "How it works"}</Heading>
           {page.stepsIntro && <p className="mt-3 text-slate-600">{text(page.stepsIntro)}</p>}
-          <ol className="mt-8 grid gap-4 md:grid-cols-2">
+          <ol className="mt-8 divide-y divide-arovia-navy/10 border-t border-arovia-navy/10">
             {page.steps.map((step, index) => (
-              <li key={step.title} className="rounded-lg border border-slate-200 bg-white p-5">
+              <li key={step.title} className="py-5">
                 <p className={`text-sm font-semibold ${tone.text}`}>{String(index + 1).padStart(2, "0")}</p>
                 <Heading level={3} className="mt-2">
                   {step.title}
@@ -139,9 +139,9 @@ export function ServicePageTemplate({ page }: { page: ContentPage }) {
       {page.why && (
         <Section>
           <Heading>{page.whyTitle ?? "Why choose this service"}</Heading>
-          <ul className="mt-8 grid gap-4 md:grid-cols-2">
+          <ul className="mt-8 divide-y divide-arovia-navy/10 border-t border-arovia-navy/10">
             {page.why.map((item) => (
-              <li key={item.title} className="rounded-lg border border-slate-200 p-5">
+              <li key={item.title} className="py-5">
                 <Heading level={3}>{item.title}</Heading>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{text(item.description)}</p>
               </li>
