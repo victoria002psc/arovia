@@ -7,11 +7,11 @@ export const homeSeo = {
 };
 
 export const homeHero = {
-  eyebrow: "Healthcare Ecosystem for People, Care, and Technology",
-  title: "Complete Healthcare Solutions, Connected in One Place",
-  text: "At Arovia Group, we believe healthcare shouldn't be fragmented. Whether you need immediate care, ongoing medicines, medical equipment, or healthcare technology, our integrated ecosystem connects everything you need. We serve patients, families, healthcare institutions, and medical businesses.",
-  primary: { label: "Talk to Our Team", href: "/contact" },
-  secondary: { label: "Explore Our Services", href: "#pillars" },
+  eyebrow: "Healthcare, connected.",
+  title: "Healthcare That Connects Care, Pharmacy, Equipment & Technology",
+  text: "Arovia Group brings together healthcare services, pharmacy, medical equipment and digital health solutions within one connected healthcare ecosystem.",
+  primary: { label: "Explore Arovia", href: "#ecosystem" },
+  secondary: { label: "Talk to Arovia", href: "/contact" },
   image: {
     src: "/images/hero-consult.jpg",
     alt: "A clinician discussing diagnostic imaging with a colleague",
@@ -19,8 +19,8 @@ export const homeHero = {
 };
 
 export const homeEcosystem = {
-  heading: "Why Healthcare Needs Integration",
-  text: "We connect four distinct healthcare capabilities into one seamless ecosystem.",
+  heading: "One Healthcare Ecosystem. Four Connected Capabilities.",
+  text: "Arovia brings together Care, Pharmacy, Equipment Trade and Digital Health so patients, families, and healthcare organizations can work with one group.",
 };
 
 export const homePillars = {

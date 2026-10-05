@@ -1,43 +1,31 @@
-import { Reveal } from "@/components/motion/Reveal";
-
 const capabilities = [
-  { name: "Care", text: "Homecare, diagnostics, ambulance and clinic services for people and families." },
-  { name: "Pharmacy", text: "A dedicated pharmacy within the same healthcare journey." },
-  { name: "Equipment Trade", text: "Medical equipment and export for healthcare organizations." },
-  { name: "Digital Health", text: "Applications, websites, platforms and software built for care." },
+  { name: "Care", detail: "Homecare, diagnostics, ambulance, clinic" },
+  { name: "Pharmacy", detail: "One pharmacy" },
+  { name: "Equipment Trade", detail: "Export and medical equipment" },
+  { name: "Digital Health", detail: "Apps, websites, platforms, solutions" },
 ];
 
-export function Ecosystem() {
+export function Ecosystem({ heading, text }: { heading: string; text: string }) {
   return (
-    <section id="ecosystem" className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-5 lg:px-10">
-        <Reveal>
-        <p className="text-[12px] font-medium uppercase tracking-[0.24em] text-[#0F9F8F]">The Arovia Group</p>
-        <div className="mt-5 grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
-          <h2 className="font-heading text-[2.35rem] font-semibold leading-[1.08] tracking-[-0.025em] text-[#0B172A] sm:text-5xl">
-            One Healthcare Ecosystem.
-            <span className="mt-2 block">Four Connected Capabilities.</span>
-          </h2>
-          <p className="max-w-sm text-[17px] leading-relaxed text-[#3E4A57] lg:pb-1">
-            Arovia brings care, pharmacy, equipment trade and digital health together, so patients, families and healthcare organizations do not have to treat them as separate worlds.
-          </p>
-        </div>
-        </Reveal>
-
-        <Reveal delay={0.12}>
-        <div className="mt-16 border-t border-[#0B172A]/15 pt-8">
-          <p className="font-heading text-[13px] font-semibold tracking-[0.22em] text-[#0B172A]">AROVIA GROUP</p>
-          <ul className="mt-8 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+    <section id="ecosystem" aria-labelledby="ecosystem-heading" className="bg-white">
+      <div className="mx-auto max-w-wide px-5 py-20 lg:px-10 lg:py-28">
+        <h2 id="ecosystem-heading" className="max-w-3xl font-heading text-3xl font-semibold text-arovia-navy sm:text-4xl">
+          {heading}
+        </h2>
+        <p className="type-lead mt-5 text-arovia-charcoal">{text}</p>
+        <div className="mt-14" role="img" aria-label="Arovia Group connected to Care, Pharmacy, Equipment Trade, and Digital Health">
+          <p className="font-heading text-sm font-semibold tracking-[0.18em] text-arovia-navy">AROVIA GROUP</p>
+          <div className="mt-6 h-px w-full bg-arovia-navy/15" />
+          <ol className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((item, index) => (
-              <li key={item.name} className="border-t border-[#0B172A]/10 pt-5">
-                <p className="font-heading text-[12px] tracking-[0.18em] text-[#8A93A0]">0{index + 1}</p>
-                <h3 className="mt-3 font-heading text-[1.65rem] font-semibold leading-none text-[#0B172A]">{item.name}</h3>
-                <p className="mt-4 text-[15px] leading-relaxed text-[#4B5563]">{item.text}</p>
+              <li key={item.name} className="border-t border-arovia-navy/15 pt-4">
+                <span className="text-xs tracking-[0.16em] text-arovia-muted">0{index + 1}</span>
+                <p className="mt-2 font-heading text-lg font-semibold text-arovia-navy">{item.name}</p>
+                <p className="mt-1 text-sm text-arovia-muted">{item.detail}</p>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
-        </Reveal>
       </div>
     </section>
   );

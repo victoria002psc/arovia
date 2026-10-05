@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Badge";
-import { Heading } from "@/components/ui/Heading";
+import { ImageFrame } from "@/components/ui/ImageFrame";
 
 export interface HeroAction {
   label: string;
@@ -19,14 +18,12 @@ export interface HeroProps {
 
 export function Hero({ eyebrow, title, text, primary, secondary, image }: HeroProps) {
   return (
-    <section className="bg-arovia-mist">
-      <div className="mx-auto grid w-full max-w-wide lg:grid-cols-2">
-        <div className="flex flex-col justify-center px-5 py-16 lg:px-10 lg:py-20">
+    <section className="bg-arovia-off">
+      <div className="mx-auto grid w-full max-w-wide items-center gap-8 px-5 py-10 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-16">
+        <div className="max-w-xl">
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-          <Heading level={1} className={eyebrow ? "mt-4" : undefined}>
-            {title}
-          </Heading>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600">{text}</p>
+          <h1 className="type-display mt-4 text-arovia-navy">{title}</h1>
+          <p className="type-lead mt-5 text-arovia-charcoal">{text}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href={primary.href}>{primary.label}</Button>
             {secondary && (
@@ -36,11 +33,7 @@ export function Hero({ eyebrow, title, text, primary, secondary, image }: HeroPr
             )}
           </div>
         </div>
-        {image && (
-          <div className="relative min-h-[280px] sm:min-h-[380px]">
-            <Image src={image.src} alt={image.alt} fill priority quality={60} sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
-          </div>
-        )}
+        {image && <ImageFrame src={image.src} alt={image.alt} ratio="3/2" priority />}
       </div>
     </section>
   );
