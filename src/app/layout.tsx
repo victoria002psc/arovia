@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { PageLayout } from "@/components/layouts/PageLayout";
 import { company } from "@/lib/constants";
+import { address, email, phoneTel } from "@/lib/site-info";
 
 const sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -38,7 +39,16 @@ const organization = {
   "@type": "Organization",
   name: company.name,
   url: company.siteUrl,
-  description: "Integrated healthcare ecosystem for care, medicines, equipment, and digital health.",
+  email,
+  telephone: phoneTel.replace("tel:", ""),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: `${address.shop}, ${address.street}`,
+    addressLocality: address.city,
+    postalCode: address.postalCode,
+    addressRegion: address.state,
+    addressCountry: "IN",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

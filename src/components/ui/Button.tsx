@@ -62,6 +62,14 @@ export function Button({
     </>
   );
 
+  if (href && /^(https?:|tel:|mailto:)/.test(href)) {
+    return (
+      <a href={href} className={classes} aria-label={ariaLabel}>
+        {content}
+      </a>
+    );
+  }
+
   if (href) {
     return (
       <Link href={href} className={classes} aria-label={ariaLabel} aria-disabled={isDisabled || undefined}>

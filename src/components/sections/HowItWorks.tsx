@@ -6,12 +6,13 @@ export interface StepItem {
   description: string;
 }
 
-export function HowItWorks({ heading, steps }: { heading: string; steps: StepItem[] }) {
+export function HowItWorks({ heading, intro, steps }: { heading: string; intro?: string; steps: StepItem[] }) {
   if (steps.length === 0) return null;
 
   return (
     <Section background="mist" labelledBy="how-it-works-heading">
       <Heading id="how-it-works-heading">{heading}</Heading>
+      {intro && <p className="mt-4 max-w-3xl text-slate-600">{intro}</p>}
       <ol className="mt-8 grid gap-4 md:grid-cols-2">
         {steps.map((step, index) => (
           <li key={step.title} className="rounded-lg border border-slate-200 bg-white p-6">

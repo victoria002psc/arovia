@@ -48,43 +48,36 @@ export function pillarClasses(pillar: keyof typeof pillarStyles) {
  * Empty details stay explicit so unpublished contact data is not invented.
  */
 export function fillCopy(input: string) {
-  const phone = company.phone || "the phone number on our Contact page";
-  const email = company.email || "the email on our Contact page";
-  const address = company.address || "our address (to be confirmed)";
-  const whatsapp = company.whatsapp || "WhatsApp (to be confirmed)";
-  const hours = company.hours || "our published business hours";
-  const emergency = company.emergencyPhone || "our emergency line (to be confirmed)";
-
-  return input
+  const phone = company.phone;
+  const email = company.email;
+  const address = company.address;
+  let next = input
     .replaceAll("[COMPANY NAME]", company.name)
-    .replaceAll("[YEAR]", String(company.year))
-    .replaceAll("[EMERGENCY PHONE]", emergency)
-    .replaceAll("[EMERGENCY NUMBER]", emergency)
-    .replaceAll("[AMBULANCE PHONE]", emergency)
+    .replaceAll("[YEAR]", String(new Date().getFullYear()))
     .replaceAll("[CARE TEAM PHONE]", phone)
     .replaceAll("[CARE EMAIL]", email)
-    .replaceAll("[CARE WHATSAPP]", whatsapp)
     .replaceAll("[PHARMACY PHONE]", phone)
     .replaceAll("[PHARMACY EMAIL]", email)
-    .replaceAll("[PHARMACY WHATSAPP]", whatsapp)
     .replaceAll("[EQUIPMENT PHONE]", phone)
     .replaceAll("[EQUIPMENT EMAIL]", email)
-    .replaceAll("[EQUIPMENT WHATSAPP]", whatsapp)
     .replaceAll("[DIGITAL HEALTH PHONE]", phone)
     .replaceAll("[DIGITAL HEALTH EMAIL]", email)
     .replaceAll("[BUSINESS EMAIL]", email)
     .replaceAll("[BUSINESS PHONE]", phone)
-    .replaceAll("[WHATSAPP]", whatsapp)
-    .replaceAll("[BUSINESS HOURS]", hours)
     .replaceAll("[ADDRESS 1]", address)
     .replaceAll("[ADDRESS 2]", address)
     .replaceAll("[ADDRESS]", address)
     .replaceAll("[EMAIL]", email)
     .replaceAll("[PHONE]", phone)
-    .replaceAll("[TIMEFRAME]", "one business day")
-    .replaceAll("[TIME]", "a confirmed response window")
-    .replaceAll("[SERVICE AREA]", "our current service area")
-    .replaceAll("[APPOINTMENT FREQUENCY]", "scheduled")
-    .replaceAll("[LOCATION]", "your area")
-    .replaceAll("[COUNTRY CODE]", "");
+    .replaceAll("[LOCATION]", "Guntur");
+
+  if (company.whatsapp) {
+    next = next
+      .replaceAll("[WHATSAPP]", company.whatsapp)
+      .replaceAll("[CARE WHATSAPP]", company.whatsapp)
+      .replaceAll("[PHARMACY WHATSAPP]", company.whatsapp)
+      .replaceAll("[EQUIPMENT WHATSAPP]", company.whatsapp);
+  }
+
+  return next;
 }
