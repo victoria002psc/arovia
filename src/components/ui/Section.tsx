@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 
-type SectionBackground = "white" | "mist" | "subtle" | "navy";
+type SectionBackground = "white" | "mist" | "subtle" | "navy" | "off" | "soft";
 
 interface SectionProps {
   children: React.ReactNode;
@@ -12,9 +12,11 @@ interface SectionProps {
 }
 
 const backgrounds: Record<SectionBackground, string> = {
-  white: "bg-white text-arovia-ink",
-  mist: "bg-arovia-mist text-arovia-ink",
-  subtle: "bg-gradient-subtle text-arovia-ink",
+  white: "bg-white text-arovia-charcoal",
+  mist: "bg-arovia-off text-arovia-charcoal",
+  off: "bg-arovia-off text-arovia-charcoal",
+  soft: "bg-arovia-soft text-arovia-charcoal",
+  subtle: "bg-arovia-soft text-arovia-charcoal",
   navy: "bg-arovia-navy text-white",
 };
 

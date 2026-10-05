@@ -42,14 +42,14 @@ export default function AboutPage() {
         </div>
       </header>
       <section className="mx-auto grid max-w-6xl gap-4 px-4 py-16 md:grid-cols-2 md:px-6">
-        <article className="rounded-3xl bg-white p-6 shadow-card">
+        <article className="rounded-3xl bg-white p-6 shadow-sm">
           <h2 className="text-2xl font-semibold">Our Mission</h2>
           <p className="mt-3 text-slate-600">
             To create an integrated healthcare ecosystem that delivers accessible, coordinated, and technology-enabled healthcare solutions for individuals, families, healthcare institutions, and medical businesses.
           </p>
           <p className="mt-3 text-xs uppercase tracking-wide text-slate-400">Working statement until the official mission is confirmed</p>
         </article>
-        <article className="rounded-3xl bg-white p-6 shadow-card">
+        <article className="rounded-3xl bg-white p-6 shadow-sm">
           <h2 className="text-2xl font-semibold">Our Vision for Healthcare</h2>
           <p className="mt-3 text-slate-600">
             A world where healthcare is interconnected—where care, medicines, equipment, and technology work seamlessly together to improve health outcomes and increase accessibility.

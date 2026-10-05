@@ -11,7 +11,7 @@ export function ServicePageView({ page }: { page: ContentPage }) {
   return (
     <>
       <article>
-        <header className={`bg-gradient-to-br ${tone.gradient} text-white`}>
+        <header className="bg-arovia-navy text-white">
           <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20">
             <nav aria-label="Breadcrumb" className="text-sm text-white/80">
               <ol className="flex flex-wrap gap-2">
@@ -50,7 +50,7 @@ export function ServicePageView({ page }: { page: ContentPage }) {
             {page.audiencesIntro && <p className="mt-3 max-w-3xl text-lg text-slate-600">{page.audiencesIntro}</p>}
             <ul className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {page.audiences.map((item) => (
-                <li key={item.title} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-card">
+                <li key={item.title} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description}</p>
                 </li>
@@ -113,7 +113,7 @@ export function ServicePageView({ page }: { page: ContentPage }) {
             <h2 className="text-3xl font-semibold">{page.extraTitle}</h2>
             <ul className="mt-8 grid gap-4 md:grid-cols-2">
               {page.extra.map((item) => (
-                <li key={item.title} className="rounded-3xl bg-white p-5 shadow-card">
+                <li key={item.title} className="rounded-3xl bg-white p-5 shadow-sm">
                   <h3 className="font-semibold">{item.title}</h3>
                   <p className="mt-2 text-sm text-slate-600">{item.description}</p>
                 </li>
@@ -123,13 +123,13 @@ export function ServicePageView({ page }: { page: ContentPage }) {
         )}
 
         {page.steps && (
-          <section id="how" className="bg-gradient-subtle py-16">
+          <section id="how" className="bg-arovia-soft py-16">
             <div className="mx-auto max-w-6xl px-4 md:px-6">
               <h2 className="text-3xl font-semibold">{page.stepsTitle}</h2>
               {page.stepsIntro && <p className="mt-3 text-lg text-slate-600">{page.stepsIntro}</p>}
               <ol className="mt-8 grid gap-4 md:grid-cols-2">
                 {page.steps.map((step, index) => (
-                  <li key={step.title} className="rounded-3xl bg-white p-5 shadow-card">
+                  <li key={step.title} className="rounded-3xl bg-white p-5 shadow-sm">
                     <span className={`text-sm font-semibold ${tone.text}`}>0{index + 1}</span>
                     <h3 className="mt-2 text-lg font-semibold">{step.title}</h3>
                     <p className="mt-2 text-sm text-slate-600">{step.description}</p>

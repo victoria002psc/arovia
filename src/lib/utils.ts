@@ -9,32 +9,28 @@ export function cn(...inputs: ClassValue[]) {
 
 const pillarStyles = {
   care: {
-    text: "text-emerald-700",
-    bg: "bg-emerald-50",
-    solid: "bg-arovia-care",
-    border: "border-emerald-200",
-    gradient: "from-emerald-500 to-teal-500",
+    text: "text-arovia-care-dark",
+    bg: "bg-arovia-care-tint",
+    solid: "bg-arovia-care-dark",
+    border: "border-arovia-care/30",
   },
   medicine: {
-    text: "text-rose-700",
-    bg: "bg-rose-50",
-    solid: "bg-arovia-medicine",
-    border: "border-rose-200",
-    gradient: "from-red-400 to-rose-500",
+    text: "text-arovia-pharmacy-dark",
+    bg: "bg-arovia-pharmacy-tint",
+    solid: "bg-arovia-pharmacy-dark",
+    border: "border-arovia-pharmacy/30",
   },
   equipment: {
-    text: "text-blue-700",
-    bg: "bg-blue-50",
-    solid: "bg-arovia-equipment",
-    border: "border-blue-200",
-    gradient: "from-blue-500 to-cyan-500",
+    text: "text-arovia-equipment-dark",
+    bg: "bg-arovia-equipment-tint",
+    solid: "bg-arovia-equipment-dark",
+    border: "border-arovia-equipment/30",
   },
   digital: {
-    text: "text-violet-700",
-    bg: "bg-violet-50",
-    solid: "bg-arovia-digital",
-    border: "border-violet-200",
-    gradient: "from-violet-500 to-purple-600",
+    text: "text-arovia-digital-dark",
+    bg: "bg-arovia-digital-tint",
+    solid: "bg-arovia-digital-dark",
+    border: "border-arovia-digital/30",
   },
 } as const;
 

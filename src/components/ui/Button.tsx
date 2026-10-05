@@ -6,13 +6,13 @@ type ButtonVariant = "primary" | "care" | "medicine" | "equipment" | "digital" |
 type ButtonSize = "sm" | "md" | "lg";
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "bg-[#0F5F73] text-white hover:bg-[#0C4C5C] shadow-sm",
-  care: "bg-arovia-care text-white hover:bg-emerald-600 shadow-sm",
-  medicine: "bg-arovia-medicine text-white hover:bg-rose-600 shadow-sm",
-  equipment: "bg-arovia-equipment text-white hover:bg-blue-600 shadow-sm",
-  digital: "bg-arovia-digital text-white hover:bg-violet-600 shadow-sm",
-  outline: "border border-slate-300 bg-white text-arovia-ink hover:border-arovia-cyan hover:text-cyan-700",
-  ghost: "bg-transparent text-arovia-ink hover:bg-slate-100",
+  primary: "bg-arovia-navy text-white hover:bg-arovia-charcoal",
+  care: "bg-arovia-care-dark text-white hover:bg-arovia-navy",
+  medicine: "bg-arovia-pharmacy-dark text-white hover:bg-arovia-navy",
+  equipment: "bg-arovia-equipment-dark text-white hover:bg-arovia-navy",
+  digital: "bg-arovia-digital-dark text-white hover:bg-arovia-navy",
+  outline: "border border-arovia-navy/20 bg-white text-arovia-navy hover:border-arovia-navy",
+  ghost: "bg-transparent text-arovia-navy hover:bg-arovia-soft",
 };
 
 const sizes: Record<ButtonSize, string> = {
@@ -48,7 +48,7 @@ export function Button({
 }: ButtonProps) {
   const isDisabled = disabled || loading;
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors",
+    "inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-colors duration-200",
     variants[variant],
     sizes[size],
     isDisabled && "pointer-events-none opacity-60",
