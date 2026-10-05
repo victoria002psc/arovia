@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/motion/Reveal";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 
@@ -23,7 +24,9 @@ const backgrounds: Record<SectionBackground, string> = {
 export function Section({ children, className, background = "white", id, labelledBy }: SectionProps) {
   return (
     <section id={id} aria-labelledby={labelledBy} className={cn("py-16 sm:py-20", backgrounds[background], className)}>
-      <Container>{children}</Container>
+      <Container>
+        <Reveal>{children}</Reveal>
+      </Container>
     </section>
   );
 }
