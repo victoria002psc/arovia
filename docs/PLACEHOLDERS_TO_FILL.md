@@ -15,8 +15,8 @@ These values are visible on the site until you replace them. Phone, email, and t
 | `[PARTNERS — to be added once verified]` | `src/data/home.ts` | Named partners you have permission to list. |
 | `[CERTIFICATIONS]` | `src/lib/site-info.ts` | Same as above, for any other surface. |
 | `[CLINIC REGISTRATION]` | `src/lib/site-info.ts` | Clinic registration, shown on care pages. |
-| `[PHARMACY LICENSE]` | `src/lib/site-info.ts` | Pharmacy license, shown on the medicines page. |
-| `[IMPORT-EXPORT CODE / EQUIPMENT REGISTRATIONS]` | `src/lib/site-info.ts` | IEC and equipment registrations, shown on equipment pages. |
+| `[PHARMACY LICENSE]` | `src/lib/site-info.ts` | Pharmacy license, shown on `/pharmacy`. |
+| `[EXPORT / IMPORT-EXPORT CODE]` | `src/lib/site-info.ts` | Export registration, shown on Equipment Trade pages. Capability and markets stay unverified. |
 | `[SERVICE AREAS / DELIVERY COVERAGE]` | `src/lib/site-info.ts` and About | Towns or a radius you actually cover. The site does not claim coverage beyond Guntur until this is filled. |
 | `[EMERGENCY RESPONSE DETAILS]` | `src/lib/site-info.ts` | What the ambulance service can and cannot do. Do not add a response-time promise. |
 | `[SOCIAL MEDIA LINKS]` | `src/lib/site-info.ts` | Profile URLs. Hidden in the footer until this is real text. |
