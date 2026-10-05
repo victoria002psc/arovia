@@ -1,10 +1,11 @@
 import { z } from "zod";
 
-export const enquiryTypes = ["healthcare", "equipment", "digital", "partnership", "general"] as const;
+export const enquiryTypes = ["healthcare", "pharmacy", "equipment", "digital", "partnership", "general"] as const;
 
 export const enquiryLabels: Record<(typeof enquiryTypes)[number], string> = {
-  healthcare: "Healthcare",
-  equipment: "Equipment",
+  healthcare: "Care",
+  pharmacy: "Pharmacy",
+  equipment: "Equipment Trade",
   digital: "Digital Health",
   partnership: "Partnership",
   general: "General",
@@ -38,6 +39,7 @@ export function enquiryFromQuery(value?: string) {
   if (normalized.includes("equip")) return "equipment" as const;
   if (normalized.includes("digital")) return "digital" as const;
   if (normalized.includes("partner")) return "partnership" as const;
+  if (normalized.includes("pharm")) return "pharmacy" as const;
   if (normalized.includes("health") || normalized.includes("care") || normalized.includes("medicine")) return "healthcare" as const;
   if ((enquiryTypes as readonly string[]).includes(normalized)) return normalized as (typeof enquiryTypes)[number];
   return "general" as const;

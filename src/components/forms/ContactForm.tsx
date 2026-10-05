@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { contactSchema, enquiryFromQuery, enquiryLabels, enquiryTypes, type ContactInput } from "@/lib/contact-schema";
+import { showWhatsApp } from "@/lib/site-info";
 import { cn } from "@/lib/utils";
 
 type Values = {
@@ -143,7 +144,7 @@ export function ContactForm({ initialType }: { initialType?: string }) {
       <fieldset>
         <legend className="text-sm font-semibold text-arovia-navy">Preferred contact method</legend>
         <div className="mt-2 flex flex-wrap gap-3">
-          {(["phone", "email", "whatsapp"] as const).map((method) => (
+          {(showWhatsApp ? (["phone", "email", "whatsapp"] as const) : (["phone", "email"] as const)).map((method) => (
             <label key={method} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-slate-200 px-4 text-sm capitalize">
               <input type="radio" name="preferredContact" value={method} checked={values.preferredContact === method} onChange={() => update("preferredContact", method)} />
               {method === "whatsapp" ? "WhatsApp" : method}

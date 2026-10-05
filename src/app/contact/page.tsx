@@ -28,7 +28,8 @@ export const metadata: Metadata = {
 };
 
 const cards = [
-  ["Healthcare", "Clinic appointments, home care, diagnostics, ambulance, and pharmacy.", "healthcare"],
+  ["Care", "Homecare, diagnostics, ambulance, and clinic.", "healthcare"],
+  ["Pharmacy", "Prescription medicines and healthcare products.", "pharmacy"],
   ["Equipment Trade", "Export and medical equipment.", "equipment"],
   ["Digital Health", "Medical apps, websites, platforms, and digital solutions.", "digital"],
   ["Partnership", "Institutions and businesses exploring a working relationship.", "partnership"],
