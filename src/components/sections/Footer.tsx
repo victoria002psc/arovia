@@ -10,11 +10,11 @@ export function Footer() {
 
   return (
     <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-2 md:px-6 lg:grid-cols-5">
-        <div className="lg:col-span-2">
+        <div className="mx-auto grid max-w-[1440px] gap-10 px-5 py-16 md:grid-cols-2 md:px-10 lg:grid-cols-3 xl:grid-cols-6">
+        <div>
           <Logo />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">
-            Arovia Group connects care, medicines, medical equipment, and digital health into one healthcare ecosystem for patients, families, and institutions.
+            Arovia Group connects care, pharmacy, equipment trade, and digital health into one healthcare ecosystem for patients, families, and institutions.
           </p>
           <ul className="mt-4 space-y-1 text-sm text-slate-600">
             <li>{email}</li>
@@ -29,7 +29,7 @@ export function Footer() {
             <ul className="mt-3 space-y-2">
               {column.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-600 hover:text-cyan-700">
+                  <Link href={link.href} className="text-sm text-slate-600 hover:text-[#0B172A]">
                     {link.label}
                   </Link>
                 </li>

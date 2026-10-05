@@ -1,84 +1,46 @@
-"use client";
-
-import { useRef } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Button } from "@/components/ui/Button";
-
-const words = "Complete Healthcare Solutions, Connected in One Place".split(" ");
+import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
-  const ref = useRef<HTMLElement>(null);
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const x = useSpring(mx, { stiffness: 40, damping: 20 });
-  const y = useSpring(my, { stiffness: 40, damping: 20 });
-  const shiftX = useTransform(x, [-0.5, 0.5], [-18, 18]);
-  const shiftY = useTransform(y, [-0.5, 0.5], [-12, 12]);
-
   return (
-    <section
-      ref={ref}
-      className="relative overflow-hidden"
-      onMouseMove={(event) => {
-        const bounds = ref.current?.getBoundingClientRect();
-        if (!bounds) return;
-        mx.set((event.clientX - bounds.left) / bounds.width - 0.5);
-        my.set((event.clientY - bounds.top) / bounds.height - 0.5);
-      }}
-    >
-      <div className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-6xl items-center gap-10 px-4 py-12 md:px-6 lg:grid-cols-5 lg:py-16">
-        <div className="lg:col-span-3">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-700"
-          >
-            Healthcare Ecosystem for People, Care, and Technology
-          </motion.p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight text-arovia-ink sm:text-5xl lg:text-6xl">
-            {words.map((word, index) => (
-              <motion.span
-                key={`${word}-${index}`}
-                className="mr-[0.28em] inline-block"
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.08 * index, ease: "easeOut" }}
-              >
-                {word}
-              </motion.span>
-            ))}
+    <section className="bg-[#F7F8F6]">
+      <div className="mx-auto grid max-w-[1440px] lg:min-h-[720px] lg:grid-cols-2">
+        <div className="flex flex-col justify-center px-5 py-16 sm:px-8 lg:px-14 lg:py-20 xl:px-20">
+          <p className="text-[12px] font-medium uppercase tracking-[0.24em] text-[#0F9F8F]">Healthcare, connected.</p>
+          <h1 className="mt-6 font-heading text-[2.5rem] font-semibold leading-[1.05] tracking-[-0.025em] text-[#0B172A] sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem]">
+            Healthcare That Connects
+            <span className="mt-4 block max-w-[12em] text-[0.46em] font-medium leading-[1.25] tracking-normal text-[#1F2937]">
+              Care, Pharmacy, Equipment &amp; Technology
+            </span>
           </h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45, ease: "easeOut" }}
-            className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600"
-          >
-            At Arovia Group, we believe healthcare shouldn&apos;t be fragmented. Whether you need immediate care, ongoing medicines, medical equipment, or healthcare technology, our integrated ecosystem connects everything you need. We serve patients, families, healthcare institutions, and medical businesses.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-            className="mt-8 flex flex-col gap-3 sm:flex-row"
-          >
-            <Button href="#pillars">Explore Our Services</Button>
-            <Button href="/contact" variant="outline">
-              Get in Touch
-            </Button>
-          </motion.div>
-        </div>
-        <motion.div style={{ x: shiftX, y: shiftY }} className="relative min-h-[320px] lg:col-span-2" aria-hidden="true">
-          <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-emerald-400 via-cyan-400 to-violet-500 opacity-90 blur-0" />
-          <motion.span className="absolute left-8 top-10 h-24 w-24 animate-float rounded-full bg-white/30 blur-sm" />
-          <motion.span className="absolute bottom-12 right-8 h-32 w-32 animate-float-delayed rounded-full bg-rose-300/40" />
-          <motion.span className="absolute right-16 top-16 h-16 w-16 animate-float rounded-full bg-blue-200/70" />
-          <div className="absolute inset-6 rounded-[1.6rem] border border-white/40 bg-white/10 backdrop-blur-sm" />
-          <div className="absolute bottom-8 left-8 right-8 rounded-2xl bg-white/90 p-4 text-sm text-slate-700 shadow-card">
-            Care, medicines, equipment, and technology — coordinated as one ecosystem.
+          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-[#3E4A57] lg:text-lg">
+            Arovia Group brings together healthcare services, pharmacy, medical equipment and digital health solutions within one connected healthcare ecosystem.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="#ecosystem"
+              className="inline-flex min-h-12 items-center justify-center bg-[#0B172A] px-6 text-[15px] font-medium text-white hover:bg-[#16283f]"
+            >
+              Explore Arovia
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex min-h-12 items-center justify-center border border-[#0B172A]/80 px-6 text-[15px] font-medium text-[#0B172A] hover:bg-white"
+            >
+              Talk to Arovia
+            </Link>
           </div>
-        </motion.div>
+        </div>
+        <div className="relative min-h-[340px] sm:min-h-[460px] lg:min-h-full">
+          <Image
+            src="/images/hero-consult.jpg"
+            alt="A clinician discussing diagnostic imaging with a colleague"
+            fill
+            priority
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover object-[58%_22%]"
+          />
+        </div>
       </div>
     </section>
   );

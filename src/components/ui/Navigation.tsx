@@ -13,10 +13,9 @@ export function Navigation() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const elevated = scrolled || open;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -36,13 +35,13 @@ export function Navigation() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-colors duration-300",
-        elevated ? "border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur" : "bg-transparent",
+        "sticky top-0 z-50 border-b bg-white transition-shadow",
+        scrolled ? "border-[#E6E8EA] shadow-[0_1px_0_rgba(11,23,42,0.04)]" : "border-[#E6E8EA]",
       )}
     >
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:h-20 md:px-6" aria-label="Primary">
+      <nav className="mx-auto flex h-[4.5rem] max-w-[1440px] items-center justify-between gap-6 px-5 lg:px-10" aria-label="Primary">
         <Logo />
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="hidden items-center gap-1 xl:flex">
           {navItems.map((item) => {
             const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
             return (
@@ -50,28 +49,22 @@ export function Navigation() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "inline-flex min-h-11 items-center rounded-full px-3 text-sm font-medium",
-                    "text-slate-700 hover:text-arovia-ink",
-                    active && "text-arovia-ink",
+                    "inline-flex min-h-11 items-center px-3 text-[14px] text-[#1F2937]",
+                    active && "text-[#0B172A]",
                   )}
                   aria-current={active ? "page" : undefined}
                 >
-                  {item.label}
-                  {active && (
-                    <motion.span
-                      layoutId="nav-underline"
-                      className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-arovia-cyan"
-                    />
-                  )}
+                  <span className={cn("border-b pb-0.5", active ? "border-[#0F9F8F]" : "border-transparent group-hover:border-[#0B172A]/30")}>
+                    {item.label}
+                  </span>
                 </Link>
                 {item.children && (
-                  <div className="invisible absolute left-0 top-full z-20 w-72 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                    <ul className="rounded-2xl border border-slate-200 bg-white p-2 shadow-lift">
+                  <div className="invisible absolute left-0 top-full z-20 min-w-[240px] pt-2 opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <ul className="border border-[#E6E8EA] bg-white py-2 shadow-[0_12px_30px_-24px_rgba(11,23,42,0.45)]">
                       {item.children.map((child) => (
                         <li key={child.href}>
-                          <Link href={child.href} className="block rounded-xl px-3 py-2 hover:bg-slate-50">
-                            <span className="block text-sm font-semibold text-arovia-ink">{child.label}</span>
-                            <span className="block text-xs text-slate-500">{child.description}</span>
+                          <Link href={child.href} className="block px-4 py-2.5 text-[14px] text-[#1F2937] hover:bg-[#F7F8F6] hover:text-[#0B172A]">
+                            {child.label}
                           </Link>
                         </li>
                       ))}
@@ -82,49 +75,43 @@ export function Navigation() {
             );
           })}
         </ul>
-        <div className="hidden lg:block">
-          <Link
-            href="/contact"
-            className="inline-flex min-h-11 items-center rounded-full bg-arovia-cyan px-5 text-sm font-semibold text-white hover:bg-cyan-600"
-          >
-            Get in Touch
+        <div className="hidden xl:block">
+          <Link href="/contact" className="inline-flex min-h-11 items-center bg-[#0B172A] px-5 text-[14px] font-medium text-white hover:bg-[#16283f]">
+            Talk to Arovia
           </Link>
         </div>
         <button
           type="button"
-          className={cn(
-            "inline-flex h-11 w-11 items-center justify-center rounded-full lg:hidden",
-            "text-arovia-ink",
-          )}
+          className="inline-flex h-11 w-11 items-center justify-center text-[#0B172A] xl:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((value) => !value)}
         >
-          {open ? <X /> : <Menu />}
+          {open ? <X strokeWidth={1.5} /> : <Menu strokeWidth={1.5} />}
         </button>
       </nav>
       <AnimatePresence>
         {open && (
           <motion.div
             id="mobile-menu"
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed inset-0 top-16 z-40 overflow-y-auto bg-white px-4 py-6 lg:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-x-0 bottom-0 top-[4.5rem] z-40 overflow-y-auto bg-[#F7F8F6] px-6 py-8 xl:hidden"
           >
-            <ul className="space-y-2">
+            <ul className="space-y-6">
               {navItems.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="block min-h-11 py-2 text-lg font-semibold text-arovia-ink">
+                  <Link href={item.href} className="font-heading text-2xl text-[#0B172A]">
                     {item.label}
                   </Link>
                   {item.children && (
-                    <ul className="mb-3 space-y-1 border-l border-slate-200 pl-4">
+                    <ul className="mt-3 space-y-1 border-l border-[#E6E8EA] pl-4">
                       {item.children.map((child) => (
                         <li key={child.href}>
-                          <Link href={child.href} className="block min-h-11 py-2 text-base text-slate-600">
+                          <Link href={child.href} className="inline-flex min-h-11 items-center text-base text-[#374151]">
                             {child.label}
                           </Link>
                         </li>
@@ -134,11 +121,8 @@ export function Navigation() {
                 </li>
               ))}
             </ul>
-            <Link
-              href="/contact"
-              className="mt-4 inline-flex min-h-11 items-center rounded-full bg-arovia-cyan px-5 font-semibold text-white"
-            >
-              Get in Touch
+            <Link href="/contact" className="mt-8 inline-flex min-h-11 items-center bg-[#0B172A] px-5 text-sm font-medium text-white">
+              Talk to Arovia
             </Link>
           </motion.div>
         )}

@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #f7f9fb;
-  --foreground: #0f172a;
-  --selection: #06b6d4;
+  --background: #f7f8f6;
+  --foreground: #0b172a;
+  --selection: #0f9f8f;
 }
 
 html {
@@ -20,8 +20,8 @@ body {
 }
 
 ::selection {
-  background: rgba(6, 182, 212, 0.28);
-  color: #0f172a;
+  background: rgba(15, 159, 143, 0.22);
+  color: #0b172a;
 }
 
 ::-webkit-scrollbar {
@@ -43,7 +43,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid #06b6d4;
+  outline: 2px solid #0f9f8f;
   outline-offset: 3px;
 }
 
@@ -52,7 +52,8 @@ body {
   h2,
   h3,
   h4 {
-    letter-spacing: -0.02em;
+    font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.03em;
   }
 }
 

@@ -33,54 +33,62 @@ export const navItems: NavItem[] = [
     label: "Care",
     href: "/care",
     children: [
-      { label: "Clinic", href: "/care/clinic", description: "Outpatient and specialty care" },
-      { label: "Homecare", href: "/care/homecare", description: "Care in the comfort of your home" },
-      { label: "Diagnostics", href: "/care/diagnostics", description: "Lab tests and health checkups" },
-      { label: "Ambulance", href: "/care/ambulance", description: "Emergency response and transport" },
+      { label: "Homecare", href: "/care/homecare", description: "Care at home" },
+      { label: "Diagnostics", href: "/care/diagnostics", description: "Tests and checkups" },
+      { label: "Ambulance", href: "/care/ambulance", description: "Emergency response" },
+      { label: "Clinic", href: "/care/clinic", description: "Outpatient care" },
     ],
   },
-  { label: "Medicines", href: "/medicines" },
+  { label: "Pharmacy", href: "/pharmacy" },
   {
-    label: "Equipment",
-    href: "/equipment",
+    label: "Equipment Trade",
+    href: "/equipment-trade",
     children: [
-      { label: "Import", href: "/equipment/import", description: "Global equipment sourcing" },
-      { label: "Export", href: "/equipment/export", description: "International distribution" },
-      { label: "Equipment", href: "/equipment/equipment", description: "Hospital, diagnostic, surgical, and ICU" },
-      { label: "Supplies", href: "/equipment/supplies", description: "Consumables and healthcare products" },
+      { label: "Export", href: "/equipment-trade/export", description: "International distribution" },
+      { label: "Medical Equipment", href: "/equipment-trade/medical-equipment", description: "Hospital and clinical equipment" },
     ],
   },
   {
     label: "Digital Health",
     href: "/digital-health",
     children: [
-      { label: "Apps", href: "/digital-health/apps", description: "Healthcare mobile applications" },
-      { label: "Websites", href: "/digital-health/websites", description: "Websites and patient portals" },
-      { label: "Platforms", href: "/digital-health/platforms", description: "Integrated healthcare systems" },
-      { label: "Solutions", href: "/digital-health/solutions", description: "Custom healthcare software" },
+      { label: "Medical Apps", href: "/digital-health/apps", description: "Healthcare applications" },
+      { label: "Medical Websites", href: "/digital-health/websites", description: "Sites and portals" },
+      { label: "Healthcare Platforms", href: "/digital-health/platforms", description: "Integrated systems" },
+      { label: "Digital Solutions", href: "/digital-health/solutions", description: "Custom healthcare software" },
     ],
   },
   { label: "Contact", href: "/contact" },
-  { label: "FAQ", href: "/faq" },
 ];
 
 export const footerColumns = [
   {
     title: "Care",
     links: [
-      { label: "Clinic", href: "/care/clinic" },
       { label: "Homecare", href: "/care/homecare" },
       { label: "Diagnostics", href: "/care/diagnostics" },
       { label: "Ambulance", href: "/care/ambulance" },
+      { label: "Clinic", href: "/care/clinic" },
     ],
   },
   {
-    title: "Services",
+    title: "Pharmacy",
+    links: [{ label: "Pharmacy", href: "/pharmacy" }],
+  },
+  {
+    title: "Equipment Trade",
     links: [
-      { label: "Medicines", href: "/medicines" },
-      { label: "Equipment Trade", href: "/equipment" },
-      { label: "Digital Health", href: "/digital-health" },
-      { label: "FAQs", href: "/faq" },
+      { label: "Export", href: "/equipment-trade/export" },
+      { label: "Medical Equipment", href: "/equipment-trade/medical-equipment" },
+    ],
+  },
+  {
+    title: "Digital Health",
+    links: [
+      { label: "Medical Apps", href: "/digital-health/apps" },
+      { label: "Medical Websites", href: "/digital-health/websites" },
+      { label: "Healthcare Platforms", href: "/digital-health/platforms" },
+      { label: "Digital Solutions", href: "/digital-health/solutions" },
     ],
   },
   {
@@ -88,8 +96,9 @@ export const footerColumns = [
     links: [
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
+      { label: "FAQ", href: "/faq" },
       { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
+      { label: "Terms", href: "/terms" },
       { label: "Medical Disclaimer", href: "/disclaimer" },
     ],
   },

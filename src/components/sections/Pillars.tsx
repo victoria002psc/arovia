@@ -1,73 +1,103 @@
-"use client";
-
-import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { pillars } from "@/lib/constants";
-import { containerVariants } from "@/lib/animation-variants";
-import { pillarClasses } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
+
+const pillars = [
+  {
+    number: "01",
+    title: "Care",
+    statement: "Healthcare designed around people, access and care.",
+    href: "/care",
+    cta: "Explore Care",
+    image: "/images/care.jpg",
+    alt: "A clinician giving an injection to a seated patient",
+    accent: "bg-[#0F9F8F]",
+    services: [
+      { label: "Homecare", href: "/care/homecare" },
+      { label: "Diagnostics", href: "/care/diagnostics" },
+      { label: "Ambulance", href: "/care/ambulance" },
+      { label: "Clinic", href: "/care/clinic" },
+    ],
+  },
+  {
+    number: "02",
+    title: "Pharmacy",
+    statement: "A dedicated pharmacy experience within the Arovia healthcare ecosystem.",
+    href: "/pharmacy",
+    cta: "Explore Pharmacy",
+    image: "/images/pharmacy-counter.jpg",
+    alt: "A pharmacist working at a dispensary counter",
+    position: "object-[74%_0%]",
+    accent: "bg-[#8F3D45]",
+    services: [{ label: "Pharmacy", href: "/pharmacy" }],
+  },
+  {
+    number: "03",
+    title: "Equipment Trade",
+    statement: "Medical equipment and export capabilities for healthcare businesses and organizations.",
+    href: "/equipment-trade",
+    cta: "Explore Equipment Trade",
+    image: "/images/equipment.jpg",
+    alt: "An operating theatre equipped with surgical lights and monitoring systems",
+    accent: "bg-[#2F5F98]",
+    services: [
+      { label: "Export", href: "/equipment-trade/export" },
+      { label: "Medical Equipment", href: "/equipment-trade/medical-equipment" },
+    ],
+  },
+  {
+    number: "04",
+    title: "Digital Health",
+    statement: "Technology designed around healthcare needs.",
+    href: "/digital-health",
+    cta: "Explore Digital Health",
+    image: "/images/digital.jpg",
+    alt: "A clinician reviewing medical imaging on a diagnostic workstation",
+    accent: "bg-[#5B4B8A]",
+    services: [
+      { label: "Medical Apps", href: "/digital-health/apps" },
+      { label: "Medical Websites", href: "/digital-health/websites" },
+      { label: "Healthcare Platforms", href: "/digital-health/platforms" },
+      { label: "Digital Solutions", href: "/digital-health/solutions" },
+    ],
+  },
+];
 
 export function Pillars() {
-  const [active, setActive] = useState(pillars[0].id);
-  const current = pillars.find((pillar) => pillar.id === active) ?? pillars[0];
-  const tone = pillarClasses(current.id);
-
   return (
-    <section id="pillars" className="bg-white py-20">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <motion.div variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-700">Our four healthcare pillars</p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-semibold text-arovia-ink sm:text-4xl">One ecosystem. Four ways in.</h2>
-        </motion.div>
-        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4" role="tablist" aria-label="Healthcare pillars">
-          {pillars.map((pillar) => {
-            const selected = pillar.id === active;
-            const colors = pillarClasses(pillar.id);
-            return (
-              <button
-                key={pillar.id}
-                type="button"
-                role="tab"
-                aria-selected={selected}
-                onClick={() => setActive(pillar.id)}
-                className={`min-h-11 rounded-3xl border p-5 text-left transition ${
-                  selected ? `${colors.border} ${colors.bg} shadow-card` : "border-slate-200 bg-slate-50 hover:bg-white"
-                }`}
-              >
-                <span className={`text-xs font-semibold tracking-[0.14em] ${colors.text}`}>{pillar.title}</span>
-                <span className="mt-3 block text-lg font-semibold text-arovia-ink">{pillar.headline}</span>
-              </button>
-            );
-          })}
-        </div>
-        <motion.div
-          key={current.id}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="mt-6 rounded-[2rem] border border-slate-200 bg-gradient-subtle p-6 md:p-8"
-          role="tabpanel"
-        >
-          <p className={`text-sm font-semibold ${tone.text}`}>{current.tagline}</p>
-          <p className="mt-3 max-w-3xl text-lg leading-relaxed text-slate-700">{current.description}</p>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            {current.services.map((service) => (
-              <li key={service.href + service.label}>
-                <Link href={service.href} className="block rounded-2xl bg-white px-4 py-3 shadow-sm hover:shadow-card">
-                  <span className="font-semibold text-arovia-ink">{service.label}</span>
-                  <span className="mt-1 block text-sm text-slate-600">{service.detail}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6">
-            <Button href={current.href} variant={current.id === "medicine" ? "medicine" : current.id}>
-              {current.cta}
-            </Button>
+    <section id="pillars" className="bg-[#F7F8F6]">
+      {pillars.map((pillar, index) => (
+        <article key={pillar.title} className="border-t border-[#E6E8EA]">
+          <div className="mx-auto grid max-w-[1440px] lg:grid-cols-2">
+            <div className={`relative min-h-[280px] sm:min-h-[380px] ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+              <Image
+                src={pillar.image}
+                alt={pillar.alt}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className={`object-cover ${"position" in pillar ? pillar.position : "object-center"}`}
+              />
+            </div>
+            <div className="flex flex-col justify-center px-5 py-14 sm:px-10 lg:px-16 xl:px-20">
+              <span className={`h-0.5 w-10 ${pillar.accent}`} aria-hidden="true" />
+              <p className="mt-6 font-heading text-sm tracking-[0.2em] text-[#6B7280]">{pillar.number}</p>
+              <h2 className="mt-3 font-heading text-4xl font-semibold text-[#0B172A] sm:text-5xl">{pillar.title}</h2>
+              <p className="mt-4 max-w-md text-lg leading-relaxed text-[#3E4A57]">{pillar.statement}</p>
+              <ul className="mt-8 max-w-sm divide-y divide-[#E6E8EA] border-y border-[#E6E8EA]">
+                {pillar.services.map((service) => (
+                  <li key={service.href + service.label}>
+                    <Link href={service.href} className="flex min-h-12 items-center text-[15px] text-[#1F2937] hover:text-[#0B172A]">
+                      {service.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link href={pillar.href} className="mt-8 inline-flex min-h-11 items-center text-[15px] font-medium text-[#0B172A] underline decoration-[#0F9F8F] underline-offset-8">
+                {pillar.cta}
+              </Link>
+            </div>
           </div>
-        </motion.div>
-      </div>
+        </article>
+      ))}
     </section>
   );
 }
