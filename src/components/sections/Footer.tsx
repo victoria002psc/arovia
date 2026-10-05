@@ -1,48 +1,81 @@
 import Link from "next/link";
-import { company, footerColumns } from "@/lib/constants";
+import { footerColumns, legalLinks } from "@/lib/constants";
+import {
+  addressSingleLine,
+  businessHours,
+  companyName,
+  email,
+  isPlaceholder,
+  mapLink,
+  phoneDisplay,
+  phoneTel,
+  socialMediaLinks,
+} from "@/lib/site-info";
+import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 
+const disclaimer =
+  "Information on this website is general and does not replace advice from a qualified clinician. In a medical emergency, contact local emergency services.";
+
 export function Footer() {
-  const phone = company.phone || "Phone to be confirmed";
-  const email = company.email || "Email to be confirmed";
-  const address = company.address || "Address to be confirmed";
-  const whatsapp = company.whatsapp || "WhatsApp to be confirmed";
+  const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-[1440px] gap-10 px-5 py-16 md:grid-cols-2 md:px-10 lg:grid-cols-3 xl:grid-cols-6">
-        <div>
-          <Logo />
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">
-            Arovia Group connects care, pharmacy, equipment trade, and digital health into one healthcare ecosystem for patients, families, and institutions.
+      <Container className="py-16">
+        <Logo />
+        <div className="mt-10 grid gap-10 sm:grid-cols-2 xl:grid-cols-5">
+          {footerColumns.map((column) => (
+            <nav key={column.title} aria-label={column.title}>
+              <h2 className="text-sm font-semibold text-arovia-navy">{column.title}</h2>
+              <ul className="mt-3 space-y-2">
+                {column.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-slate-600 underline-offset-4 hover:text-arovia-navy hover:underline">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
+        </div>
+        <address className="mt-10 space-y-2 text-sm not-italic text-slate-700">
+          <p>
+            <a href={`mailto:${email}`} className="underline-offset-4 hover:underline">
+              {email}
+            </a>
           </p>
-          <ul className="mt-4 space-y-1 text-sm text-slate-600">
-            <li>{email}</li>
-            <li>{phone}</li>
-            <li>{address}</li>
-            <li>{whatsapp}</li>
-          </ul>
-        </div>
-        {footerColumns.map((column) => (
-          <div key={column.title}>
-            <h2 className="text-sm font-semibold text-arovia-ink">{column.title}</h2>
-            <ul className="mt-3 space-y-2">
-              {column.links.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-600 underline decoration-transparent underline-offset-4 transition-[color,text-decoration-color] duration-300 hover:text-[#0B172A] hover:decoration-[#0B172A]">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+          <p>
+            <a href={phoneTel} className="underline-offset-4 hover:underline">
+              {phoneDisplay}
+            </a>
+          </p>
+          <p>
+            <a href={mapLink} className="underline-offset-4 hover:underline">
+              {addressSingleLine}
+            </a>
+          </p>
+          {!isPlaceholder(businessHours) && <p>{businessHours}</p>}
+          {!isPlaceholder(socialMediaLinks) && <p>{socialMediaLinks}</p>}
+        </address>
+      </Container>
       <div className="border-t border-slate-200">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-slate-500 md:flex-row md:justify-between md:px-6">
-          <p>Copyright © {company.year} Arovia Group. All rights reserved.</p>
-          <p>Built on healthcare expertise. Committed to integration. Focused on outcomes.</p>
-        </div>
+        <Container className="flex flex-col gap-4 py-6">
+          <ul className="flex flex-wrap gap-x-4 gap-y-2">
+            {legalLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="text-sm text-slate-600 underline-offset-4 hover:underline">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-600">{disclaimer}</p>
+          <p className="text-sm text-slate-500">
+            Copyright © {year} {companyName}. All rights reserved.
+          </p>
+        </Container>
       </div>
     </footer>
   );

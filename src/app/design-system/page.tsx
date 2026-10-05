@@ -6,7 +6,15 @@ import { Card } from "@/components/ui/Card";
 import { Heading } from "@/components/ui/Heading";
 import { Icon } from "@/components/ui/Icon";
 import { Section } from "@/components/ui/Section";
-import { isPlaceholder, tagline } from "@/lib/site-info";
+import { Breadcrumbs } from "@/components/layouts/Breadcrumbs";
+import { ContactStrip } from "@/components/sections/ContactStrip";
+import { CTASection } from "@/components/sections/CTASection";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { PageHero } from "@/components/sections/PageHero";
+import { Services } from "@/components/sections/Services";
+import { TrustSection } from "@/components/sections/TrustSection";
+import { WhoWeServe } from "@/components/sections/WhoWeServe";
+import { certifications, clinicRegistration, isPlaceholder, tagline } from "@/lib/site-info";
 
 export const metadata: Metadata = {
   title: "Design system",
@@ -119,6 +127,22 @@ export default function DesignSystemPage() {
           </div>
         </div>
       </Section>
+      <Section>
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Design system", href: "/design-system" }]} />
+      </Section>
+      <PageHero eyebrow="Inner page" title="Page hero" summary="Summary passed in as data." />
+      <Services
+        heading="Services"
+        items={[
+          { title: "Clinic", description: "Clinic", href: "/care/clinic" },
+          { title: "Pharmacy", description: "Pharmacy", href: "/medicines" },
+        ]}
+      />
+      <WhoWeServe heading="Who it serves" items={[{ title: "Patients and families", description: "People using Arovia services." }]} />
+      <HowItWorks heading="How it works" steps={[{ title: "Contact", description: "Send an inquiry." }]} />
+      <TrustSection items={[{ label: "Certifications", value: certifications }, { label: "Clinic registration", value: clinicRegistration }]} />
+      <ContactStrip />
+      <CTASection heading="Get in Touch" text="Contact Arovia Group." primary={{ label: "Get in Touch", href: "/contact" }} secondary={{ label: "About", href: "/about" }} />
     </>
   );
 }

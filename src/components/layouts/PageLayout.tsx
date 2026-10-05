@@ -1,4 +1,4 @@
-import { Navigation } from "@/components/ui/Navigation";
+import { Navigation } from "@/components/layouts/Navigation";
 import { ScrollTop } from "@/components/ui/ScrollTop";
 import { Footer } from "@/components/sections/Footer";
 

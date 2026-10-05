@@ -40,10 +40,10 @@ export const navItems: NavItem[] = [
     label: "Home Care",
     href: "/care",
     children: [
-      { label: "Clinic", href: "/care/clinic", description: "Clinic" },
-      { label: "Homecare", href: "/care/homecare", description: "Homecare" },
-      { label: "Diagnostics", href: "/care/diagnostics", description: "Diagnostics" },
-      { label: "Ambulance", href: "/care/ambulance", description: "Ambulance" },
+      { label: "Clinic", href: "/care/clinic", description: "Outpatient and specialty care." },
+      { label: "Homecare", href: "/care/homecare", description: "Care in the home." },
+      { label: "Diagnostics", href: "/care/diagnostics", description: "Lab tests and health checkups." },
+      { label: "Ambulance", href: "/care/ambulance", description: "Ambulance support and patient transport." },
     ],
   },
   {
@@ -55,20 +55,20 @@ export const navItems: NavItem[] = [
     label: "Medical Equipment Trade",
     href: "/equipment",
     children: [
-      { label: "Import", href: "/equipment/import", description: "Import" },
-      { label: "Export", href: "/equipment/export", description: "Export" },
-      { label: "Medical Equipment", href: "/equipment/equipment", description: "Medical Equipment" },
-      { label: "Medical Supplies", href: "/equipment/supplies", description: "Medical Supplies" },
+      { label: "Import", href: "/equipment/import", description: "Sourcing equipment into India." },
+      { label: "Export", href: "/equipment/export", description: "Supplying equipment to other markets." },
+      { label: "Medical Equipment", href: "/equipment/equipment", description: "Hospital, diagnostic, surgical and ICU equipment." },
+      { label: "Medical Supplies", href: "/equipment/supplies", description: "Consumables and healthcare products." },
     ],
   },
   {
     label: "Digital Health",
     href: "/digital-health",
     children: [
-      { label: "Medical Apps", href: "/digital-health/apps", description: "Medical Apps" },
-      { label: "Medical Websites", href: "/digital-health/websites", description: "Medical Websites" },
-      { label: "Healthcare Platforms", href: "/digital-health/platforms", description: "Healthcare Platforms" },
-      { label: "Digital Solutions", href: "/digital-health/solutions", description: "Digital Solutions" },
+      { label: "Medical Apps", href: "/digital-health/apps", description: "Healthcare applications for patients and clinicians." },
+      { label: "Medical Websites", href: "/digital-health/websites", description: "Websites and portals for healthcare organisations." },
+      { label: "Healthcare Platforms", href: "/digital-health/platforms", description: "Systems that connect clinical and operational work." },
+      { label: "Digital Solutions", href: "/digital-health/solutions", description: "Software built for a specific healthcare need." },
     ],
   },
   { label: "Contact", href: "/contact" },
@@ -113,7 +113,21 @@ export const pillarDirectory = [
   },
 ] as const;
 
+export const legalLinks = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Medical Disclaimer", href: "/disclaimer" },
+] as const;
+
 export const footerColumns = [
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
+      { label: "FAQ", href: "/faq" },
+    ],
+  },
   {
     title: "Home Care",
     links: [
@@ -143,17 +157,6 @@ export const footerColumns = [
       { label: "Medical Websites", href: "/digital-health/websites" },
       { label: "Healthcare Platforms", href: "/digital-health/platforms" },
       { label: "Digital Solutions", href: "/digital-health/solutions" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "About", href: "/about" },
-      { label: "Contact", href: "/contact" },
-      { label: "FAQ", href: "/faq" },
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms", href: "/terms" },
-      { label: "Medical Disclaimer", href: "/disclaimer" },
     ],
   },
 ];
