@@ -6,7 +6,7 @@ type ButtonVariant = "primary" | "care" | "medicine" | "equipment" | "digital" |
 type ButtonSize = "sm" | "md" | "lg";
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "bg-arovia-cyan text-white hover:bg-cyan-600 shadow-sm",
+  primary: "bg-[#0F5F73] text-white hover:bg-[#0C4C5C] shadow-sm",
   care: "bg-arovia-care text-white hover:bg-emerald-600 shadow-sm",
   medicine: "bg-arovia-medicine text-white hover:bg-rose-600 shadow-sm",
   equipment: "bg-arovia-equipment text-white hover:bg-blue-600 shadow-sm",

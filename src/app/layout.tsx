@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 const organization = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "MedicalBusiness"],
   name: company.name,
   url: company.siteUrl,
   email,

@@ -38,7 +38,7 @@ export function Hero({ eyebrow, title, text, primary, secondary, image }: HeroPr
         </div>
         {image && (
           <div className="relative min-h-[280px] sm:min-h-[380px]">
-            <Image src={image.src} alt={image.alt} fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <Image src={image.src} alt={image.alt} fill priority quality={60} sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
           </div>
         )}
       </div>
