@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export interface AccordionItem {
@@ -17,6 +17,12 @@ interface AccordionProps {
 
 export function Accordion({ items, allowMultiple = false, className }: AccordionProps) {
   const [open, setOpen] = useState<string[]>(items[0] ? [items[0].id] : []);
+
+  const itemKey = items.map((item) => item.id).join("|");
+  useEffect(() => {
+    const slug = window.location.hash.replace("#", "");
+    if (slug && itemKey.split("|").includes(slug)) setOpen([slug]);
+  }, [itemKey]);
   const baseId = useId();
   const buttons = useRef<Array<HTMLButtonElement | null>>([]);
 
@@ -60,6 +66,7 @@ export function Accordion({ items, allowMultiple = false, className }: Accordion
                 ref={(node) => {
                   buttons.current[index] = node;
                 }}
+                id={item.id}
                 type="button"
                 className="flex min-h-11 w-full items-center justify-between gap-4 px-4 py-3 text-left text-base font-semibold text-arovia-navy"
                 aria-expanded={expanded}

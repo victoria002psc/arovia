@@ -615,8 +615,8 @@ export const faqs: FaqItem[] = [
 export const faqCategories = [
   { id: "all", label: "All" },
   { id: "general", label: "General" },
-  { id: "care", label: "Care" },
+  { id: "care", label: "Home Care" },
   { id: "medicines", label: "Medicines" },
   { id: "equipment", label: "Equipment" },
-  { id: "digital", label: "Digital" },
+  { id: "digital", label: "Digital Health" },
 ] as const;
