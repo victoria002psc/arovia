@@ -194,7 +194,7 @@ export const homeFaqs = [
   },
   {
     question: "Do you deliver medicines to my home?",
-    answer: "Our pharmacy service includes home delivery for medicines and healthcare products within [SERVICE AREAS / DELIVERY COVERAGE].",
+    answer: "Delivery is not published. [SERVICE AREAS / DELIVERY COVERAGE] Ask the pharmacy when you submit a prescription.",
   },
   {
     question: "How can I get information about medical equipment?",
