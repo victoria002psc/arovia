@@ -26,7 +26,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
+
+# static-export park artifact (should not persist)
+src/app/api/contact/route.ts.parked
 
 # vercel
 .vercel

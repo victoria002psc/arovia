@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { contactSchema, enquiryFromQuery, type ContactInput } from "@/lib/contact-schema";
 import { cn } from "@/lib/utils";
@@ -29,8 +30,17 @@ const empty = (type: Values["enquiryType"]): Values => ({
   company: "",
 });
 
-export function ContactForm({ initialType }: { initialType?: string }) {
-  const starting = enquiryFromQuery(initialType);
+export function ContactForm() {
+  return (
+    <Suspense fallback={<p className="text-sm text-arovia-charcoal">Loading form…</p>}>
+      <ContactFormInner />
+    </Suspense>
+  );
+}
+
+function ContactFormInner() {
+  const searchParams = useSearchParams();
+  const starting = enquiryFromQuery(searchParams.get("type") ?? undefined);
   const [values, setValues] = useState<Values>(() => empty(starting));
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});

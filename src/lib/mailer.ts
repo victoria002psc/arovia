@@ -1,6 +1,12 @@
 import type { ContactInput } from "@/lib/contact-schema";
 import { enquiryLabels } from "@/lib/contact-schema";
 
+/**
+ * Node.js mail delivery (used by `src/app/api/contact/route.ts`).
+ * Resend (HTTP) works on Node and on Cloudflare Pages Functions.
+ * SMTP via Nodemailer requires a full Node.js server — it is NOT supported
+ * on Cloudflare Pages Functions / Workers (no reliable outbound SMTP TCP).
+ */
 export async function deliverInquiry(input: ContactInput) {
   const to = process.env.CONTACT_EMAIL || "arovia22@gmail.com";
   const subject = `Arovia enquiry: ${enquiryLabels[input.enquiryType]}`;

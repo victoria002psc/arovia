@@ -1,0 +1,11 @@
+# Legacy path redirects (previously next.config.mjs redirects)
+/medicines /pharmacy 301
+/medicines/* /pharmacy 301
+/equipment /equipment-trade 301
+/equipment/export /equipment-trade/export 301
+/equipment/equipment /equipment-trade/medical-equipment 301
+/equipment/import /equipment-trade 301
+/equipment/supplies /equipment-trade 301
+/home-care /care 301
+/home-care/* /care 301
+/disclaimer /medical-disclaimer 301

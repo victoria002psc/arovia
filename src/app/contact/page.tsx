@@ -22,7 +22,7 @@ const addressLines = [
   `${address.state}, ${address.country}`,
 ];
 
-export default function ContactPage({ searchParams }: { searchParams?: { type?: string } }) {
+export default function ContactPage() {
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -131,7 +131,7 @@ export default function ContactPage({ searchParams }: { searchParams?: { type?: 
               Fill in the form below and our team will get back to you as soon as possible.
             </p>
             <div className="mt-6">
-              <ContactForm initialType={searchParams?.type} />
+              <ContactForm />
             </div>
           </article>
         </div>
