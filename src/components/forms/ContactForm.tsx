@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { contactSchema, enquiryFromQuery, enquiryLabels, enquiryTypes, type ContactInput } from "@/lib/contact-schema";
-import { showWhatsApp } from "@/lib/site-info";
+import { ArrowRight } from "lucide-react";
+import { contactSchema, enquiryFromQuery, type ContactInput } from "@/lib/contact-schema";
 import { cn } from "@/lib/utils";
 
 type Values = {
@@ -37,8 +37,6 @@ export function ContactForm({ initialType }: { initialType?: string }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [serverMessage, setServerMessage] = useState("");
   const [startedAt] = useState(() => Date.now());
-  const showOrganization = ["equipment", "digital", "partnership"].includes(values.enquiryType);
-
   const visible = useMemo(() => {
     const next: Record<string, string> = {};
     for (const [key, message] of Object.entries(errors)) {
@@ -116,38 +114,24 @@ export function ContactForm({ initialType }: { initialType?: string }) {
         {status === "error" ? serverMessage : ""}
       </div>
       <Field id="name" label="Full name" error={visible.name} required>
-        <input id="name" className={inputClass(!!visible.name)} name="name" value={values.name} onChange={(event) => update("name", event.target.value)} onBlur={() => blur("name")} autoComplete="name" aria-invalid={!!visible.name} aria-describedby={visible.name ? "name-error" : undefined} required />
+        <input id="name" className={inputClass(!!visible.name)} name="name" placeholder="Enter your full name" value={values.name} onChange={(event) => update("name", event.target.value)} onBlur={() => blur("name")} autoComplete="name" aria-invalid={!!visible.name} aria-describedby={visible.name ? "name-error" : undefined} required />
       </Field>
       <Field id="email" label="Email" error={visible.email} required>
-        <input id="email" className={inputClass(!!visible.email)} type="email" name="email" value={values.email} onChange={(event) => update("email", event.target.value)} onBlur={() => blur("email")} autoComplete="email" aria-invalid={!!visible.email} aria-describedby={visible.email ? "email-error" : undefined} required />
+        <input id="email" className={inputClass(!!visible.email)} type="email" name="email" placeholder="Enter your email address" value={values.email} onChange={(event) => update("email", event.target.value)} onBlur={() => blur("email")} autoComplete="email" aria-invalid={!!visible.email} aria-describedby={visible.email ? "email-error" : undefined} required />
       </Field>
       <Field id="phone" label="Phone" error={visible.phone} required>
-        <input id="phone" className={inputClass(!!visible.phone)} name="phone" value={values.phone} onChange={(event) => update("phone", event.target.value)} onBlur={() => blur("phone")} autoComplete="tel" aria-invalid={!!visible.phone} aria-describedby={visible.phone ? "phone-error" : undefined} required />
+        <input id="phone" className={inputClass(!!visible.phone)} name="phone" placeholder="Enter your phone number" value={values.phone} onChange={(event) => update("phone", event.target.value)} onBlur={() => blur("phone")} autoComplete="tel" aria-invalid={!!visible.phone} aria-describedby={visible.phone ? "phone-error" : undefined} required />
       </Field>
-      <Field id="enquiryType" label="Enquiry type" error={visible.enquiryType} required>
-        <select id="enquiryType" className={inputClass(!!visible.enquiryType)} name="enquiryType" value={values.enquiryType} onChange={(event) => update("enquiryType", event.target.value as Values["enquiryType"])} onBlur={() => blur("enquiryType")} aria-invalid={!!visible.enquiryType} aria-describedby={visible.enquiryType ? "enquiryType-error" : undefined}>
-          {enquiryTypes.map((type) => (
-            <option key={type} value={type}>
-              {enquiryLabels[type]}
-            </option>
-          ))}
-        </select>
-      </Field>
-      {showOrganization && (
-        <Field id="organization" label="Organization" error={visible.organization}>
-          <input id="organization" className={inputClass(false)} name="organization" value={values.organization} onChange={(event) => update("organization", event.target.value)} autoComplete="organization" />
-        </Field>
-      )}
       <Field id="message" label="Message" error={visible.message} required>
-        <textarea id="message" className={cn(inputClass(!!visible.message), "min-h-32")} name="message" value={values.message} onChange={(event) => update("message", event.target.value)} onBlur={() => blur("message")} aria-invalid={!!visible.message} aria-describedby={visible.message ? "message-error" : undefined} required />
+        <textarea id="message" className={cn(inputClass(!!visible.message), "min-h-28")} name="message" placeholder="Tell us how we can help you..." value={values.message} onChange={(event) => update("message", event.target.value)} onBlur={() => blur("message")} aria-invalid={!!visible.message} aria-describedby={visible.message ? "message-error" : undefined} required />
       </Field>
       <fieldset>
         <legend className="text-sm font-semibold text-arovia-navy">Preferred contact method</legend>
-        <div className="mt-2 flex flex-wrap gap-3">
-          {(showWhatsApp ? (["phone", "email", "whatsapp"] as const) : (["phone", "email"] as const)).map((method) => (
-            <label key={method} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-slate-200 px-4 text-sm capitalize">
+        <div className="mt-2 flex flex-wrap gap-6">
+          {(["phone", "email"] as const).map((method) => (
+            <label key={method} className="inline-flex min-h-11 items-center gap-2 text-sm font-normal text-arovia-charcoal">
               <input type="radio" name="preferredContact" value={method} checked={values.preferredContact === method} onChange={() => update("preferredContact", method)} />
-              {method === "whatsapp" ? "WhatsApp" : method}
+              {method === "phone" ? "Phone" : "Email"}
             </label>
           ))}
         </div>
@@ -167,8 +151,9 @@ export function ContactForm({ initialType }: { initialType?: string }) {
           <input tabIndex={-1} autoComplete="off" value={values.company} onChange={(event) => update("company", event.target.value)} />
         </label>
       </div>
-      <button type="submit" disabled={status === "submitting"} aria-busy={status === "submitting"} className="inline-flex min-h-11 items-center justify-center rounded-full bg-arovia-navy px-6 font-semibold text-white disabled:opacity-60">
-        {status === "submitting" ? "Sending…" : "Send enquiry"}
+      <button type="submit" disabled={status === "submitting"} aria-busy={status === "submitting"} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-arovia-navy px-5 font-semibold text-white hover:bg-arovia-charcoal disabled:opacity-60">
+        {status === "submitting" ? "Sending…" : "Send Enquiry"}
+        {status !== "submitting" && <ArrowRight aria-hidden="true" className="h-4 w-4" />}
       </button>
       {status === "error" && (
         <p role="alert" className="rounded-md bg-rose-50 px-4 py-3 text-sm text-rose-800">
@@ -198,5 +183,5 @@ function Field({ id, label, error, required, children }: { id: string; label: st
 }
 
 function inputClass(invalid: boolean) {
-  return cn("w-full rounded-md border bg-white px-4 py-3 text-base font-normal text-arovia-ink outline-none focus-visible:ring-2 focus-visible:ring-arovia-cyan", invalid ? "border-rose-400" : "border-slate-300");
+  return cn("mt-1.5 w-full rounded-lg border bg-white px-3 py-2.5 text-sm font-normal text-arovia-charcoal outline-none placeholder:text-slate-400 focus:border-arovia-teal", invalid ? "border-rose-400" : "border-[#E5E7EB]");
 }

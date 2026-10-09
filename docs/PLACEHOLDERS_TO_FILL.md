@@ -4,7 +4,7 @@ These values are visible on the site until you replace them. Phone, email, and t
 
 | Placeholder | File | What to supply |
 | --- | --- | --- |
-| `[BUSINESS HOURS]` | `src/lib/site-info.ts` (`businessHours`) | Opening days and hours. Shown on the contact page once it no longer starts and ends with brackets. |
+| Business hours | `src/lib/site-info.ts` (`businessHours`) | Set to 9:00 AM – 8:00 PM and shown on the contact page. |
 | `[LOGO]` | `src/lib/site-info.ts` (`logo`) | Confirm whether `public/logo-arovia.png` is the final mark. The header already uses that file. |
 | `[TAGLINE]` | `src/lib/site-info.ts` (`tagline`) | Approved tagline, if you want one beyond the homepage headline. |
 | `[YEARS OF EXPERIENCE]` | `src/lib/site-info.ts` | Only if you want a verified years figure. Do not invent a number. |

@@ -30,7 +30,8 @@ export const showWhatsApp = false;
 
 export const whatsappHref = `https://wa.me/${phoneTel.replace("tel:+", "")}`;
 
-export const businessHours = "[BUSINESS HOURS]";
+export const businessHours = "9:00 AM – 8:00 PM";
+export const businessDays = "Monday to Sunday";
 export const logo = "[LOGO]";
 export const tagline = "[TAGLINE]";
 export const yearsOfExperience = "[YEARS OF EXPERIENCE]";
@@ -45,7 +46,6 @@ export const socialMediaLinks = "[SOCIAL MEDIA LINKS]";
 export const partners = "[PARTNERS]";
 
 export const placeholders = {
-  businessHours,
   logo,
   tagline,
   yearsOfExperience,

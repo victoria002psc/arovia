@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { navItems } from "@/lib/constants";
-import { email, phoneDisplay, phoneTel } from "@/lib/site-info";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
@@ -18,6 +17,8 @@ function isCurrent(pathname: string, href: string) {
 function hasSubmenu(item: NavItem) {
   return (item.children?.length ?? 0) > 1;
 }
+
+const headerNav = navItems.filter((item) => item.href !== "/contact");
 
 export function Header() {
   const pathname = usePathname();
@@ -99,28 +100,26 @@ export function Header() {
     <header
       ref={headerRef}
       className={cn(
-        "sticky top-0 z-50 transition-[background-color,box-shadow,border-color] duration-200",
-        scrolled ? "border-b border-arovia-navy/10 bg-white shadow-sm" : "border-b border-transparent bg-arovia-off",
+        "sticky top-0 z-50 border-b bg-white transition-[box-shadow,border-color] duration-200",
+        scrolled ? "border-arovia-navy/10 shadow-sm" : "border-arovia-navy/8",
       )}
       onMouseLeave={() => setOpenMenu(null)}
     >
       <nav className="mx-auto flex h-20 w-full max-w-wide items-center gap-3 px-5 lg:px-10" aria-label="Primary">
         <Logo />
-        <ul className="ml-auto hidden items-center gap-1 xl:flex">
-          {navItems.map((item) => (
+        <ul className="ml-auto hidden items-center gap-1 lg:flex">
+          {headerNav.map((item) => (
             <DesktopItem key={item.href} item={item} pathname={pathname} openMenu={openMenu} setOpenMenu={setOpenMenu} />
           ))}
         </ul>
-        <a href={phoneTel} className="hidden whitespace-nowrap text-sm font-semibold text-arovia-navy xl:inline-flex xl:min-h-11 xl:items-center">
-          {phoneDisplay}
-        </a>
-        <Button href="/contact" size="sm" className="hidden xl:inline-flex">
+        <Button href="/contact" size="sm" className="hidden rounded-full px-5 lg:inline-flex">
           Talk to Arovia
+          <span aria-hidden="true">→</span>
         </Button>
         <button
           ref={menuButtonRef}
           type="button"
-          className="ml-auto inline-flex h-11 w-11 items-center justify-center text-arovia-navy xl:hidden"
+          className="ml-auto inline-flex h-11 w-11 items-center justify-center text-arovia-navy lg:hidden"
           aria-expanded={drawerOpen}
           aria-controls="mobile-menu"
           aria-label={drawerOpen ? "Close menu" : "Open menu"}
@@ -136,13 +135,13 @@ export function Header() {
           role="dialog"
           aria-modal="true"
           aria-labelledby={drawerTitleId}
-          className="fixed inset-x-0 bottom-0 top-20 z-40 overflow-y-auto bg-white px-5 py-6 xl:hidden"
+          className="fixed inset-x-0 bottom-0 top-20 z-40 overflow-y-auto bg-white px-5 py-6 lg:hidden"
         >
           <p id={drawerTitleId} className="sr-only">
             Site menu
           </p>
           <ul className="space-y-2">
-            {navItems.map((item) => (
+            {headerNav.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="flex min-h-11 items-center text-lg font-semibold text-arovia-navy" aria-current={isCurrent(pathname, item.href) ? "page" : undefined}>
                   {item.label}
@@ -162,13 +161,7 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <a href={phoneTel} className="mt-4 flex min-h-11 items-center font-semibold text-arovia-navy">
-            {phoneDisplay}
-          </a>
-          <a href={`mailto:${email}`} className="flex min-h-11 items-center text-arovia-navy">
-            {email}
-          </a>
-          <Button href="/contact" className="mt-4">
+          <Button href="/contact" className="mt-6">
             Talk to Arovia
           </Button>
         </div>

@@ -1,125 +1,139 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
+import { ArrowUpRight, Clock3, Mail, MapPin, Phone } from "lucide-react";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { FAQAccordion } from "@/components/sections/FAQAccordion";
-import { Heading } from "@/components/ui/Heading";
-import { faqs } from "@/content/faqs";
-import {
-  addressSingleLine,
-  businessHours,
-  email,
-  isPlaceholder,
-  mapLink,
-  phoneDisplay,
-  phoneTel,
-  showWhatsApp,
-  whatsappHref,
-} from "@/lib/site-info";
+import { address, businessDays, businessHours, email, mapLink, phoneDisplay, phoneTel } from "@/lib/site-info";
 
 export const metadata: Metadata = {
-  title: "Contact Arovia Group — Healthcare, Equipment, Digital Solutions",
-  description: "Get in touch with Arovia. Contact us for healthcare services, equipment sourcing, digital health projects, or partnerships.",
+  title: "Contact Arovia",
+  description: "Have a question, need more information, or want to discuss a healthcare requirement? Contact Arovia Group in Guntur.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact Arovia Group — Healthcare, Equipment, Digital Solutions",
-    description: "Get in touch with Arovia. Contact us for healthcare services, equipment sourcing, digital health projects, or partnerships.",
+    title: "Contact Arovia",
+    description: "Have a question, need more information, or want to discuss a healthcare requirement? Contact Arovia Group in Guntur.",
     url: "/contact",
   },
 };
 
-const cards = [
-  ["Care", "Homecare, diagnostics, ambulance, and clinic.", "healthcare"],
-  ["Pharmacy", "Prescription medicines and healthcare products.", "pharmacy"],
-  ["Equipment Trade", "Export and medical equipment.", "equipment"],
-  ["Digital Health", "Medical apps, websites, platforms, and digital solutions.", "digital"],
-  ["Partnership", "Institutions and businesses exploring a working relationship.", "partnership"],
-  ["General", "Any other question for Arovia Group.", "general"],
-] as const;
+const addressLines = [
+  "Shop No. 26, Ground Floor,",
+  `Annapurna Complex, ${address.street},`,
+  `${address.city} – ${address.postalCode},`,
+  `${address.state}, ${address.country}`,
+];
 
 export default function ContactPage({ searchParams }: { searchParams?: { type?: string } }) {
-  const contactFaqs = faqs.filter((item) => ["what-is-arovia", "who-served", "service-area", "standards"].includes(item.id));
-
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Contact Arovia Group",
+    name: "Contact Arovia",
     url: "/contact",
   };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
-      <header className="bg-arovia-mist">
-        <div className="mx-auto max-w-6xl px-5 py-16 lg:px-10">
-          <Heading level={1}>Talk to Arovia</Heading>
-          <p className="mt-4 max-w-3xl text-lg text-slate-700">
-            Questions about our services? Ready to partner with us? Arovia Group is in Guntur, Andhra Pradesh.
+      <section className="relative overflow-hidden bg-[#F7F8F6]">
+        <div className="absolute inset-y-0 right-0 hidden w-1/2 md:block">
+          <Image
+            src="/images/contact-doctor.jpg"
+            alt="A physician in a white coat speaking with a patient in a bright clinic"
+            fill
+            priority
+            sizes="50vw"
+            className="object-cover object-[70%_center]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F7F8F6] from-0% via-[#F7F8F6]/80 via-[28%] to-transparent" />
+        </div>
+        <div className="relative mx-auto flex min-h-[260px] max-w-wide flex-col justify-center px-5 py-8 md:h-[280px] md:py-0 lg:px-10">
+          <p className="text-xs font-semibold tracking-[0.16em] text-arovia-teal">GET IN TOUCH</p>
+          <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight text-arovia-navy sm:text-5xl">Contact Arovia</h1>
+          <p className="mt-3 max-w-md text-[15px] leading-relaxed text-arovia-charcoal">
+            Have a question, need more information, or want to discuss a healthcare requirement? We&apos;re here to help.
           </p>
         </div>
-      </header>
-      <section className="mx-auto grid max-w-6xl gap-8 px-5 py-16 lg:grid-cols-[1fr_1.1fr] lg:px-10">
-        <div>
-          <Heading>Contact options</Heading>
-          <ul className="mt-6 space-y-3 text-sm text-slate-700">
-            <li>
-              <a className="font-semibold text-arovia-navy underline-offset-4 hover:underline" href={`mailto:${email}`}>
-                {email}
-              </a>
-            </li>
-            <li>
-              <a className="font-semibold text-arovia-navy underline-offset-4 hover:underline" href={phoneTel}>
-                {phoneDisplay}
-              </a>
-            </li>
-            <li>
-              <a className="underline-offset-4 hover:underline" href={mapLink}>
-                {addressSingleLine}
-              </a>
-            </li>
-            {showWhatsApp && (
-              <li>
-                <a className="font-semibold text-arovia-navy underline-offset-4 hover:underline" href={whatsappHref}>
-                  WhatsApp
-                </a>
-              </li>
-            )}
-            {isPlaceholder(businessHours) ? (
-              <li className="bg-amber-100 px-2 py-1 text-amber-950">{businessHours}</li>
-            ) : (
-              <li>{businessHours}</li>
-            )}
-          </ul>
-          <a href={mapLink} className="mt-4 inline-flex min-h-11 items-center font-semibold text-arovia-navy underline-offset-4 hover:underline">
-            Open in Google Maps
-          </a>
-          <Heading level={3} className="mt-10">
-            Enquiry types
-          </Heading>
-          <ul className="mt-4 space-y-3">
-            {cards.map(([title, copy, type]) => (
-              <li key={type} className="rounded-lg border border-slate-200 bg-white p-4">
-                <h3 className="font-semibold text-arovia-navy">{title}</h3>
-                <p className="mt-1 text-sm text-slate-600">{copy}</p>
-                <Link href={`/contact?type=${type}`} className="mt-2 inline-flex min-h-11 items-center text-sm font-semibold text-arovia-navy underline-offset-4 hover:underline">
-                  Start a {title} enquiry
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="rounded-lg border border-slate-200 bg-white p-6">
-          <Heading level={2}>Send a message</Heading>
-          <div className="mt-6">
-            <ContactForm initialType={searchParams?.type} />
-          </div>
-        </div>
       </section>
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-3xl px-5">
-          <Heading>Questions</Heading>
-          <div className="mt-4">
-            <FAQAccordion items={contactFaqs} />
-          </div>
+
+      <section className="bg-[#F7F8F6] px-5 pb-16 pt-4 lg:px-10">
+        <div className="mx-auto grid max-w-wide items-stretch gap-5 lg:grid-cols-2">
+          <article className="flex flex-col overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-sm">
+            <div className="p-6 sm:p-7">
+              <p className="text-xs font-semibold tracking-[0.14em] text-arovia-teal">CONTACT INFORMATION</p>
+              <h2 className="mt-2 font-heading text-[1.7rem] font-semibold leading-tight text-arovia-navy">Get in touch with Arovia</h2>
+              <p className="mt-2 text-sm leading-relaxed text-arovia-charcoal">
+                Our team is ready to assist you. Reach out to us through email or phone, or visit our location.
+              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <a href={`mailto:${email}`} className="flex items-center gap-3 rounded-xl bg-[#E7F6F4] px-3.5 py-3 text-arovia-navy">
+                  <Mail aria-hidden="true" className="h-5 w-5 shrink-0 text-arovia-teal" strokeWidth={1.75} />
+                  <span className="min-w-0">
+                    <span className="block text-sm font-semibold">Email Us</span>
+                    <span className="block truncate text-xs text-arovia-charcoal">{email}</span>
+                  </span>
+                  <ArrowUpRight aria-hidden="true" className="ml-auto h-4 w-4 shrink-0" />
+                </a>
+                <a href={phoneTel} className="flex items-center gap-3 rounded-xl bg-[#E7F3FB] px-3.5 py-3 text-arovia-navy">
+                  <Phone aria-hidden="true" className="h-5 w-5 shrink-0 text-[#3B82C4]" strokeWidth={1.75} />
+                  <span>
+                    <span className="block text-sm font-semibold">Call Us</span>
+                    <span className="block text-xs text-arovia-charcoal">{phoneDisplay}</span>
+                  </span>
+                  <ArrowUpRight aria-hidden="true" className="ml-auto h-4 w-4 shrink-0" />
+                </a>
+              </div>
+              <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                <div className="flex gap-3">
+                  <MapPin aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-arovia-teal" strokeWidth={1.75} />
+                  <div>
+                    <h3 className="text-sm font-semibold text-arovia-navy">Our Address</h3>
+                    {addressLines.map((line) => (
+                      <p key={line} className="text-sm leading-relaxed text-arovia-charcoal">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Clock3 aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-arovia-teal" strokeWidth={1.75} />
+                  <div>
+                    <h3 className="text-sm font-semibold text-arovia-navy">Business Hours</h3>
+                    <p className="text-sm text-arovia-charcoal">{businessHours}</p>
+                    <p className="text-sm text-arovia-charcoal">{businessDays}</p>
+                  </div>
+                </div>
+              </div>
+              <a
+                href={mapLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-arovia-navy px-4 text-sm font-semibold text-white"
+              >
+                <MapPin aria-hidden="true" className="h-4 w-4" strokeWidth={1.75} />
+                Open in Google Maps
+                <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
+              </a>
+            </div>
+            <div className="relative mt-2 min-h-[240px] w-full flex-1">
+              <Image
+                src="/images/contact-building.jpg"
+                alt="Modern glass building with Arovia signage and landscaped grounds"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover object-center"
+              />
+            </div>
+          </article>
+
+          <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-sm sm:p-8">
+            <p className="text-xs font-semibold tracking-[0.14em] text-arovia-teal">SEND A MESSAGE</p>
+            <h2 className="mt-2 font-heading text-3xl font-semibold text-arovia-navy">We&apos;d love to hear from you</h2>
+            <p className="mt-3 text-sm leading-relaxed text-arovia-charcoal">
+              Fill in the form below and our team will get back to you as soon as possible.
+            </p>
+            <div className="mt-6">
+              <ContactForm initialType={searchParams?.type} />
+            </div>
+          </article>
         </div>
       </section>
     </>

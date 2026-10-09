@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { ServicePageTemplate } from "@/components/templates/ServicePageTemplate";
-import { carePage } from "@/content/care";
+import { CarePage } from "@/components/sections/CarePage";
 
 export const metadata: Metadata = {
-  title: carePage.seo.title,
-  description: carePage.seo.description,
-  keywords: carePage.seo.keywords,
-  alternates: { canonical: carePage.path },
+  title: "Arovia Care — Homecare, Clinic, Diagnostics & Ambulance",
+  description:
+    "When you need care, we're here. Homecare, clinic consultations, diagnostics and ambulance support from Arovia Group.",
+  keywords: ["clinic care", "home care services", "diagnostic tests", "ambulance services", "outpatient care"],
+  alternates: { canonical: "/care" },
+  openGraph: {
+    title: "Arovia Care — Homecare, Clinic, Diagnostics & Ambulance",
+    description:
+      "When you need care, we're here. Homecare, clinic consultations, diagnostics and ambulance support from Arovia Group.",
+    url: "/care",
+  },
 };
 
 export default function Page() {
-  return <ServicePageTemplate page={carePage} />;
+  return <CarePage />;
 }

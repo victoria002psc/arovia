@@ -1,90 +1,119 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ImageFrame } from "@/components/ui/ImageFrame";
-import { TextLink } from "@/components/ui/TextLink";
-import { addressSingleLine, email, mapLink, phoneDisplay, phoneTel } from "@/lib/site-info";
-
-const careServices = [
-  { label: "Homecare", text: "Nursing and personal care at home.", href: "/care/homecare" },
-  { label: "Diagnostics", text: "Laboratory tests and health checkups.", href: "/care/diagnostics" },
-  { label: "Ambulance", text: "Patient transport. Call local emergency services in a life-threatening emergency.", href: "/care/ambulance" },
-  { label: "Clinic", text: "Consultations and treatment planning.", href: "/care/clinic" },
-];
+import { ArrowRight } from "lucide-react";
+import { Icon } from "@/components/ui/Icon";
+import { Button } from "@/components/ui/Button";
+import {
+  homeAudiences,
+  homeCare,
+  homeDigital,
+  homeEquipment,
+  homeFinalCta,
+  homePharmacy,
+  homeWhy,
+} from "@/data/home";
 
 export function HomeContinue() {
   return (
     <>
       <section className="bg-white" aria-labelledby="care-story">
-        <div className="mx-auto grid max-w-wide items-center gap-12 px-5 py-20 lg:grid-cols-12 lg:px-10 lg:py-28">
-          <div className="lg:col-span-5">
-            <ImageFrame src="/images/care.jpg" alt="A clinician sitting with a patient" ratio="4/5" />
+        <div className="mx-auto grid max-w-wide items-center gap-10 px-5 py-14 lg:grid-cols-2 lg:gap-14 lg:px-10 lg:py-16">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image src={homeCare.image.src} alt={homeCare.image.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
           </div>
-          <div className="lg:col-span-7">
-            <h2 id="care-story" className="font-heading text-4xl font-semibold text-arovia-navy sm:text-5xl">
-              Care Designed Around People
+          <div>
+            <p className="flex items-center gap-2 text-sm font-medium text-arovia-navy/70">
+              <span className="h-2 w-2 rounded-full bg-arovia-teal" aria-hidden="true" />
+              {homeCare.number}
+            </p>
+            <h2 id="care-story" className="mt-3 font-heading text-3xl font-bold tracking-tight text-arovia-navy sm:text-4xl">
+              {homeCare.heading}
             </h2>
-            <p className="type-lead mt-5">Homecare, diagnostics, ambulance support, and clinic visits, arranged as one care service.</p>
-            <ul className="mt-10 divide-y divide-arovia-navy/10 border-y border-arovia-navy/10">
-              {careServices.map((service) => (
-                <li key={service.href} className="grid gap-2 py-4 sm:grid-cols-[10rem_1fr] sm:items-baseline">
-                  <Link href={service.href} className="font-heading text-xl font-semibold text-arovia-navy">
-                    {service.label}
-                  </Link>
-                  <p className="text-arovia-charcoal">{service.text}</p>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8">
-              <TextLink href="/care">Explore Care</TextLink>
+            <p className="mt-4 text-base leading-relaxed text-arovia-charcoal">{homeCare.text}</p>
+            <div className="mt-8 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+              <ul className="flex flex-wrap gap-x-6 gap-y-3">
+                {homeCare.services.map((service) => (
+                  <li key={service.href}>
+                    <Link href={service.href} className="inline-flex items-center gap-2 text-sm font-semibold text-arovia-navy">
+                      <Icon name={service.icon} className="h-4 w-4 text-arovia-teal" strokeWidth={1.75} />
+                      {service.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Button href={homeCare.href} variant="care" size="sm" className="w-fit shrink-0 rounded-full px-5">
+                {homeCare.cta}
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-arovia-off" aria-labelledby="pharmacy-story">
-        <div className="mx-auto grid max-w-wide items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-10 lg:py-28">
-          <div className="lg:order-2">
-            <ImageFrame src="/images/pharmacy.jpg" alt="A pharmacist working in a pharmacy" ratio="3/2" />
-          </div>
+      <section className="bg-[#FBF7F8]" aria-labelledby="pharmacy-story">
+        <div className="mx-auto grid max-w-wide items-center gap-10 px-5 py-14 lg:grid-cols-2 lg:gap-10 lg:px-10 lg:py-16">
           <div>
-            <h2 id="pharmacy-story" className="font-heading text-4xl font-semibold text-arovia-navy">
-              Pharmacy Within a Connected Healthcare Journey
-            </h2>
-            <p className="type-lead mt-5">
-              One pharmacy for prescription medicines and healthcare products, with a pharmacist available to explain how to take them. Prices, stock, and delivery are confirmed with the team.
+            <p className="flex items-center gap-2 text-sm font-semibold text-white">
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#C56B7B] text-[11px] font-semibold">
+                {homePharmacy.number}
+              </span>
             </p>
+            <h2 id="pharmacy-story" className="mt-3 font-heading text-3xl font-bold tracking-tight text-arovia-navy sm:text-4xl">
+              {homePharmacy.heading}
+            </h2>
+            <p className="mt-4 max-w-md text-base leading-relaxed text-arovia-charcoal">{homePharmacy.text}</p>
             <div className="mt-8">
-              <TextLink href="/pharmacy">Explore Pharmacy</TextLink>
+              <Button href={homePharmacy.href} variant="medicine" size="sm" className="w-fit rounded-full px-5">
+                {homePharmacy.cta}
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </Button>
             </div>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image src={homePharmacy.image.src} alt={homePharmacy.image.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+            <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#FBF7F8] to-transparent" />
           </div>
         </div>
       </section>
 
       <section className="bg-arovia-navy text-white" aria-labelledby="equipment-story">
-        <div className="mx-auto grid max-w-wide items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-10 lg:py-28">
-          <ImageFrame src="/images/equipment.jpg" alt="Hospital and diagnostic equipment" ratio="16/9" />
+        <div className="mx-auto grid max-w-wide items-center gap-10 px-5 py-14 lg:grid-cols-2 lg:gap-14 lg:px-10 lg:py-16">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image src={homeEquipment.image.src} alt={homeEquipment.image.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+          </div>
           <div>
-            <h2 id="equipment-story" className="font-heading text-4xl font-semibold">
-              Medical Equipment. Connected to Global Markets.
+            <p className="flex items-center gap-2 text-sm font-semibold text-white">
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-400/90 text-[11px] font-semibold text-arovia-navy">
+                {homeEquipment.number}
+              </span>
+            </p>
+            <h2 id="equipment-story" className="mt-3 max-w-lg font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              {homeEquipment.heading}
             </h2>
-            <p className="type-lead mt-5 text-white/80">Export support and medical equipment for healthcare businesses and organizations.</p>
-            <ul className="mt-6 space-y-2 text-sm">
-              <li>
-                <Link href="/equipment-trade/export" className="underline-offset-4 hover:underline">
-                  Export
-                </Link>
-              </li>
-              <li>
-                <Link href="/equipment-trade/medical-equipment" className="underline-offset-4 hover:underline">
-                  Medical Equipment
-                </Link>
-              </li>
+            <p className="mt-4 text-base leading-relaxed text-white/80">{homeEquipment.text}</p>
+            <ul className="mt-7 flex flex-wrap gap-6">
+              {homeEquipment.services.map((service) => (
+                <li key={service.href}>
+                  <Link href={service.href} className="inline-flex items-center gap-2.5 text-sm font-semibold text-white">
+                    <Icon name={service.icon} className="h-4 w-4" strokeWidth={1.75} />
+                    {service.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <TextLink href="/equipment-trade" className="text-white">
-                Explore Equipment Trade
-              </TextLink>
-              <Link href="/contact?type=equipment" className="text-sm font-medium underline-offset-4 hover:underline">
-                Request an Equipment Inquiry
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link
+                href={homeEquipment.href}
+                className="inline-flex h-10 w-fit items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-semibold text-arovia-navy"
+              >
+                {homeEquipment.cta}
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </Link>
+              <Link
+                href={homeEquipment.inquiry.href}
+                className="inline-flex h-10 w-fit items-center justify-center rounded-full border border-white/50 px-5 text-sm font-semibold text-white"
+              >
+                {homeEquipment.inquiry.label}
               </Link>
             </div>
           </div>
@@ -92,105 +121,115 @@ export function HomeContinue() {
       </section>
 
       <section className="bg-white" aria-labelledby="digital-story">
-        <div className="mx-auto grid max-w-wide items-end gap-12 px-5 py-20 lg:grid-cols-12 lg:px-10 lg:py-28">
-          <div className="lg:col-span-5">
-            <h2 id="digital-story" className="font-heading text-4xl font-semibold text-arovia-navy">
-              Technology Built Around Healthcare
+        <div className="mx-auto grid max-w-wide items-center gap-10 px-5 py-14 lg:grid-cols-2 lg:gap-14 lg:px-10 lg:py-16">
+          <div>
+            <p className="flex items-center gap-2 text-sm font-medium text-arovia-navy/70">
+              <span className="h-2 w-2 rounded-full bg-arovia-digital" aria-hidden="true" />
+              {homeDigital.number}
+            </p>
+            <h2 id="digital-story" className="mt-3 font-heading text-3xl font-bold tracking-tight text-arovia-navy sm:text-4xl">
+              {homeDigital.heading}
             </h2>
-            <p className="type-lead mt-5">Software for clinical and operational work: applications, websites, platforms, and a solution built for a specific need.</p>
-            <ul className="mt-8 space-y-3">
-              {[
-                ["/digital-health/apps", "Medical Apps"],
-                ["/digital-health/websites", "Medical Websites"],
-                ["/digital-health/platforms", "Healthcare Platforms"],
-                ["/digital-health/solutions", "Digital Solutions"],
-              ].map(([href, label]) => (
-                <li key={href}>
-                  <Link href={href} className="font-heading text-2xl text-arovia-navy underline-offset-4 hover:underline">
-                    {label}
+            <p className="mt-4 max-w-md text-base leading-relaxed text-arovia-charcoal">{homeDigital.text}</p>
+            <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-3">
+              {homeDigital.services.map((service) => (
+                <li key={service.href}>
+                  <Link href={service.href} className="inline-flex items-center gap-2 text-sm font-semibold text-arovia-navy">
+                    <Icon name={service.icon} className="h-4 w-4 text-arovia-digital" strokeWidth={1.75} />
+                    {service.label}
                   </Link>
                 </li>
               ))}
             </ul>
             <div className="mt-8">
-              <TextLink href="/digital-health">Explore Digital Health</TextLink>
+              <Button href={homeDigital.href} variant="digital" size="sm" className="w-fit rounded-full px-5">
+                {homeDigital.cta}
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </Button>
             </div>
           </div>
-          <div className="lg:col-span-7">
-            <ImageFrame src="/images/digital.jpg" alt="A clinician reviewing information on a healthcare system" ratio="16/9" />
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image src={homeDigital.image.src} alt={homeDigital.image.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
           </div>
         </div>
       </section>
 
-      <section className="border-t border-arovia-navy/10 bg-arovia-off" aria-labelledby="journeys">
-        <h2 id="journeys" className="sr-only">
-          Who Arovia works with
-        </h2>
-        <div className="mx-auto grid max-w-wide md:grid-cols-2">
-          <div className="px-5 py-16 lg:px-10 lg:py-24">
-            <h3 className="font-heading text-3xl font-semibold text-arovia-navy">For Individuals & Families</h3>
-            <p className="mt-4">Healthcare services, pharmacy, and care.</p>
-            <div className="mt-8">
-              <TextLink href="/care">Explore Healthcare</TextLink>
-            </div>
-          </div>
-          <div className="border-t border-arovia-navy/10 px-5 py-16 md:border-l md:border-t-0 lg:px-10 lg:py-24">
-            <h3 className="font-heading text-3xl font-semibold text-arovia-navy">For Healthcare Organizations</h3>
-            <p className="mt-4">Equipment trade and digital health solutions.</p>
-            <div className="mt-8">
-              <TextLink href="/contact?type=partnership">Work With Arovia</TextLink>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white" aria-labelledby="why-arovia">
-        <div className="mx-auto max-w-content px-5 py-20 lg:px-10 lg:py-28">
-          <h2 id="why-arovia" className="font-heading text-4xl font-semibold text-arovia-navy">
-            Why Arovia
+      <section className="bg-[#F5F7F8]" aria-labelledby="who-we-serve">
+        <div className="mx-auto max-w-wide px-5 py-14 lg:px-10 lg:py-16">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-arovia-teal">{homeAudiences.eyebrow}</p>
+          <h2 id="who-we-serve" className="mx-auto mt-3 max-w-3xl text-center font-heading text-3xl font-bold tracking-tight text-arovia-navy sm:text-4xl">
+            {homeAudiences.heading}
           </h2>
-          <ul className="mt-10 space-y-6">
-            {[
-              ["Connected capabilities", "Care, pharmacy, equipment trade, and digital health are part of one group."],
-              ["More than one service", "A person or an organization can start with the service they need and stay with the same group."],
-              ["Patient-focused", "Care planning starts with the person and the family around them."],
-              ["Support for healthcare businesses", "Hospitals, clinics, and other organizations can enquire about equipment and technology."],
-              ["Technology around the work", "Digital health is built for a healthcare task, not as a separate product line with invented results."],
-            ].map(([title, copy]) => (
-              <li key={title} className="border-t border-arovia-navy/10 pt-6">
-                <h3 className="font-heading text-2xl font-semibold text-arovia-navy">{title}</h3>
-                <p className="mt-2">{copy}</p>
+          <ul className="mt-10 grid gap-5 lg:grid-cols-2">
+            {homeAudiences.items.map((item) => (
+              <li key={item.href} className="overflow-hidden rounded-2xl border border-arovia-navy/8 bg-white">
+                <div className="grid sm:grid-cols-[11rem_minmax(0,1fr)]">
+                  <div className="relative min-h-[148px] sm:min-h-[168px]">
+                    <span className={`absolute inset-y-0 left-0 z-10 w-1.5 ${item.accent}`} aria-hidden="true" />
+                    <Image src={item.image.src} alt={item.image.alt} fill sizes="(min-width: 1024px) 12rem, 50vw" className="object-cover" />
+                  </div>
+                  <div className="flex flex-col justify-center px-5 py-5 sm:px-6">
+                    <h3 className="font-heading text-xl font-bold text-arovia-navy">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-arovia-muted">{item.description}</p>
+                    <Link href={item.href} className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-arovia-navy">
+                      {item.cta}
+                      <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section className="bg-arovia-navy text-white" aria-labelledby="contact-cta">
-        <div className="mx-auto max-w-wide px-5 py-20 lg:px-10">
-          <h2 id="contact-cta" className="max-w-3xl font-heading text-4xl font-semibold">
-            Begin Your Healthcare Journey Today
+      <section className="bg-white" aria-labelledby="why-arovia">
+        <div className="mx-auto max-w-wide px-5 py-14 lg:px-10 lg:py-16">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-arovia-teal">{homeWhy.eyebrow}</p>
+          <h2 id="why-arovia" className="mx-auto mt-3 max-w-3xl text-center font-heading text-3xl font-bold tracking-tight text-arovia-navy sm:text-4xl">
+            {homeWhy.heading}
           </h2>
-          <p className="mt-4 max-w-2xl text-white/80">Talk to the team, or send a question. The reply uses the details you provide.</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/contact" className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 font-semibold text-arovia-navy">
-              Talk to Arovia
+          <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {homeWhy.items.map((item) => (
+              <li key={item.title}>
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#D9F1ED] text-arovia-teal">
+                  <Icon name={item.icon} className="h-4 w-4" strokeWidth={1.8} />
+                </span>
+                <h3 className="mt-4 font-heading text-base font-bold text-arovia-navy">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-arovia-muted">{item.description}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden" aria-labelledby="contact-cta">
+        <div className="absolute inset-0">
+          <Image src={homeFinalCta.image.src} alt="" fill priority={false} sizes="100vw" className="object-cover" />
+          <div className="absolute inset-0 bg-[#04101F]/78" />
+        </div>
+        <div className="relative mx-auto flex max-w-wide flex-col gap-6 px-5 py-12 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-14">
+          <div className="max-w-2xl">
+            <h2 id="contact-cta" className="font-heading text-3xl font-bold tracking-tight text-white sm:text-[2.15rem]">
+              {homeFinalCta.heading}
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-white/85">{homeFinalCta.text}</p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              href={homeFinalCta.primary.href}
+              className="inline-flex h-10 w-fit items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-semibold text-arovia-navy"
+            >
+              {homeFinalCta.primary.label}
+              <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
-            <Link href="/contact?type=general" className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/40 px-5 font-semibold">
-              Request Information
+            <Link
+              href={homeFinalCta.secondary.href}
+              className="inline-flex h-10 w-fit items-center justify-center rounded-full border border-white/70 px-5 text-sm font-semibold text-white"
+            >
+              {homeFinalCta.secondary.label}
             </Link>
           </div>
-          <address className="mt-10 space-y-1 text-sm not-italic text-white/80">
-            <p>
-              <a href={`mailto:${email}`}>{email}</a>
-            </p>
-            <p>
-              <a href={phoneTel}>{phoneDisplay}</a>
-            </p>
-            <p>
-              <a href={mapLink}>{addressSingleLine}</a>
-            </p>
-          </address>
         </div>
       </section>
     </>
