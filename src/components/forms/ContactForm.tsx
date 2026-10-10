@@ -133,7 +133,18 @@ function ContactFormInner() {
         <input id="phone" className={inputClass(!!visible.phone)} name="phone" placeholder="Enter your phone number" value={values.phone} onChange={(event) => update("phone", event.target.value)} onBlur={() => blur("phone")} autoComplete="tel" aria-invalid={!!visible.phone} aria-describedby={visible.phone ? "phone-error" : undefined} required />
       </Field>
       <Field id="message" label="Message" error={visible.message} required>
-        <textarea id="message" className={cn(inputClass(!!visible.message), "min-h-28")} name="message" placeholder="Tell us how we can help you..." value={values.message} onChange={(event) => update("message", event.target.value)} onBlur={() => blur("message")} aria-invalid={!!visible.message} aria-describedby={visible.message ? "message-error" : undefined} required />
+        <textarea
+          id="message"
+          className={cn(inputClass(!!visible.message), "min-h-28")}
+          name="message"
+          placeholder="Describe your enquiry (service interest, timing). Do not include sensitive medical details."
+          value={values.message}
+          onChange={(event) => update("message", event.target.value)}
+          onBlur={() => blur("message")}
+          aria-invalid={!!visible.message}
+          aria-describedby={visible.message ? "message-error" : undefined}
+          required
+        />
       </Field>
       <fieldset>
         <legend className="text-sm font-semibold text-arovia-navy">Preferred contact method</legend>

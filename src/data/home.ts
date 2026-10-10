@@ -46,7 +46,7 @@ export const homeEcosystem = {
     {
       number: "03",
       name: "Equipment Trade",
-      description: "Export and medical equipment for healthcare businesses.",
+      description: "Import and export support, plus medical equipment for healthcare businesses.",
       href: "/equipment-trade",
       cta: "Explore Equipment Trade",
       icon: "BedDouble" as IconName,
@@ -99,7 +99,7 @@ export const homePharmacy = {
 export const homeEquipment = {
   number: "03",
   heading: "Medical Equipment. Connected to Global Markets.",
-  text: "Export and medical equipment for healthcare businesses and organizations.",
+  text: "Import and export support, plus medical equipment for healthcare businesses and organizations.",
   href: "/equipment-trade",
   cta: "Explore Equipment Trade",
   inquiry: { label: "Request an Equipment Inquiry", href: "/contact?type=equipment" },

@@ -25,29 +25,6 @@ const strip = [
   { label: "Ambulance", detail: "Emergency & patient transport", href: "/care/ambulance", icon: Ambulance },
 ];
 
-const steps = [
-  {
-    number: "01",
-    title: "Tell us what you need.",
-    text: "It could be something small, something ongoing, or something urgent.",
-  },
-  {
-    number: "02",
-    title: "We'll help you find the right care.",
-    text: "Clinic, homecare, diagnostics or transport.",
-  },
-  {
-    number: "03",
-    title: "Get the care you need.",
-    text: "At home, at a clinic, or wherever the service is available.",
-  },
-  {
-    number: "04",
-    title: "We're here if you need us again.",
-    text: "Because care doesn't always end after one visit.",
-  },
-];
-
 const people = [
   {
     title: "Looking after yourself",
@@ -65,14 +42,6 @@ const people = [
     title: "Ongoing care",
     text: "Making regular healthcare a little easier to manage.",
   },
-];
-
-const values = [
-  { title: "Personal.", text: "You're not just a number." },
-  { title: "Clear.", text: "You should understand what's happening." },
-  { title: "Accessible.", text: "Getting care shouldn't feel harder than it already is." },
-  { title: "Connected.", text: "When you need more than one service, they should work together." },
-  { title: "Respectful.", text: "Every person deserves patience and dignity." },
 ];
 
 export function CarePage() {
@@ -401,33 +370,8 @@ export function CarePage() {
         </div>
       </section>
 
-      {/* Process — typographic, light */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-wide px-5 py-10 lg:px-10 lg:py-14">
-          <Reveal className="max-w-2xl">
-            <h2 className="font-heading text-3xl font-semibold tracking-tight text-arovia-navy sm:text-[2.25rem]">
-              It&apos;s simple to get started.
-            </h2>
-            <p className="mt-2 text-base leading-relaxed text-arovia-charcoal">
-              You don&apos;t need to figure it all out. Just tell us what you need, and we&apos;ll help you from there.
-            </p>
-          </Reveal>
-          <ol className="mt-6 grid gap-0 border-t border-arovia-navy/10 md:grid-cols-4">
-            {steps.map((step) => (
-              <Reveal key={step.number}>
-                <li className="border-b border-arovia-navy/10 py-5 md:border-b-0 md:border-r md:px-5 md:py-6 md:first:pl-0 md:last:border-r-0 md:last:pr-0">
-                  <p className="font-heading text-sm font-semibold tracking-[0.14em] text-arovia-teal">{step.number}</p>
-                  <h3 className="mt-2 font-heading text-base font-semibold text-arovia-navy">{step.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-arovia-muted">{step.text}</p>
-                </li>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       {/* People — balanced image + typography */}
-      <section className="bg-[#F7F4EE]">
+      <section className="bg-white">
         <div className="mx-auto grid max-w-wide items-center gap-6 px-5 py-10 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:py-14">
           <Reveal className="lg:col-span-5">
             <div className="relative mx-auto aspect-[4/5] max-h-[22rem] w-full overflow-hidden rounded-lg lg:mx-0 lg:max-h-[26rem]">
@@ -453,29 +397,6 @@ export function CarePage() {
               ))}
             </ul>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Values — typography led */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-wide px-5 py-10 lg:px-10 lg:py-14">
-          <Reveal className="max-w-xl">
-            <h2 className="font-heading text-3xl font-semibold tracking-tight text-arovia-navy sm:text-[2.25rem]">
-              More than services.
-              <br />
-              Real support.
-            </h2>
-          </Reveal>
-          <ul className="mt-6 space-y-0">
-            {values.map((item) => (
-              <Reveal key={item.title}>
-                <li className="grid gap-1.5 border-t border-arovia-navy/10 py-4 sm:grid-cols-[minmax(0,11rem)_minmax(0,1fr)] sm:items-baseline sm:gap-8">
-                  <h3 className="font-heading text-xl font-semibold tracking-tight text-arovia-navy sm:text-2xl">{item.title}</h3>
-                  <p className="max-w-xl text-base leading-relaxed text-arovia-charcoal">{item.text}</p>
-                </li>
-              </Reveal>
-            ))}
-          </ul>
         </div>
       </section>
 

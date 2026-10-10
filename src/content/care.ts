@@ -4,7 +4,7 @@ const careFaqs = [
   {
     question: "How do I schedule a clinic appointment?",
     answer:
-      "You can schedule through our website, by calling [PHONE], or via WhatsApp. Availability is confirmed when you book.",
+      "You can schedule through our Contact page or by calling [PHONE]. Availability is confirmed when we reply.",
   },
   {
     question: "Does homecare require a clinic evaluation first?",
@@ -182,7 +182,7 @@ export const clinicPage: ContentPage = {
   why: [
     { title: "Qualified clinicians", description: "Medical professionals focused on clear plans, not rushed visits." },
     { title: "Connected follow-through", description: "Home care, diagnostics, and pharmacy can continue the same plan." },
-    { title: "Convenient scheduling", description: "Book through the contact form, phone, or WhatsApp." },
+    { title: "Convenient scheduling", description: "Book through the Contact page or by phone." },
   ],
   faqs: careFaqs.slice(0, 3),
   ctaTitle: "Book your consultation",
@@ -400,7 +400,7 @@ export const ambulancePage: ContentPage = {
   ],
   faqs: [
     { question: "When should I call?", answer: "Call for chest pain, breathing difficulty, severe allergy, bleeding, unconsciousness, or major trauma." },
-    { question: "Is it available 24/7?", answer: "The service is built for round-the-clock response. Hours will be published with the emergency number." },
+    { question: "Is it available 24/7?", answer: "Hours for Arovia ambulance and patient transport are confirmed when you enquire. For life-threatening emergencies, call local emergency services." },
     { question: "Can you do non-emergency transfers?", answer: "Yes. Book discharges, inter-hospital transfers, and planned trips through the care team." },
   ],
   ctaTitle: "Save the ambulance number",

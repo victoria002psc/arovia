@@ -41,7 +41,7 @@ export function pillarClasses(pillar: keyof typeof pillarStyles) {
 
 /**
  * Replace content-master placeholders with confirmed company details.
- * Empty details stay explicit so unpublished contact data is not invented.
+ * Never invent response times, WhatsApp availability, or registration numbers.
  */
 export function fillCopy(input: string) {
   const phone = company.phone;
@@ -65,7 +65,12 @@ export function fillCopy(input: string) {
     .replaceAll("[ADDRESS]", address)
     .replaceAll("[EMAIL]", email)
     .replaceAll("[PHONE]", phone)
-    .replaceAll("[LOCATION]", "Guntur");
+    .replaceAll("[LOCATION]", "Guntur")
+    // No unverified SLA — point to published business hours only.
+    .replaceAll("[TIMEFRAME]", "business hours")
+    .replaceAll("[SERVICE AREAS / DELIVERY COVERAGE]", "Coverage is confirmed per enquiry from our Guntur base.")
+    .replaceAll("[EMERGENCY PHONE]", "local emergency services")
+    .replaceAll("[AMBULANCE PHONE]", "local emergency services");
 
   if (company.whatsapp) {
     next = next
@@ -73,7 +78,22 @@ export function fillCopy(input: string) {
       .replaceAll("[CARE WHATSAPP]", company.whatsapp)
       .replaceAll("[PHARMACY WHATSAPP]", company.whatsapp)
       .replaceAll("[EQUIPMENT WHATSAPP]", company.whatsapp);
+  } else {
+    next = next
+      .replaceAll(", or via WhatsApp", "")
+      .replaceAll(", via WhatsApp", "")
+      .replaceAll(" or via WhatsApp", "")
+      .replaceAll(" via WhatsApp", "")
+      .replaceAll("via WhatsApp [WHATSAPP]", "through the Contact page")
+      .replaceAll("WhatsApp [WHATSAPP]", "the Contact page")
+      .replaceAll("[WHATSAPP]", "")
+      .replaceAll("[CARE WHATSAPP]", "")
+      .replaceAll("[PHARMACY WHATSAPP]", "")
+      .replaceAll("[EQUIPMENT WHATSAPP]", "");
   }
+
+  // Strip any remaining unpublished bracket tokens so they never render publicly.
+  next = next.replace(/\[[A-Z][A-Z0-9 _/\-]{2,}\]/g, "").replace(/\s{2,}/g, " ").trim();
 
   return next;
 }

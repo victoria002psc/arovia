@@ -8,14 +8,14 @@ export const equipmentPage: ContentPage = {
   seo: {
     title: "Equipment Trade — Export and Medical Equipment | Arovia",
     description:
-      "Medical equipment and export support for healthcare businesses and organizations. Hospital, diagnostic, surgical, and ICU equipment.",
-    keywords: ["medical equipment", "equipment export", "hospital equipment", "diagnostic equipment"],
+      "Medical equipment import and export support for healthcare businesses and organizations. Hospital, diagnostic, surgical, and ICU equipment.",
+    keywords: ["medical equipment", "equipment import", "equipment export", "hospital equipment", "diagnostic equipment"],
   },
   eyebrow: "Equipment Trade",
   title: "Medical Equipment. Connected to Healthcare Organizations.",
-  subheading: "Export support and medical equipment for hospitals, clinics, and healthcare businesses.",
+  subheading: "Import and export support, plus medical equipment for hospitals, clinics, and healthcare businesses.",
   intro:
-    "Healthcare organizations need reliable equipment and a clear path when they sell or source equipment for other markets. Arovia's Equipment Trade covers export support and medical equipment: hospital, diagnostic, surgical, and ICU devices, with installation and training discussed as part of the enquiry.",
+    "Healthcare organizations need reliable equipment and a clear path when they source or move equipment across markets. Arovia's Equipment Trade covers medical equipment alongside import and export support: hospital, diagnostic, surgical, and ICU devices, with installation and training discussed as part of the enquiry. Destinations, volumes, and registrations are confirmed per enquiry.",
   primaryCta: { label: "Request an Equipment Inquiry", href: "/contact?type=equipment" },
   secondaryCta: { label: "Explore services", href: "#services" },
   breadcrumbs: [
@@ -31,11 +31,11 @@ export const equipmentPage: ContentPage = {
     { title: "Medical businesses", description: "Sourcing and export conversations for healthcare ventures." },
   ],
   servicesTitle: "Two Equipment Trade services",
-  servicesIntro: "Export and Medical Equipment. Nothing else is offered on this page.",
+  servicesIntro: "Export support (including import/sourcing conversations where relevant) and Medical Equipment.",
   services: [
     {
       title: "Export",
-      description: "Documentation, logistics, and market-access support for medical equipment.",
+      description: "Documentation, logistics, and market-access support for medical equipment moving across borders. Import or sourcing needs can be discussed in the same enquiry.",
       href: "/equipment-trade/export",
     },
     {
@@ -52,7 +52,7 @@ export const equipmentPage: ContentPage = {
     { title: "Quality check", description: "Items are checked before they are handed over. Specific certifications are listed per product once confirmed." },
   ],
   faqs: [
-    { question: "Do you export medical equipment?", answer: "Export support is part of Equipment Trade. Destinations and volumes are confirmed per enquiry. A published market list is not available yet." },
+    { question: "Do you import and export medical equipment?", answer: "Import and export support are part of Equipment Trade conversations. Destinations, volumes, and paperwork are confirmed per enquiry. A published market list and registration numbers are not shown until verified." },
     { question: "Is installation and training included?", answer: "Installation and basic training can be included. The quotation states what is covered." },
     { question: "What quality standards does the equipment meet?", answer: "Specific ISO, CE, or FDA claims are listed per product once confirmed. Every shipment is quality-checked." },
   ],
@@ -95,7 +95,7 @@ export const exportPage: ContentPage = {
         "Support after the shipment is dispatched",
       ],
       notes: [
-        "[VERIFY: export capability and markets]",
+        "Destinations and volumes are confirmed per enquiry — a published market list is not available yet.",
         "Air, sea, and land options are discussed per shipment.",
         "Destination-specific files are prepared only when they apply to that enquiry.",
       ],

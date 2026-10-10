@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, Clock3, Mail, MapPin, Phone } from "lucide-react";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { address, businessDays, businessHours, email, mapLink, phoneDisplay, phoneTel } from "@/lib/site-info";
@@ -16,8 +17,8 @@ export const metadata: Metadata = {
 };
 
 const addressLines = [
-  "Shop No. 26, Ground Floor,",
-  `Annapurna Complex, ${address.street},`,
+  `${address.shop},`,
+  `${address.street},`,
   `${address.city} – ${address.postalCode},`,
   `${address.state}, ${address.country}`,
 ];
@@ -128,7 +129,11 @@ export default function ContactPage() {
             <p className="text-xs font-semibold tracking-[0.14em] text-arovia-teal">SEND A MESSAGE</p>
             <h2 className="mt-2 font-heading text-3xl font-semibold text-arovia-navy">We&apos;d love to hear from you</h2>
             <p className="mt-3 text-sm leading-relaxed text-arovia-charcoal">
-              Fill in the form below and our team will get back to you as soon as possible.
+              Fill in the form below for a service enquiry. Do not submit sensitive medical details — see our{" "}
+              <Link href="/privacy" className="font-semibold text-arovia-navy underline-offset-4 hover:underline">
+                Privacy Notice
+              </Link>
+              .
             </p>
             <div className="mt-6">
               <ContactForm />

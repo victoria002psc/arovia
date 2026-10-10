@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const values = [
   ["Patient-Centered Care", "Healthcare decisions start with what's best for the patient. Everything we do serves that purpose."],
   ["Integration & Coordination", "Siloed healthcare is inefficient. We bring our four pillars together to create seamless experiences."],
-  ["Professional Excellence", "Our team includes qualified healthcare professionals, specialists, engineers, and experts. Excellence is non-negotiable."],
+  ["Professional Excellence", "We aim for careful, responsible delivery across care, pharmacy, equipment, and digital health — without overstating credentials that are not yet published."],
   ["Innovation", "We use technology and modern healthcare approaches to make healthcare better, faster, and more accessible."],
   ["Trust & Transparency", "Healthcare requires trust. We're transparent about what we do, how we do it, and what qualifications we bring."],
   ["Accessibility", "Great healthcare shouldn't be limited to those with resources. We're committed to making healthcare accessible."],
@@ -20,7 +20,7 @@ const values = [
 const pillars = [
   ["Care", "Our Care pillar delivers direct healthcare to patients through clinics, home care, diagnostics, and emergency services. Healthcare is most effective when it's accessible."],
   ["Pharmacy", "The pharmacy provides prescription medicines and healthcare products, with pharmacist guidance. Availability and delivery are confirmed with the team."],
-  ["Equipment Trade", "Equipment Trade covers export support and medical equipment for healthcare organizations."],
+  ["Equipment Trade", "Equipment Trade covers medical equipment plus import and export support for healthcare organizations."],
   ["Digital Health", "Our Digital Health pillar builds technology that makes healthcare more efficient, accessible, and coordinated."],
 ];
 
@@ -93,7 +93,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-semibold">How We Operate</h2>
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
             {[
-              ["Quality First", "Every service meets professional healthcare standards."],
+              ["Quality First", "We work to professional healthcare standards appropriate to each service, confirmed when you engage with the team."],
               ["Integration", "The four pillars are coordinated functions of one ecosystem."],
               ["Patient Outcomes", "Success is measured by health outcomes, service quality, and satisfaction."],
               ["Technology-Enabled", "Digital tools support human expertise."],
@@ -109,11 +109,12 @@ export default function AboutPage() {
           <p className="mt-3 max-w-3xl text-slate-600">
             Licenses, registrations, and certifications will be published here once confirmed. Until then, this page does not claim approvals that have not been verified.
           </p>
-          <h2 className="mt-12 text-3xl font-semibold">Healthcare Professionals & Experts</h2>
-          <p className="mt-3 max-w-3xl bg-amber-100 px-3 py-2 text-slate-900">[FOUNDER / LEADERSHIP]</p>
-          <p className="mt-3 max-w-3xl bg-amber-100 px-3 py-2 text-slate-900">[FOUNDING YEAR]</p>
+          <h2 className="mt-12 text-3xl font-semibold">People and coverage</h2>
           <p className="mt-3 max-w-3xl text-slate-600">
-            Named leadership, clinicians, and technology leads will be added when the team list is ready. Arovia is built by healthcare professionals, specialists, technology experts, and operators. Service coverage beyond Guntur is [SERVICE AREAS / DELIVERY COVERAGE].
+            Named leadership and clinician profiles will be listed when they are ready to publish. Until then, please use the Contact page for partnership or service questions.
+          </p>
+          <p className="mt-3 max-w-3xl text-slate-600">
+            Arovia Group operates from Guntur, Andhra Pradesh. Service coverage outside Guntur is confirmed per enquiry — we do not publish a wider delivery map until it is verified.
           </p>
           <div className="mt-8">
             <Link href="/contact?type=partnership" className="inline-flex min-h-11 items-center font-semibold text-cyan-700">

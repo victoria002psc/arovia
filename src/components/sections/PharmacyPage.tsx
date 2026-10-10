@@ -5,12 +5,12 @@ import { Reveal } from "@/components/motion/Reveal";
 
 const principles = [
   {
-    title: "Easy access",
-    text: "Medicines when you need them.",
+    title: "Part of care",
+    text: "Prescription support coordinated with Arovia care.",
     icon: Pill,
   },
   {
-    title: "Trusted care",
+    title: "Trusted guidance",
     text: "A responsible approach to medicines.",
     icon: Shield,
   },
@@ -171,10 +171,10 @@ export function PharmacyPage() {
             <h1 className="mt-6 max-w-lg font-heading text-[2.6rem] font-semibold leading-[1.02] tracking-tight text-arovia-navy sm:text-5xl lg:text-[3.6rem]">
               Medicines
               <br />
-              when you <span className="text-arovia-pharmacy">need them.</span>
+              as part of <span className="text-arovia-pharmacy">your care.</span>
             </h1>
             <p className="mt-6 max-w-md text-base leading-relaxed text-arovia-charcoal sm:text-[1.05rem]">
-              Arovia Pharmacy is part of our healthcare services, helping make everyday medicines easier to access.
+              Arovia Pharmacy sits inside the Arovia healthcare ecosystem — talk to us about prescriptions and everyday medicines. Availability is confirmed with the pharmacy team.
             </p>
             <div className="mt-9">
               <PharmacyCta />

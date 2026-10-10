@@ -48,7 +48,7 @@ export const faqs: FaqItem[] = [
     category: "care",
     question: "How do I schedule an appointment?",
     answer:
-      "You can book a clinic appointment or request a home visit through our Contact page, by calling [PHONE], or via WhatsApp. Our team will respond within [TIMEFRAME].",
+      "You can book a clinic appointment or request a home visit through our Contact page or by calling [PHONE]. We reply during business hours.",
   },
   {
     id: "clinic-vs-home",
@@ -62,7 +62,7 @@ export const faqs: FaqItem[] = [
     category: "care",
     question: "Can I book a clinic appointment online?",
     answer:
-      "Yes. You can book through our website, call [PHONE], or message via WhatsApp. We typically have availability within [TIMEFRAME].",
+      "Yes. You can request a booking through our Contact page or by calling [PHONE]. Availability is confirmed when we reply.",
   },
   {
     id: "bring",
@@ -90,7 +90,7 @@ export const faqs: FaqItem[] = [
     category: "care",
     question: "How do I request homecare?",
     answer:
-      "Contact our team through phone [PHONE], email [EMAIL], or WhatsApp [WHATSAPP]. We'll understand your specific needs, arrange an initial assessment, create a personalized care plan, and arrange homecare visits.",
+      "Contact our team by phone [PHONE] or email [EMAIL], or use the Contact page. We'll discuss your needs, arrange an assessment when appropriate, and outline next steps for homecare.",
   },
   {
     id: "visit-includes",
@@ -132,7 +132,7 @@ export const faqs: FaqItem[] = [
     category: "care",
     question: "What happens if I need care at an unusual time?",
     answer:
-      "For emergencies, call [EMERGENCY PHONE]. For non-emergency needs outside normal hours, discuss scheduling options with our team. After-hours homecare availability is still being confirmed.",
+      "For life-threatening emergencies, call local emergency services. For non-emergency needs outside normal hours, contact the care team on [PHONE] and we will confirm what can be arranged.",
   },
   {
     id: "hygiene",
@@ -146,7 +146,7 @@ export const faqs: FaqItem[] = [
     category: "care",
     question: "Are your homecare staff trained and qualified?",
     answer:
-      "Yes. Our homecare team includes trained and certified nurses, licensed caregiver professionals, staff trained in infection control, and background-checked professionals who receive regular training.",
+      "Homecare is delivered by the clinical team assigned to your care plan. Specific qualifications for a visit are confirmed when care is arranged — this site does not publish a fixed staffing roster.",
   },
   {
     id: "not-satisfied",
@@ -230,7 +230,7 @@ export const faqs: FaqItem[] = [
     category: "care",
     question: "How long does emergency response take?",
     answer:
-      "Average response time is still being confirmed and varies by location and traffic. Emergency calls are prioritized for immediate dispatch.",
+      "Arovia does not publish an ambulance response time. For life-threatening emergencies, call local emergency services. For transport enquiries, contact [PHONE].",
   },
   {
     id: "when-ambulance",
@@ -244,21 +244,21 @@ export const faqs: FaqItem[] = [
     category: "care",
     question: "Do I need to call ahead for an ambulance?",
     answer:
-      "Call immediately for any emergency at [AMBULANCE PHONE]. Calling ensures the right resources are ready.",
+      "For a life-threatening emergency, call local emergency services first. For non-emergency patient transport, contact Arovia on [PHONE].",
   },
   {
     id: "ambulance-247",
     category: "care",
     question: "Is ambulance service available 24/7?",
     answer:
-      "The service is designed for round-the-clock emergency response. Exact published hours will be confirmed with the emergency number.",
+      "Hours for Arovia ambulance and patient transport are confirmed when you enquire. For life-threatening emergencies, call local emergency services.",
   },
   {
     id: "ambulance-care",
     category: "care",
     question: "What medical care does the ambulance provide?",
     answer:
-      "Ambulances are equipped for advanced life support, oxygen and ventilation, cardiac monitoring, IV administration, emergency medications, and a professional paramedic team.",
+      "Equipment and clinical staffing for a transport are confirmed when you arrange the service. This website does not list a fixed ambulance configuration.",
   },
   {
     id: "where-taken",
@@ -286,7 +286,7 @@ export const faqs: FaqItem[] = [
     category: "medicines",
     question: "Do you deliver medicines to my home?",
     answer:
-      "Delivery coverage is not published. [SERVICE AREAS / DELIVERY COVERAGE] Ask the pharmacy when you submit a prescription.",
+      "Delivery coverage is not published on this website. Ask the pharmacy team when you enquire about a prescription.",
   },
   {
     id: "otc",
@@ -321,7 +321,7 @@ export const faqs: FaqItem[] = [
     category: "medicines",
     question: "Can I get refills without visiting the clinic?",
     answer:
-      "Yes. Request refills by calling [PHONE], emailing [EMAIL], or via WhatsApp [WHATSAPP]. We'll verify with your prescriber and prepare the refill.",
+      "Yes. Request refills by calling [PHONE], emailing [EMAIL], or using the Contact page. The pharmacy will confirm what is needed with your prescriber when applicable.",
   },
   {
     id: "generics",
@@ -363,7 +363,7 @@ export const faqs: FaqItem[] = [
     category: "medicines",
     question: "What's your pharmacy team's qualifications?",
     answer:
-      "The pharmacy team includes licensed pharmacists and trained pharmacy staff who continue professional education and focus on medication safety.",
+      "Pharmacy support is provided by the pharmacy team. Licensing details will be published when confirmed; ask the team when you visit or enquire.",
   },
   {
     id: "do-export",
@@ -524,14 +524,14 @@ export const faqs: FaqItem[] = [
     category: "general",
     question: "What is your response time?",
     answer:
-      "For most inquiries, we aim to respond within [TIMEFRAME] during business hours. Urgent healthcare inquiries are prioritized.",
+      "For most enquiries, we reply during business hours. Urgent healthcare enquiries are prioritised when we receive them.",
   },
   {
     id: "fastest-contact",
     category: "general",
     question: "Which contact method is fastest?",
     answer:
-      "For urgent matters, calling [PHONE] is fastest once the number is published. For detailed inquiries, email is best.",
+      "For urgent matters, calling [PHONE] is usually fastest. For detailed enquiries, email or the Contact page works well.",
   },
   {
     id: "what-to-provide",
@@ -545,14 +545,14 @@ export const faqs: FaqItem[] = [
     category: "general",
     question: "Can I get a quote for equipment or digital services?",
     answer:
-      "Yes. Submit an inquiry with the details of your needs and we'll provide a quote within [TIMEFRAME].",
+      "Yes. Submit an enquiry with the details of your needs and we will reply with next steps during business hours.",
   },
   {
     id: "emergency-support",
     category: "care",
     question: "Is there emergency healthcare support 24/7?",
     answer:
-      "Ambulance response is intended to be available around the clock. Call [EMERGENCY PHONE] once that line is published. Availability details will be confirmed with the number.",
+      "For life-threatening emergencies, call local emergency services. Arovia ambulance support for patient transport is arranged through the Contact page or [PHONE]. Hours and availability are confirmed when you enquire — this site does not promise a response time.",
   },
   {
     id: "international",

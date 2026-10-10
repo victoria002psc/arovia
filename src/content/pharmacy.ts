@@ -86,7 +86,7 @@ export const pharmacyPage: ContentPage = {
   ],
   faqs: [
     { question: "Can I order medicines without a physical prescription?", answer: "E-prescription policy is still being confirmed. Share what you have and a pharmacist will tell you the accepted format." },
-    { question: "Do you deliver?", answer: "Delivery coverage is not published. Ask the pharmacy team when you submit a prescription. [SERVICE AREAS / DELIVERY COVERAGE]" },
+    { question: "Do you deliver?", answer: "Delivery coverage is not published on this website. Ask the pharmacy team when you enquire about a prescription." },
     { question: "Do you accept insurance?", answer: "Insurance partnerships are still being confirmed. Ask when you submit a prescription." },
     { question: "Is pharmacist consultation included?", answer: "Yes. Pharmacists counsel on usage, side effects, and interactions." },
   ],

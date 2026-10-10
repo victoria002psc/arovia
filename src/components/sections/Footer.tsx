@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { companyName } from "@/lib/site-info";
+import { companyName, email, phoneDisplay, phoneTel } from "@/lib/site-info";
 import { Logo } from "@/components/ui/Logo";
 
 const columns = [
@@ -53,6 +53,14 @@ export function Footer() {
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/70">
             Healthcare, pharmacy, equipment trade and digital health — connected through one healthcare ecosystem.
           </p>
+          <p className="mt-4 space-y-1 text-sm text-white/70">
+            <a href={`mailto:${email}`} className="block hover:text-white">
+              {email}
+            </a>
+            <a href={phoneTel} className="block hover:text-white">
+              {phoneDisplay}
+            </a>
+          </p>
         </div>
 
         {columns.map((column) => (
@@ -79,7 +87,7 @@ export function Footer() {
           <ul className="flex flex-wrap gap-x-4 gap-y-1">
             <li>
               <Link href="/privacy" className="hover:text-white">
-                Privacy Policy
+                Privacy Notice
               </Link>
             </li>
             <li>
